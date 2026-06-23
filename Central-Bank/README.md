@@ -254,6 +254,126 @@ Validate Prisma schema:
 $env:DATABASE_URL="mysql://central_bank:central_bank_password@localhost:3306/central_bank_core"; pnpm exec prisma validate
 ```
 
+## Prisma Migration Guide
+
+Central-Bank uses **Prisma 6.1.0** with MySQL 8.x for schema, migrations, and seeding. Wallet/Gateway do not use Prisma (raw `mysql2` / no DB).
+
+### Schema & Migrations Overview
+
+```text
+Central-Bank/prisma/
+├── schema.prisma                  # datasource: mysql, generator: prisma-client-js
+├── seed.ts                        # idempotent system account seeder
+└── migrations/                    # 11 migrations, chronological
+    ├── 20260601160000_init
+    ├── 20260609120000_add_topup_withdrawal_transaction_types
+    ├── 20260609153000_add_updated_at_defaults
+    ├── 20260609154500_add_staff_user_roles
+    ├── 20260610152000_add_pending_loan_status
+    ├── 20260611071000_add_kyc_identity_documents
+    ├── 20260617090000_add_user_pending_role
+    ├── 20260618090000_add_phone_pin_hash
+    ├── 20260618150000_add_account_number
+    ├── 20260619100000_add_loan_recommendation
+    └── 20260620120000_add_issuance_burn_transaction_types
+```
+
+### Local Development (Laragon / host MySQL)
+
+```bash
+# 1. Generate Prisma client (idempotent, run after every schema/migration change)
+pnpm exec prisma generate
+
+# 2. Apply migrations + create new migration file from schema diff
+pnpm exec prisma migrate dev
+
+# 3. (Optional) Reset database — drops all data, re-applies all migrations + seed
+pnpm exec prisma migrate reset
+
+# 4. Show migration status
+pnpm exec prisma migrate status
+
+# 5. Seed system accounts (CENTRAL_RESERVE, ISSUANCE_ACCOUNT, fee rules, etc.)
+pnpm prisma:seed
+
+# Or one-shot via npm scripts
+pnpm prisma:generate
+pnpm prisma:migrate
+pnpm prisma:seed
+```
+
+If `migrate dev` returns `P3014` (shadow database permission error), grant privileges:
+
+```bash
+docker exec -it <mysql-container> mysql -uroot -p<password> -e \
+  "GRANT ALL PRIVILEGES ON *.* TO 'central_bank'@'%' WITH GRANT OPTION; FLUSH PRIVILEGES;"
+pnpm exec prisma migrate dev
+```
+
+### Docker / Production (in-container)
+
+The `Central-Bank/Dockerfile` runs migrations + seed + app as a single CMD chain (line 38):
+
+```dockerfile
+CMD ["sh", "-c", "./node_modules/.bin/prisma migrate deploy \
+  && node dist-seed/seed.js \
+  && exec node dist/main.js"]
+```
+
+- **`migrate deploy`** = production-safe, applies pending migrations, no schema diff
+- **Build stage** runs `npx prisma generate` once before `npm run build` (client is baked into image)
+- **First boot** = all 11 migrations applied in order
+- **Subsequent boots** = `migrate deploy` is a no-op (no pending migrations)
+
+```bash
+# Watch migration logs during container start
+docker compose logs -f central-bank | grep -E "migrations|seed|started"
+
+# Expected first-boot output:
+#   prisma:migrate  11 migrations found
+#   prisma:migrate  All migrations applied
+#   Seed: 12 system accounts upserted
+#   Seed: fee rules created
+#   Application listening on port 3000
+```
+
+### Seed Idempotency
+
+`seed.ts` uses `prisma.walletAccount.upsert` for system accounts (idempotent on restart). However, `seedLoanPoolFunding` and `seedMonetaryPolicyEvent` use `prisma.X.create` guarded by `findFirst` — restart-safe. `upsertFeeRules` is **not** yet fully idempotent and will fail with `ER_DUP_ENTRY` on second container restart. Fix in progress.
+
+If a seed error occurs, run manually inside container:
+
+```bash
+docker compose exec central-bank node dist-seed/seed.js
+# Or reset and reseed (CAUTION: drops all data)
+docker compose exec central-bank npx prisma migrate reset --force
+```
+
+### Common Commands
+
+| Task | Command |
+|---|---|
+| Validate schema syntax | `pnpm exec prisma validate` |
+| Format schema file | `pnpm exec prisma format` |
+| View current DB schema | `pnpm exec prisma db pull` (regenerates from DB) |
+| Generate client only | `pnpm exec prisma generate` |
+| Open Prisma Studio (GUI) | `pnpm exec prisma studio` |
+| Create empty migration | `pnpm exec prisma migrate dev --create-only --name <name>` |
+| Apply pending (prod) | `pnpm exec prisma migrate deploy` |
+| Mark failed migration resolved | `pnpm exec prisma migrate resolve --applied <name>` |
+
+### Troubleshooting
+
+| Error | Penyebab | Fix |
+|---|---|---|
+| `P1001: Can't reach database` | MySQL not running / wrong host | Cek `docker compose ps mysql`, verify `DATABASE_URL` |
+| `P3009: migrate found failed migrations` | Previous migration crashed mid-way | `prisma migrate resolve --rolled-back <name>` lalu re-apply |
+| `P3014: Prisma can't create shadow DB` | User lacks CREATE privilege | Grant `ALL PRIVILEGES` untuk dev user (lihat atas) |
+| `ER_DUP_ENTRY` on container restart | Seed `create` not guarded by `findFirst` | Manual `migrate reset --force` (data loss) atau perbaiki seed.ts |
+| Port 3301 vs 3306 mismatch | Compose pakai 3301, MySQL default 3306 | Tambah `--port=3301` di MySQL `command` (lihat `DOCKER_SETUP.md`) |
+
+---
+
 ## Verification Run
 
 Last local verification:
