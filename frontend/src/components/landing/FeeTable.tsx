@@ -45,13 +45,13 @@ export default function FeeTable() {
         </motion.div>
 
         <div className="grid lg:grid-cols-[1.4fr_1fr] gap-5 [perspective:2000px]">
-          {/* Fee table — 3D card */}
+          {/* Fee table — card */}
           <motion.div
-            initial={{ opacity: 0, y: 24, rotateX: -8 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6 }}
-            className="relative [transform-style:preserve-3d]"
+            className="relative"
           >
             <div className="relative rounded-3xl border border-slate-200 dark:border-border/60 bg-white dark:bg-card/60 backdrop-blur-xl overflow-hidden shadow-[0_20px_60px_-20px_rgba(2,6,23,0.1),inset_0_1px_0_rgba(255,255,255,0.6)]">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 dark:via-white/10 to-transparent" />
@@ -119,13 +119,13 @@ export default function FeeTable() {
             </div>
           </motion.div>
 
-          {/* Simulator card — 3D card */}
+          {/* Simulator card */}
           <motion.div
-            initial={{ opacity: 0, y: 24, rotateX: -8 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="relative [transform-style:preserve-3d]"
+            className="relative"
           >
             <div className="relative h-full rounded-3xl border border-slate-200 dark:border-border/60 bg-white dark:bg-card/60 backdrop-blur-xl p-6 shadow-[0_20px_60px_-20px_rgba(2,6,23,0.1),inset_0_1px_0_rgba(255,255,255,0.6)]">
               <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 dark:via-white/10 to-transparent" />

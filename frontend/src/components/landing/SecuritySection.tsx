@@ -81,8 +81,8 @@ export default function SecuritySection() {
                 {/* Inner refraction */}
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 dark:via-white/10 to-transparent" />
 
-                {/* Scanning line animation on hover */}
-                <div className="absolute inset-y-0 -left-1 w-1 bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 group-hover:animate-[scan_1.5s_ease-in-out_infinite] pointer-events-none" />
+                {/* Scanning line on hover (CSS transition, no infinite keyframe) */}
+                <div className="absolute inset-y-0 -left-1 w-1 bg-gradient-to-b from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 group-hover:left-full transition-all duration-700 ease-in-out pointer-events-none" />
 
                 <div className="flex items-start gap-4 relative z-10">
                   <div className="relative shrink-0">

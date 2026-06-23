@@ -20,10 +20,23 @@ export default function LandingNavbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
+    let raf = 0;
+    let queued = false;
+    const update = () => {
+      setScrolled(window.scrollY > 12);
+      queued = false;
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      raf = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
 
   return (

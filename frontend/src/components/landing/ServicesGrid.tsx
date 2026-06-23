@@ -85,18 +85,17 @@ export default function ServicesGrid() {
           {services.map((s, i) => (
             <motion.div
               key={s.title}
-              initial={{ opacity: 0, y: 32, rotateX: -10 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{
                 delay: i * 0.06,
                 duration: 0.6,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              whileHover={{ y: -6, rotateX: 3 }}
-              className="group relative [transform-style:preserve-3d]"
+              className="group relative"
             >
-              <div className="relative h-full rounded-2xl border border-slate-200 dark:border-border/60 bg-white dark:bg-card/60 backdrop-blur-xl p-6 shadow-[0_10px_30px_-15px_rgba(2,6,23,0.1),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(37,99,235,0.3)] overflow-hidden">
+              <div className="relative h-full rounded-2xl border border-slate-200 dark:border-border/60 bg-white dark:bg-card/60 backdrop-blur-xl p-6 shadow-[0_10px_30px_-15px_rgba(2,6,23,0.1),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:shadow-[0_20px_50px_-15px_rgba(37,99,235,0.3)] overflow-hidden">
                 {/* Inner refraction */}
                 <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 dark:via-white/10 to-transparent" />
 

@@ -23,11 +23,11 @@ export default function CTAFooter() {
       <div className="max-w-7xl mx-auto space-y-10 relative z-10">
         {/* CTA hero card */}
         <motion.div
-          initial={{ opacity: 0, y: 24, scale: 0.96 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="relative [perspective:2000px]"
+          className="relative"
         >
           <div className="relative rounded-3xl border border-primary/30 bg-gradient-to-br from-blue-50/60 via-white to-cyan-50/60 dark:from-blue-500/10 dark:via-primary/5 dark:to-cyan-500/10 backdrop-blur-xl p-10 md:p-14 text-center space-y-6 overflow-hidden shadow-[0_25px_60px_-20px_rgba(37,99,235,0.2),inset_0_1px_0_rgba(255,255,255,0.6)]">
             {/* Inner refraction */}

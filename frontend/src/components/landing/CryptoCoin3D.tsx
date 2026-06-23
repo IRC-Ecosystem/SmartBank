@@ -1,15 +1,11 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 /**
- * Enhanced glassmorphic 3D crypto coin — pure SVG + CSS 3D transforms.
- *
- * Mirip reference: koin glassmorphic dengan embossed symbol, reflective
- * holographic ring, edge bevel untuk thickness illusion, floating particles.
- *
- * Pakai framer-motion (sudah ada di deps) untuk tilt + float animations.
+ * Glassmorphic 3D crypto coin — pure SVG + CSS 3D transforms.
+ * Hover-only tilt. No RAF loop. No orbit particles. No infinite conic.
  */
 export function CryptoCoin3D({
   size = 360,
@@ -23,8 +19,9 @@ export function CryptoCoin3D({
   const ref = useRef<HTMLDivElement>(null);
   const mx = useMotionValue(0);
   const my = useMotionValue(0);
-  const rx = useSpring(useTransform(my, [-0.5, 0.5], [22, -22]), { stiffness: 120, damping: 18 });
-  const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-26, 26]), { stiffness: 120, damping: 18 });
+  // Stiffness 300+ / damping 30+ → snappy, no overshoot
+  const rx = useSpring(useTransform(my, [-0.5, 0.5], [18, -18]), { stiffness: 320, damping: 30 });
+  const ry = useSpring(useTransform(mx, [-0.5, 0.5], [-22, 22]), { stiffness: 320, damping: 30 });
 
   const onMove = (e: React.MouseEvent) => {
     const r = ref.current?.getBoundingClientRect();
@@ -37,34 +34,16 @@ export function CryptoCoin3D({
     my.set(0);
   };
 
-  // Auto-rotation breathing
-  const [autoRotate, setAutoRotate] = useState(0);
-  useEffect(() => {
-    let raf = 0;
-    let last = performance.now();
-    const tick = (now: number) => {
-      const dt = (now - last) / 1000;
-      last = now;
-      setAutoRotate((r) => r + dt * 8); // 8 deg/sec
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
-
   return (
     <div
       ref={ref}
       onMouseMove={onMove}
       onMouseLeave={onLeave}
-      className="relative [perspective:1400px] mx-auto"
+      className="relative [perspective:800px] mx-auto"
       style={{ width: size, height: size }}
     >
       <motion.div
-        style={{
-          rotateX: rx,
-          rotateY: useTransform(ry, (v) => v + autoRotate) as unknown as number,
-        }}
+        style={{ rotateX: rx, rotateY: ry }}
         className="relative w-full h-full [transform-style:preserve-3d]"
       >
         {/* ---- COIN FACE (front) ---- */}
@@ -79,17 +58,6 @@ export function CryptoCoin3D({
           <div className="absolute inset-3 rounded-full border-2 border-white/25" />
           <div className="absolute inset-6 rounded-full border border-white/15" />
           <div className="absolute inset-8 rounded-full border border-dashed border-white/10" />
-
-          {/* Holographic iridescent overlay — animated conic */}
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-            className="absolute inset-0 rounded-full mix-blend-overlay opacity-50 pointer-events-none"
-            style={{
-              background:
-                "conic-gradient(from 0deg, rgba(255,255,255,0.4) 0deg, transparent 90deg, rgba(34,211,238,0.6) 180deg, transparent 270deg, rgba(255,255,255,0.3) 360deg)",
-            }}
-          />
 
           {/* Top-left specular highlight */}
           <div className="absolute -top-10 -left-10 w-48 h-48 rounded-full bg-white/25 blur-3xl pointer-events-none" />
@@ -106,9 +74,8 @@ export function CryptoCoin3D({
             </div>
           </div>
 
-          {/* Edge bezel highlights */}
+          {/* Edge bezel highlight */}
           <div className="absolute inset-0 rounded-full ring-1 ring-white/10 pointer-events-none" />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white/[0.04] to-transparent pointer-events-none" />
         </div>
 
         {/* ---- COIN EDGE (side bevel for thickness illusion) ---- */}
@@ -127,37 +94,7 @@ export function CryptoCoin3D({
         />
       </motion.div>
 
-      {/* ---- ORBITING PARTICLES (decorative) ---- */}
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 [transform-style:preserve-3d] pointer-events-none"
-      >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 size-4 rounded-full bg-cyan-400 shadow-[0_0_24px_rgba(34,211,238,0.95)]" />
-      </motion.div>
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 [transform-style:preserve-3d] pointer-events-none"
-      >
-        <div className="absolute bottom-0 right-1/4 translate-y-3 size-3 rounded-full bg-blue-300 shadow-[0_0_18px_rgba(147,197,253,0.9)]" />
-      </motion.div>
-      <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 [transform-style:preserve-3d] pointer-events-none"
-      >
-        <div className="absolute top-1/2 left-0 -translate-x-3 size-2 rounded-full bg-emerald-400 shadow-[0_0_14px_rgba(52,211,153,0.85)]" />
-      </motion.div>
-      <motion.div
-        animate={{ rotate: -360 }}
-        transition={{ duration: 32, repeat: Infinity, ease: "linear" }}
-        className="absolute inset-0 [transform-style:preserve-3d] pointer-events-none"
-      >
-        <div className="absolute top-1/4 right-0 translate-x-3 size-2.5 rounded-full bg-indigo-300 shadow-[0_0_14px_rgba(165,180,252,0.85)]" />
-      </motion.div>
-
-      {/* Floor reflection (subtle) */}
+      {/* Floor reflection (subtle, static) */}
       <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 w-3/4 h-8 rounded-full bg-blue-500/15 blur-2xl pointer-events-none" />
     </div>
   );

@@ -129,7 +129,7 @@ export default function AuthBrandPanel() {
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         >
           <CreditCard3D
-            width={320}
+            width={480}
             variant="blue"
             holderName="A. WIJAYA K."
             last4="8472"

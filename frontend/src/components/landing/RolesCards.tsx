@@ -84,26 +84,21 @@ export default function RolesCards() {
           {roles.map((r, i) => (
             <motion.div
               key={r.role}
-              initial={{ opacity: 0, y: 32, rotateX: -10 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ delay: i * 0.08, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              whileHover={{ y: -8, rotateX: 4 }}
-              className="group relative [transform-style:preserve-3d]"
+              className="group relative"
             >
-              <div
-                className={`relative h-full rounded-2xl border-2 bg-white dark:bg-gradient-to-br ${
-                  i === 0
-                    ? "border-blue-300 dark:border-blue-500/30 dark:from-blue-950/30"
-                    : i === 1
-                      ? "border-emerald-300 dark:border-emerald-500/30 dark:from-emerald-950/20"
-                      : i === 2
-                        ? "border-cyan-300 dark:border-cyan-500/30 dark:from-cyan-950/20"
-                        : "border-indigo-300 dark:border-indigo-500/30 dark:from-indigo-950/30"
-                } to-white/0 dark:to-slate-900/30 backdrop-blur-xl p-5 shadow-[0_10px_30px_-15px_rgba(2,6,23,0.08),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:shadow-[0_25px_60px_-15px_rgba(37,99,235,0.25)] overflow-hidden`}
-              >
-                {/* Inner refraction */}
-                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/50 dark:via-white/10 to-transparent" />
+              <div className="relative h-full rounded-2xl border border-white/10 bg-gradient-to-br from-zinc-950 via-neutral-950 to-black backdrop-blur-xl p-5 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.12),inset_0_-1px_0_rgba(255,255,255,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_30px_70px_-15px_rgba(0,0,0,0.95),inset_0_1px_0_rgba(255,255,255,0.18)] overflow-hidden">
+                {/* Gloss highlight — top half lighter for shine */}
+                <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.05] to-transparent pointer-events-none" />
+
+                {/* Specular edge — sharp white hairline on top */}
+                <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent" />
+
+                {/* Bottom rim */}
+                <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
 
                 {/* Role number watermark */}
                 <div className="absolute top-2 right-3 text-[60px] leading-none font-display font-bold text-foreground/[0.04] dark:text-foreground/[0.06] pointer-events-none tabular-nums">
@@ -142,7 +137,7 @@ export default function RolesCards() {
                     ))}
                   </ul>
 
-                  <p className="text-[10px] text-muted-foreground italic border-t border-border/50 pt-3 leading-relaxed">
+                  <p className="text-[10px] text-muted-foreground italic border-t border-white/10 pt-3 leading-relaxed">
                     {r.limit}
                   </p>
                 </div>

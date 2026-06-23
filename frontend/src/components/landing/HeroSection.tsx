@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import {
   ArrowRight,
   BookOpen,
@@ -17,7 +17,7 @@ import { MeshBackground } from "@/components/landing/MeshBackground";
 import { CreditCard3D } from "@/components/landing/CreditCard3D";
 
 /* -------------------------------------------------------------------------- */
-/*  Magnetic CTA — pulls toward cursor, hover-only 3D, premium spring         */
+/*  CTA — primary uses magnetic spring; secondary uses CSS hover only          */
 /* -------------------------------------------------------------------------- */
 function MagneticCTA({
   children,
@@ -28,16 +28,31 @@ function MagneticCTA({
   href: string;
   variant?: "primary" | "secondary";
 }) {
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const sx = useSpring(mx, { stiffness: 250, damping: 20 });
-  const sy = useSpring(my, { stiffness: 250, damping: 20 });
-
   const isPrimary = variant === "primary";
   const baseClasses = isPrimary
     ? "bg-primary text-primary-foreground shadow-[0_10px_30px_-10px_rgba(37,99,235,0.5),inset_0_1px_0_rgba(255,255,255,0.15)] hover:shadow-[0_15px_40px_-10px_rgba(37,99,235,0.7),inset_0_1px_0_rgba(255,255,255,0.2)]"
     : "bg-white dark:bg-slate-900/60 text-foreground border border-slate-300 dark:border-white/10 backdrop-blur-xl hover:border-primary hover:bg-slate-50 dark:hover:bg-slate-900/80 shadow-[0_8px_24px_-12px_rgba(2,6,23,0.1)]";
 
+  // Primary — magnetic spring (4 motion values). Secondary — plain CSS hover.
+  if (isPrimary) {
+    return <PrimaryMagnetic href={href} className={baseClasses}>{children}</PrimaryMagnetic>;
+  }
+  return <SecondaryCSS href={href} className={baseClasses}>{children}</SecondaryCSS>;
+}
+
+function PrimaryMagnetic({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: React.ReactNode;
+}) {
+  const mx = useMotionValue(0);
+  const my = useMotionValue(0);
+  const sx = useSpring(mx, { stiffness: 300, damping: 30 });
+  const sy = useSpring(my, { stiffness: 300, damping: 30 });
   return (
     <motion.div
       onMouseMove={(e) => {
@@ -57,13 +72,37 @@ function MagneticCTA({
       <Link href={href}>
         <motion.div
           style={{ x: sx, y: sy }}
-          className={`relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${baseClasses}`}
+          className={`group relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 ${className}`}
         >
-          <span className="relative z-10 flex items-center gap-2">{children}</span>
-          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+          <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+            {children}
+          </span>
+          <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
         </motion.div>
       </Link>
     </motion.div>
+  );
+}
+
+function SecondaryCSS({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: React.ReactNode;
+}) {
+  return (
+    <Link
+      href={href}
+      className={`group relative overflow-hidden inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm transition-all duration-300 hover:-translate-y-0.5 active:scale-[0.97] ${className}`}
+    >
+      <span className="relative z-10 flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
+        {children}
+      </span>
+      <span className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 bg-gradient-to-r from-transparent via-white/20 to-transparent pointer-events-none" />
+    </Link>
   );
 }
 
@@ -170,7 +209,7 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-[100dvh] pt-32 pb-0 overflow-hidden flex flex-col">
+    <section className="relative min-h-[100dvh] pt-20 pb-0 overflow-hidden flex flex-col">
       <MeshBackground />
 
       <motion.div
@@ -265,103 +304,95 @@ export default function HeroSection() {
           </motion.div>
         </motion.div>
 
-        {/* ============== RIGHT: 3 floating cards ABOVE + Debit Card BELOW ============== */}
-        <div className="relative [perspective:1500px] flex flex-col gap-5">
+        {/* ============== RIGHT: 3D ATM card CENTER + info cards FLOATING around ============== */}
+        <div className="relative min-h-[450px]">
+          {/* 3D ATM card — CENTER FOCAL POINT */}
+          <motion.div
+            initial={{ opacity: 0, y: 30, scale: 0.92 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            transition={{ duration: 1.0, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10"
+          >
+            <CreditCard3D width={420} variant="blue" holderName="A. WIJAYA K." last4="8472" />
+          </motion.div>
 
-          {/* Stack of 3 floating info cards ABOVE the debit card */}
-          <div className="space-y-2.5 relative z-10">
-            {/* Saldo Aktif */}
-            <motion.div
-              initial={{ opacity: 0, y: 16, rotateX: -8 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ delay: 0.4, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(2,6,23,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
-            >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
-              <div className="flex items-center gap-2.5">
-                <div className="size-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
-                  <Wallet className="w-4 h-4" strokeWidth={2} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                    Saldo Aktif
-                  </p>
-                  <p className="text-sm font-display font-semibold tabular-nums">
-                    Rp 50.000,00
-                  </p>
-                </div>
-                <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 inline-flex items-center gap-0.5 shrink-0">
-                  <span className="size-1 rounded-full bg-emerald-500 animate-pulse" />
-                  Live
-                </span>
+          {/* Saldo — top-left floating (overlaps 3D card top edge) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16, x: -20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-[8%] left-[2%] w-56 sm:w-60 z-20 [transform:translateZ(60px)] rounded-2xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_25px_70px_-15px_rgba(2,6,23,0.25),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
+            <div className="flex items-center gap-2.5">
+              <div className="size-9 rounded-xl bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white shadow-lg shadow-blue-500/30">
+                <Wallet className="w-4 h-4" strokeWidth={2} />
               </div>
-            </motion.div>
-
-            {/* Transfer Berhasil */}
-            <motion.div
-              initial={{ opacity: 0, y: 16, rotateX: -8 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ delay: 0.5, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(2,6,23,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
-            >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
-              <div className="flex items-center gap-2.5">
-                <div className="size-9 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30">
-                  <Zap className="w-4 h-4" strokeWidth={2} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                    Transfer Berhasil
-                  </p>
-                  <p className="text-sm font-display font-semibold truncate">
-                    +Rp 100.000 · IDEMP-9F2A
-                  </p>
-                </div>
-                <CheckCircle2
-                  className="size-3.5 text-emerald-500 shrink-0"
-                  strokeWidth={2.5}
-                />
-              </div>
-            </motion.div>
-
-            {/* Supply Invariant */}
-            <motion.div
-              initial={{ opacity: 0, y: 16, rotateX: -8 }}
-              animate={{ opacity: 1, y: 0, rotateX: 0 }}
-              transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="relative rounded-2xl border border-slate-200 dark:border-white/10 bg-white dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_20px_60px_-15px_rgba(2,6,23,0.15),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
-            >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
-              <div className="flex items-center gap-2.5">
-                <div className="size-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
-                  <CircleDollarSign className="w-4 h-4" strokeWidth={2} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                    Supply Invariant
-                  </p>
-                  <div className="flex items-center gap-1.5">
-                    <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                    <p className="text-sm font-display font-bold text-emerald-600 dark:text-emerald-400">
-                      VALID
-                    </p>
-                  </div>
-                </div>
-                <p className="text-[10px] font-mono text-muted-foreground tabular-nums shrink-0">
-                  Rp 1,000,000,000
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  Saldo Aktif
+                </p>
+                <p className="text-sm font-display font-semibold tabular-nums">
+                  Rp 50.000,00
                 </p>
               </div>
-            </motion.div>
-          </div>
+              <span className="text-[10px] font-mono text-emerald-600 dark:text-emerald-400 inline-flex items-center gap-0.5 shrink-0">
+                <span className="size-1 rounded-full bg-emerald-500 animate-pulse" />
+                Live
+              </span>
+            </div>
+          </motion.div>
 
-          {/* Main debit card — hover-only 3D tilt (no auto-rotate) */}
+          {/* Transfer — top-right floating (overlaps 3D card top edge) */}
           <motion.div
-            initial={{ opacity: 0, y: 30, rotateX: 15 }}
-            animate={{ opacity: 1, y: 0, rotateX: 0 }}
-            transition={{ duration: 1.0, delay: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="relative z-10 mx-auto"
+            initial={{ opacity: 0, y: 16, x: 20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute top-[16%] right-[1%] w-56 sm:w-60 z-20 [transform:translateZ(60px)] rounded-2xl border border-slate-200 dark:border-white/10 bg-white/90 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_25px_70px_-15px_rgba(2,6,23,0.25),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
           >
-            <CreditCard3D width={340} variant="blue" holderName="A. WIJAYA K." last4="8472" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/60 dark:via-white/20 to-transparent rounded-t-2xl pointer-events-none" />
+            <div className="flex items-center gap-2.5">
+              <div className="size-5 rounded-xl bg-gradient-to-br from-emerald-500 to-cyan-600 flex items-center justify-center text-white shadow-lg shadow-emerald-500/30">
+                <Zap className="w-4 h-4" strokeWidth={2} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  Transfer Berhasil
+                </p>
+                <p className="text-sm font-display font-semibold truncate">
+                  +Rp 100.000 
+                </p>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Supply — bottom-center floating (overlaps 3D card bottom edge) */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.7, duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="absolute bottom-[4%] left-1/2 -translate-x-1/2 w-64 z-20 [transform:translateZ(50px)] rounded-2xl border border-emerald-300/60 dark:border-emerald-500/30 bg-emerald-50/95 dark:bg-emerald-950/50 backdrop-blur-2xl shadow-[0_25px_70px_-15px_rgba(16,185,129,0.35),inset_0_1px_0_rgba(255,255,255,0.5)] p-4"
+          >
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-emerald-300/60 to-transparent rounded-t-2xl pointer-events-none" />
+            <div className="flex items-center gap-2.5">
+              <div className="size-9 rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center text-white shadow-lg shadow-cyan-500/30">
+                <CircleDollarSign className="w-4 h-4" strokeWidth={2} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  Supply Invariant
+                </p>
+                <div className="flex items-center gap-1.5">
+                  <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  <p className="text-sm font-display font-bold text-emerald-600 dark:text-emerald-400">
+                    VALID
+                  </p>
+                </div>
+              </div>
+              <p className="text-[10px] font-mono text-muted-foreground tabular-nums shrink-0">
+                Rp 1,000,000,000
+              </p>
+            </div>
           </motion.div>
         </div>
       </motion.div>

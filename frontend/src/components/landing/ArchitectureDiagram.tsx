@@ -56,20 +56,29 @@ export default function ArchitectureDiagram() {
         </div>
 
         <div className="grid md:grid-cols-[1fr_auto_1fr] gap-6 md:gap-4 items-stretch [perspective:2000px]">
-          {/* Tier 1 — 3D card */}
+          {/* Tier 1 — card */}
           <motion.div
-            initial={{ opacity: 0, x: -32, rotateY: 8 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-            className="group relative [transform-style:preserve-3d]"
+            className="group relative"
           >
-            <div className="relative rounded-3xl border border-blue-200 dark:border-primary/30 bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-blue-950/30 dark:to-slate-900 backdrop-blur-xl p-7 shadow-[0_20px_60px_-20px_rgba(37,99,235,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:shadow-[0_30px_80px_-20px_rgba(37,99,235,0.3)] hover:[transform:translateY(-4px)]">
-              {/* Inner refraction */}
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent rounded-t-3xl" />
+            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-neutral-950 to-black backdrop-blur-xl p-7 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.04)] transition-all duration-500 hover:shadow-[0_40px_100px_-15px_rgba(0,0,0,0.95),inset_0_1px_0_rgba(255,255,255,0.2)] hover:[transform:translateY(-4px)] overflow-hidden">
+              {/* Gloss highlight — top half lighter for shine */}
+              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-3xl pointer-events-none" />
 
-              {/* Corner glow */}
-              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-primary/10 blur-3xl pointer-events-none" />
+              {/* Specular edge — sharp white hairline on top */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-t-3xl" />
+
+              {/* Inner refraction (subtle blue accent on top edge) */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent rounded-t-3xl" />
+
+              {/* Subtle bottom rim */}
+              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+
+              {/* Corner glow (subtle white) */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 rounded-full bg-white/5 blur-3xl pointer-events-none" />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
@@ -149,17 +158,29 @@ export default function ArchitectureDiagram() {
             </div>
           </motion.div>
 
-          {/* Tier 2 — 3D card */}
+          {/* Tier 2 — card */}
           <motion.div
-            initial={{ opacity: 0, x: 32, rotateY: -8 }}
-            whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
+            initial={{ opacity: 0, x: 32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1], delay: 0.05 }}
-            className="group relative [transform-style:preserve-3d]"
+            className="group relative"
           >
-            <div className="relative rounded-3xl border border-blue-200 dark:border-blue-500/30 bg-white dark:bg-gradient-to-br dark:from-slate-900 dark:via-cyan-950/20 dark:to-slate-900 backdrop-blur-xl p-7 shadow-[0_20px_60px_-20px_rgba(59,130,246,0.12),inset_0_1px_0_rgba(255,255,255,0.6)] transition-all duration-500 hover:shadow-[0_30px_80px_-20px_rgba(59,130,246,0.3)] hover:[transform:translateY(-4px)]">
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-500/40 to-transparent rounded-t-3xl" />
-              <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-blue-500/10 blur-3xl pointer-events-none" />
+            <div className="relative rounded-3xl border border-white/10 bg-gradient-to-br from-zinc-950 via-neutral-950 to-black backdrop-blur-xl p-7 shadow-[0_30px_80px_-15px_rgba(0,0,0,0.85),inset_0_1px_0_rgba(255,255,255,0.14),inset_0_-1px_0_rgba(255,255,255,0.04)] transition-all duration-500 hover:shadow-[0_40px_100px_-15px_rgba(0,0,0,0.95),inset_0_1px_0_rgba(255,255,255,0.2)] hover:[transform:translateY(-4px)] overflow-hidden">
+              {/* Gloss highlight — top half lighter for shine */}
+              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-3xl pointer-events-none" />
+
+              {/* Specular edge — sharp white hairline on top */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent rounded-t-3xl" />
+
+              {/* Inner refraction (subtle cyan accent on top edge) */}
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-400/40 to-transparent rounded-t-3xl" />
+
+              {/* Subtle bottom rim */}
+              <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent pointer-events-none" />
+
+              {/* Corner glow (subtle white) */}
+              <div className="absolute -top-10 -left-10 w-40 h-40 rounded-full bg-white/5 blur-3xl pointer-events-none" />
 
               <div className="relative z-10">
                 <div className="flex items-center gap-3 mb-5">
