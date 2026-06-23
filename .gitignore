@@ -41,6 +41,10 @@ Thumbs.db
 wallet/PROGRESS.md
 
 docs/
+# Allow design specs to be tracked
+!docs/superpowers/
+!docs/superpowers/specs/
+!docs/superpowers/specs/**
 .hermes/
 .claude/
 .github/
