@@ -273,16 +273,17 @@ export const walletController = {
   },
 
   // PUT /api/v1/wallets/me/upgrade
+  // C3: TIDAK lagi grant role/KYC lokal. Forward ke Central-Bank yang hanya
+  // menyimpan pendingRole; grant final via TellerService.approveKyc.
   upgradeAccount: async (req, res, next) => {
     try {
-      const { userId } = req.user;
       const { role, businessName, nik } = req.body;
 
       if (!role || !businessName || !nik) {
         return responseHelper.error(res, 'BAD_REQUEST', 'Peran Bisnis, Nama Bisnis, dan NIK wajib diisi untuk pengajuan upgrade', 400);
       }
 
-      const validRoles = ['MERCHANT', 'CASHIER', 'SUPPLIER', 'LOGISTICS', 'ANALYTICS_VIEWER'];
+      const validRoles = ['MERCHANT', 'SUPPLIER', 'ANALYTICS_VIEWER'];
       if (!validRoles.includes(role)) {
         return responseHelper.error(res, 'BAD_REQUEST', 'Peran Bisnis yang diajukan tidak valid', 400);
       }
@@ -291,30 +292,14 @@ export const walletController = {
         return responseHelper.error(res, 'BAD_REQUEST', 'Nomor NIK harus berupa 16-digit angka dummy', 400);
       }
 
-      const mapDbRole = (r) => {
-        const upper = (r || '').toUpperCase();
-        if (['MERCHANT', 'SUPPLIER', 'ANALYTICS_VIEWER'].includes(upper)) return 'MERCHANT';
-        if (['CENTRAL_BANK_ADMIN', 'AUDITOR', 'SYSTEM_SERVICE'].includes(upper)) return upper;
-        return 'WALLET_USER';
-      };
-      const dbRole = mapDbRole(role);
+      const token = req.headers['authorization']?.split(' ')[1];
+      const result = await centralBankService.requestUpgrade(role, businessName, nik, token);
 
-      // Update in PostgreSQL (or mock in-memory store)
-      const updateResult = await db.query(
-        'UPDATE users SET role = $1, kyc_tier = $2, updated_at = CURRENT_TIMESTAMP WHERE id = $3',
-        [dbRole, 'VERIFIED', userId]
-      );
-
-      if (updateResult.rowCount === 0) {
-        return responseHelper.error(res, 'NOT_FOUND', 'Pengguna tidak ditemukan', 404);
-      }
-
-      console.log(`🚀 [UPGRADE PROCESS] User ${userId} successfully upgraded to role ${role} (KYC: VERIFIED)`);
-
-      return responseHelper.success(res, { 
-        message: `Akun Anda berhasil ditingkatkan menjadi ${role}!`,
-        role,
-        kycTier: 'VERIFIED'
+      return responseHelper.success(res, {
+        message: `Pengajuan upgrade ke ${role} tercatat. Menunggu persetujuan Teller.`,
+        status: result.status,
+        pendingRole: result.pending_role,
+        requestedAt: result.requested_at
       }, 200);
     } catch (err) {
       next(err);

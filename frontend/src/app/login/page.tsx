@@ -145,7 +145,8 @@ export default function LoginPage() {
               </p>
             </motion.div>
 
-            {/* Quick-pick demo accounts */}
+            {/* Quick-pick demo accounts — M8: gated by NEXT_PUBLIC_ENABLE_DEMO_ACCOUNTS */}
+            {process.env.NEXT_PUBLIC_ENABLE_DEMO_ACCOUNTS === 'true' && (
             <motion.div variants={item} className="space-y-2 mb-5">
               <p className="text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
                 Akun dummy · klik untuk isi otomatis
@@ -168,6 +169,7 @@ export default function LoginPage() {
                 })}
               </div>
             </motion.div>
+            )}
 
             {error && (
               <motion.div

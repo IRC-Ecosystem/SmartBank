@@ -109,18 +109,21 @@ export const authService = {
           let userName = cbPayload.name;
           let walletId = cbPayload.wallet_id;
 
-          // Fallback: decode from JWT if fields missing
+          // Fallback: verify CB JWT (M11: use jwt.verify, not jwt.decode).
+          // CB dan Wallet berbagi JWT_SECRET yang sama — signature bisa diverifikasi.
           if (!userId && cbToken) {
             try {
-              // Extract payload without verifying signature since it's signed by CB, not Wallet
-              const decoded = jwt.decode(cbToken);
+              const decoded = jwt.verify(cbToken, config.jwt.secret, {
+                issuer: config.jwt.issuer,
+                audience: config.jwt.audience,
+              });
               if (decoded) {
                 userId = decoded.sub || decoded.userId;
                 userRole = decoded.role || userRole;
                 if (!userName) userName = decoded.name;
                 if (!walletId) walletId = decoded.walletId;
               }
-            } catch (e) { /* ignore */ }
+            } catch (e) { /* ignore — fall through ke defaults */ }
           }
 
           if (!userId) userId = `usr_cb_${cleanEmail.replace(/[@.]/g, '_')}`;

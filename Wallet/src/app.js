@@ -53,8 +53,10 @@ app.use(auditRequestMiddleware);
 app.use(createRateLimiter({ windowMs: 60_000, limit: 100, action: 'wallet_general_rate_limit' }));
 app.use(express.static('src/public'));
 
-// Serve Interactive Swagger API Documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+// Serve Interactive Swagger API Documentation (L4: disabled in production)
+if (config.nodeEnv !== 'production') {
+  app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+}
 
 // --- PUBLIC ROUTES ---
 app.get('/', (req, res) => {

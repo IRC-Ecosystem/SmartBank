@@ -1,6 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { AccountStatus, Prisma, TransactionType, WalletAccount } from '@prisma/client';
 import { randomUUID } from 'crypto';
+import * as bcrypt from 'bcrypt';
 import { AppError } from '../../common/app-error';
 import { ErrorCode } from '../../common/error-codes';
 import { AuditLogService } from '../audit/audit-log.service';
@@ -404,6 +405,167 @@ export class SettlementService {
           requestId: input.requestId,
         });
         const response = { payment_request_id: payment.id, transaction_id: transactionId, status: 'SETTLED' };
+        await this.idempotency.complete(tx, { ...input.idempotency, responseBody: asJson(response) });
+        return response;
+      }),
+    );
+  }
+
+  
+  async settleViaConnector(input: {
+    payerWalletId: string;
+    payeeWalletId: string;
+    grossAmount: string;
+    pin: string;
+    sourceApp: string;
+    description: string;
+    externalRefId?: string;
+    metadata?: Record<string, unknown>;
+    idempotency: IdempotencyInput;
+    requestId: string;
+    actorUserId: string;
+  }) {
+    return this.withDeadlockRetry(() =>
+      this.prisma.$transaction(async (tx) => {
+        const idem = await this.idempotency.start(tx, input.idempotency);
+        if (idem.replay) return idem.response;
+
+        const grossAmount = this.money.parse(input.grossAmount);
+        this.money.assertPositive(grossAmount);
+
+        // 1. Validate PIN & Ownership
+        const payerUser = await tx.user.findFirst({
+          where: { id: input.actorUserId },
+          include: { wallets: { where: { id: input.payerWalletId } } },
+        });
+
+        if (!payerUser || payerUser.wallets.length === 0) {
+          throw new AppError(ErrorCode.FORBIDDEN, 'Akses ke wallet ini tidak diizinkan');
+        }
+
+        if (!payerUser.pinHash) {
+          throw new AppError(ErrorCode.UNAUTHORIZED, 'PIN belum diatur');
+        }
+
+        const pinMatch = await bcrypt.compare(input.pin, payerUser.pinHash);
+        if (!pinMatch) {
+          throw new AppError(ErrorCode.UNAUTHORIZED, 'PIN transaksi salah');
+        }
+
+        // 2. Fee quote
+        const quote = await this.fees.quote({ tx, sourceApp: input.sourceApp, amount: grossAmount });
+
+        // 3. Lock accounts
+        const accounts = await this.lockAccounts(tx, [
+          input.payerWalletId,
+          input.payeeWalletId,
+          ...quote.components.map((c) => c.destinationAccountId),
+        ]);
+        const payerAccount = accounts.get(input.payerWalletId);
+        if (!payerAccount) throw new AppError(ErrorCode.VALIDATION_ERROR, 'Payer wallet tidak ditemukan');
+        const payeeAccount = accounts.get(input.payeeWalletId);
+        if (!payeeAccount) throw new AppError(ErrorCode.VALIDATION_ERROR, 'Payee wallet tidak ditemukan');
+
+        // 4. Limits & balance
+        await this.enforceVelocityLimits(tx, input.payerWalletId);
+        this.ensureDebitAllowed(payerAccount, quote.totalDebit);
+
+        const transactionId = randomUUID();
+        const paymentRequestId = randomUUID();
+
+        // 5. Entries & Transaction
+        const entries: LedgerPost[] = [
+          { accountId: input.payerWalletId, direction: 'DEBIT', amount: quote.totalDebit, description: input.description },
+          { accountId: input.payeeWalletId, direction: 'CREDIT', amount: grossAmount, description: input.description },
+          ...quote.components.map((c) => ({
+            accountId: c.destinationAccountId,
+            direction: 'CREDIT' as const,
+            amount: c.amount,
+            description: `${c.type} fee/tax`,
+          })),
+        ];
+
+        await tx.transaction.create({
+          data: {
+            id: transactionId,
+            transactionType: 'PAYMENT',
+            status: 'SETTLED',
+            sourceApp: input.sourceApp,
+            payerWalletId: input.payerWalletId,
+            payeeWalletId: input.payeeWalletId,
+            grossAmount: grossAmount,
+            totalDebit: quote.totalDebit,
+            feeTotal: quote.feeTotal,
+            taxTotal: quote.taxTotal,
+            idempotencyKey: input.idempotency.key,
+            metadata: input.metadata ? asJson(input.metadata) : undefined,
+            settledAt: new Date(),
+          },
+        });
+
+        await this.ledger.post(tx, { transactionId, entries: await this.applyEntries(tx, entries) });
+
+        // 6. Create PaymentRequest as PAID immediately
+        await tx.paymentRequest.create({
+          data: {
+            id: paymentRequestId,
+            sourceApp: input.sourceApp,
+            payerWalletId: input.payerWalletId,
+            payeeWalletId: input.payeeWalletId,
+            grossAmount: grossAmount,
+            amountDue: quote.totalDebit,
+            status: 'PAID',
+            description: input.description,
+            metadata: input.metadata ? asJson(input.metadata) : undefined,
+            expiresAt: new Date(Date.now() + 86400000), // arbitrary future date since it's already paid
+            paidTransactionId: transactionId,
+          },
+        });
+
+        // 7. Notification & Audit
+        await tx.notification.create({
+          data: {
+            id: randomUUID(),
+            userId: input.actorUserId,
+            type: 'PAYMENT_SETTLED',
+            title: 'Pembayaran Berhasil',
+            body: `Pembayaran Rp ${grossAmount.toString()} ke ${input.sourceApp} berhasil.`,
+            sourceApp: input.sourceApp,
+            sourceRef: paymentRequestId,
+            payload: asJson({ transaction_id: transactionId, gross_amount: grossAmount.toString() })
+          }
+        });
+
+        await this.audit.record({
+          tx,
+          actorUserId: input.actorUserId,
+          serviceName: 'centralbank-core-connector',
+          action: 'PAYMENT_REQUEST_PAID_ATOMIC',
+          targetType: 'payment_request',
+          targetId: paymentRequestId,
+          requestId: input.requestId,
+        });
+
+        const response = {
+          payment_request_id: paymentRequestId,
+          transaction_id: transactionId,
+          status: 'SETTLED',
+          gross_amount: grossAmount.toString(),
+          fee_breakdown: {
+            bank: quote.breakdown.bank.toString(),
+            gateway: quote.breakdown.gateway.toString(),
+            marketplace: quote.breakdown.marketplace.toString(),
+            pos: quote.breakdown.pos.toString(),
+            supplier: quote.breakdown.supplier.toString(),
+            logistics: quote.breakdown.logistics.toString(),
+            tax: quote.breakdown.tax.toString(),
+            total: quote.breakdown.total.toString(),
+          },
+          total_debit: quote.totalDebit.toString(),
+          net_to_seller: grossAmount.toString(),
+          settled_at: new Date().toISOString(),
+        };
+
         await this.idempotency.complete(tx, { ...input.idempotency, responseBody: asJson(response) });
         return response;
       }),

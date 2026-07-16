@@ -126,6 +126,24 @@ enum MonetaryPolicyEventType {
   RESERVE_ADJUSTMENT
 }
 
+enum NotificationType {
+  OTP_LINKING_REQUESTED
+  OTP_VERIFIED
+  OTP_EXPIRED
+  OTP_BLOCKED
+  PAYMENT_SETTLED
+  PAYMENT_FAILED
+  WALLET_LINKED
+  WALLET_UNLINKED
+}
+
+enum NotificationChannel {
+  IN_APP
+  SMS
+  EMAIL
+  PUSH
+}
+
 model User {
   id           String          @id @db.Char(36)
   name         String          @db.VarChar(191)
@@ -137,6 +155,7 @@ model User {
   createdAt    DateTime        @default(now()) @map("created_at")
   updatedAt    DateTime        @default(now()) @updatedAt @map("updated_at")
   wallets      WalletAccount[]
+  notifications Notification[]
 
   // Extra fields for Wallet compatibility
   phone        String?         @unique @db.VarChar(50)
@@ -314,6 +333,26 @@ model FeeConfiguration {
 
   @@unique([type])
   @@map("fee_configurations")
+}
+
+model Notification {
+  id        String              @id @db.Char(36)
+  userId    String              @map("user_id") @db.Char(36)
+  type      NotificationType
+  channel   NotificationChannel @default(IN_APP)
+  sourceApp String?             @map("source_app") @db.VarChar(64)
+  sourceRef String?             @map("source_ref") @db.VarChar(191)
+  title     String              @db.VarChar(191)
+  body      String              @db.VarChar(1000)
+  payload   Json?
+  readAt    DateTime?           @map("read_at")
+  createdAt DateTime            @default(now()) @map("created_at")
+  user      User                @relation(fields: [userId], references: [id])
+
+  @@index([userId, readAt])
+  @@index([userId, createdAt])
+  @@index([type, createdAt])
+  @@map("notifications")
 }
 
 model AuditLog {

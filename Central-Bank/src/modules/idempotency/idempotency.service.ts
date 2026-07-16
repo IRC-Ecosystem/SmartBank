@@ -26,17 +26,32 @@ export class IdempotencyService {
       if (existing.status === 'COMPLETED') return { replay: true, response: existing.responseBody };
       throw new AppError(ErrorCode.IDEMPOTENCY_CONFLICT, 'Request dengan Idempotency-Key ini masih diproses');
     }
-    await tx.idempotencyKey.create({
-      data: {
-        id: randomUUID(),
-        idempotencyKey: input.key,
-        route: input.route,
-        actorId: input.actorId,
-        requestHash: input.requestHash,
-        status: 'PROCESSING',
-        lockedUntil: new Date(Date.now() + 60_000),
-      },
-    });
+    // H1: Dua request konkuren bisa sama-sama findUnique-miss lalu create → P2002.
+    // Catch P2002 dan kembalikan 409 (bukan 500) agar client retry.
+    try {
+      await tx.idempotencyKey.create({
+        data: {
+          id: randomUUID(),
+          idempotencyKey: input.key,
+          route: input.route,
+          actorId: input.actorId,
+          requestHash: input.requestHash,
+          status: 'PROCESSING',
+          // ponytail: lockedUntil (60s) vestigial — idempotency record co-located
+          // dalam $transaction yang sama dengan work, crash → rollback row.
+          // Field tidak pernah dibaca oleh start(). Hapus saat schema next migration.
+          lockedUntil: new Date(Date.now() + 60_000),
+        },
+      });
+    } catch (err: unknown) {
+      if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2002') {
+        throw new AppError(
+          ErrorCode.IDEMPOTENCY_CONFLICT,
+          'Idempotency-Key ini sedang diproses oleh request bersamaan, silakan coba lagi',
+        );
+      }
+      throw err;
+    }
     return { replay: false };
   }
 

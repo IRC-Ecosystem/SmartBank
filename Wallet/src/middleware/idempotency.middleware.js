@@ -41,8 +41,8 @@ export const idempotencyMiddleware = async (req, res, next) => {
   try {
     // Step 1: Check if key already exists
     const existing = await db.query(
-      'SELECT * FROM idempotency_keys WHERE idempotency_key = ?',
-      [key]
+      'SELECT * FROM idempotency_keys WHERE idempotency_key = ? AND route = ? AND actor_id = ?',
+      [key, route, clientId]
     );
 
     if (existing.rowCount > 0) {
@@ -104,8 +104,8 @@ export const idempotencyMiddleware = async (req, res, next) => {
       if (insertErr.code === 'ER_DUP_ENTRY') {
         // Another request won the race — re-query and return its cached response
         const raced = await db.query(
-          'SELECT * FROM idempotency_keys WHERE idempotency_key = ?',
-          [key]
+          'SELECT * FROM idempotency_keys WHERE idempotency_key = ? AND route = ? AND actor_id = ?',
+          [key, route, clientId]
         );
         if (raced.rowCount > 0) {
           const cached = raced.rows[0];
@@ -152,8 +152,8 @@ export const idempotencyMiddleware = async (req, res, next) => {
       db.query(
         `UPDATE idempotency_keys
            SET response_body = ?, status = 'COMPLETED', updated_at = ?
-         WHERE idempotency_key = ? AND status = 'PROCESSING'`,
-        [JSON.stringify(wrapper), new Date(), key]
+         WHERE idempotency_key = ? AND route = ? AND actor_id = ? AND status = 'PROCESSING'`,
+        [JSON.stringify(wrapper), new Date(), key, route, clientId]
       ).catch((err) => console.error('⚠️ Gagal mengupdate idempotency record:', err.message));
     };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Menu } from 'lucide-react';
 import { ApiHealthIndicator } from '../ui/ApiHealthIndicator';
+import { NotificationBell } from './NotificationBell';
 
 interface TopbarProps {
   onMenuClick: () => void;
@@ -16,6 +17,7 @@ export const Topbar: React.FC<TopbarProps> = ({ onMenuClick }) => {
       </div>
 
       <div className="topbar__right">
+        <NotificationBell />
         <ApiHealthIndicator />
       </div>
     </header>

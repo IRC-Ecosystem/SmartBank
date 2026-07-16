@@ -11,7 +11,8 @@ import {
   RotateCcw, 
   Activity, 
   LogOut,
-  X
+  X,
+  Bell
 } from 'lucide-react';
 import { useAuth } from '../../auth/AuthProvider';
 import { clearSession } from '../../auth/session';
@@ -41,6 +42,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onClose }) => {
     { label: 'Transfers', path: '/transfers', icon: <ArrowRightLeft size={20} /> },
     { label: 'Payment Requests', path: '/payments', icon: <Receipt size={20} /> },
     { label: 'Loans', path: '/loans', icon: <HandCoins size={20} /> },
+    { label: 'Inbox', path: '/inbox', icon: <Bell size={20} /> },
   ];
 
   const isAdmin = user?.role === 'CENTRAL_BANK_ADMIN';

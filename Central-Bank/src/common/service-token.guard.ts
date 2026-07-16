@@ -2,9 +2,10 @@ import { CanActivate, ExecutionContext, Injectable, UnauthorizedException } from
 
 /**
  * Guard sederhana untuk endpoint service-to-service.
- * Bearer token harus cocok dengan SERVICE_TOKEN (default: JWT_SECRET jika tidak di-set).
+ * H3: hanya terima SERVICE_TOKEN (tidak lagi fallback ke JWT_SECRET).
+ * Kunci signing JWT tidak boleh dikirim via header HTTP antar service.
  *
- * Hanya dipakai oleh Wallet → Central-Bank untuk lookup wallet berdasarkan userId
+ * Dipakai oleh Wallet → Central-Bank untuk lookup wallet berdasarkan userId
  * saat flow login. Tidak menggantikan otentikasi user; caller harus tahu userId.
  */
 @Injectable()
@@ -16,7 +17,7 @@ export class ServiceTokenGuard implements CanActivate {
     const presented = headerToken && headerToken.startsWith('Bearer ')
       ? headerToken.substring(7).trim()
       : null;
-    const expected = process.env.SERVICE_TOKEN || process.env.JWT_SECRET;
+    const expected = process.env.SERVICE_TOKEN;
     if (!expected || !presented || presented !== expected) {
       throw new UnauthorizedException('Service token tidak valid');
     }

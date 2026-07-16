@@ -57,7 +57,8 @@ async function runMigrations() {
     await connection.end();
   } catch (err) {
     console.error('❌ Gagal menjalankan migrasi database:', err.message);
-    console.log('💡 Tips: Silakan aktifkan USE_IN_MEMORY_DB=true di file .env jika MySQL belum siap.');
+    // L5: fail-fast — jangan start server jika tabel tidak dibuat (hindari runtime 500).
+    process.exit(1);
   }
 }
 

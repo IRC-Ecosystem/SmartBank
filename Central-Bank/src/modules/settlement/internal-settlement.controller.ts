@@ -1,0 +1,37 @@
+import { Body, Controller, Post, Req, UnauthorizedException, UseGuards } from '@nestjs/common';
+import { Request } from 'express';
+import { Public } from '../../common/public.decorator';
+import { ServiceTokenGuard } from '../../common/service-token.guard';
+import { SettlementService } from './settlement.service';
+import { InternalSettleDto } from './dto/internal-settle.dto';
+import { requestId, requireIdempotencyKey } from '../../common/request-utils';
+
+@Controller('internal/payment-requests')
+export class InternalSettlementController {
+  constructor(private readonly settlement: SettlementService) {}
+
+  @Public()
+  @UseGuards(ServiceTokenGuard)
+  @Post('settle')
+  async settleViaConnector(@Body() body: InternalSettleDto, @Req() req: Request) {
+    const delegatedUserId = req.header('x-delegated-user-id');
+    if (!delegatedUserId) {
+      throw new UnauthorizedException('Header X-Delegated-User-Id wajib dikirim');
+    }
+    const idemKey = requireIdempotencyKey(req);
+
+    return this.settlement.settleViaConnector({
+      payerWalletId: body.payer_wallet_id,
+      payeeWalletId: body.payee_wallet_id,
+      grossAmount: body.gross_amount,
+      pin: body.pin,
+      sourceApp: body.source_app,
+      description: body.description ?? '',
+      externalRefId: body.external_ref_id,
+      metadata: body.metadata,
+      idempotency: { key: idemKey, route: req.path, actorId: delegatedUserId, requestHash: '' },
+      requestId: requestId(req),
+      actorUserId: delegatedUserId,
+    });
+  }
+}

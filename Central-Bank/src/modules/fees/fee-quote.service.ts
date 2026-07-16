@@ -15,6 +15,7 @@ export type FeeQuote = {
   taxTotal: bigint;
   totalDebit: bigint;
   components: FeeComponent[];
+  breakdown: Record<string, bigint>;
 };
 
 const SOURCE_FEE_BY_APP: Record<string, FeeType | undefined> = {
@@ -61,12 +62,25 @@ export class FeeQuoteService {
     const feeTotal = components
       .filter((component) => component.type !== 'TAX')
       .reduce((sum, component) => sum + component.amount, 0n);
+      
+    const breakdown = {
+      bank: components.find(c => c.type === 'BANK')?.amount ?? 0n,
+      gateway: components.find(c => c.type === 'GATEWAY')?.amount ?? 0n,
+      marketplace: components.find(c => c.type === 'MARKETPLACE')?.amount ?? 0n,
+      pos: components.find(c => c.type === 'POS')?.amount ?? 0n,
+      supplier: components.find(c => c.type === 'SUPPLIER')?.amount ?? 0n,
+      logistics: components.find(c => c.type === 'LOGISTICS')?.amount ?? 0n,
+      tax: taxTotal,
+      total: feeTotal + taxTotal,
+    };
+
     return {
       grossAmount: input.amount,
       feeTotal,
       taxTotal,
       totalDebit: input.amount + feeTotal + taxTotal,
       components,
+      breakdown,
     };
   }
 }

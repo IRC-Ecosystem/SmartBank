@@ -40,15 +40,11 @@ Thumbs.db
 # Duplicate local progress logs
 wallet/PROGRESS.md
 
-docs/
-# Allow design specs to be tracked
-!docs/superpowers/
-!docs/superpowers/specs/
-!docs/superpowers/specs/**
 .hermes/
 .claude/
 .github/
 .commandcode/
+.codex/
 AUDIT_REPORT_v2.md
 AUDIT_REPORT.md
 CLAUDE.md
@@ -57,3 +53,5 @@ design.md
 memory.md
 PR.md
 PR.txt
+AGENTS.md
+QA_AUDIT_2026-06-30.md

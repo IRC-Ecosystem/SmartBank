@@ -35,6 +35,7 @@ export const jwtMiddleware = (req, res, next) => {
     const secret = process.env.JWT_SECRET;
     if (!secret) throw new Error('JWT_SECRET wajib dikonfigurasi');
     const decoded = jwt.verify(token, secret, {
+      algorithms: ['HS256'], // M6: pin algorithm prevent downgrade
       issuer: process.env.JWT_ISSUER || 'smartbank',
       audience: process.env.JWT_AUDIENCE || 'smartbank-clients',
     });

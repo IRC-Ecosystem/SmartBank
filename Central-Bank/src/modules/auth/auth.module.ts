@@ -13,8 +13,17 @@ import { AuthService } from './auth.service';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => {
-        const secret = config.get<string>('JWT_SECRET');
-        if (!secret) throw new Error('JWT_SECRET environment variable is required');
+        const secret = config.get<string>('JWT_SECRET') ?? '';
+        // C1: hard-fail bila JWT_SECRET hilang, terlalu pendek, atau nilai default/ter-leaked.
+        const KNOWN_BAD = [
+          'change-me-for-development',
+          'supersecretkey_change_me_2026',
+          'laragon_local_dev_secret_min_32_chars_abcdef123456',
+          'change_me_jwt_secret_min_32_chars',
+        ];
+        if (!secret || secret.length < 32 || KNOWN_BAD.includes(secret)) {
+          throw new Error('JWT_SECRET wajib di-set, >=32 karakter, dan bukan nilai default/ter-leaked.');
+        }
         return {
           secret,
           signOptions: {

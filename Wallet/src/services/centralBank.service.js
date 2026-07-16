@@ -228,7 +228,7 @@ export const centralBankService = {
         {
           method: 'GET',
           headers: {
-            'Authorization': `Bearer ${process.env.JWT_SECRET}`,
+            'Authorization': `Bearer ${config.centralBank.serviceToken || config.jwt.secret}`,
             'X-Service-Name': 'WalletApp'
           }
         }
@@ -277,7 +277,7 @@ export const centralBankService = {
       const response = await fetch(`${config.centralBank.url}/api/v1/users/${encodeURIComponent(userId)}/wallet`, {
         method: 'GET',
         headers: {
-          'Authorization': `Bearer ${process.env.JWT_SECRET}`,
+          'Authorization': `Bearer ${config.centralBank.serviceToken || config.jwt.secret}`,
           'X-Service-Name': 'WalletApp'
         }
       });
@@ -1084,6 +1084,34 @@ export const centralBankService = {
     };
     cbState.transactions.push(tx);
     return tx;
+  },
+
+  // 8. REQUEST UPGRADE (C3: forward ke CB, CB set pendingRole — TIDAK grant role/KYC)
+  requestUpgrade: async (role, businessName, nik, token) => {
+    if (!config.centralBank.mock) {
+      const response = await fetch(`${config.centralBank.url}/api/v1/wallets/me/upgrade-request`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+          'X-Request-Id': `req_upgrade_${crypto.randomUUID()}`
+        },
+        body: JSON.stringify({ role, businessName, nik })
+      });
+      if (!response.ok) {
+        const errBody = await response.json().catch(() => ({}));
+        throw new CustomError(
+          errBody.error?.code || 'BAD_REQUEST',
+          errBody.error?.message || 'Pengajuan upgrade ditolak oleh Central Bank',
+          response.status
+        );
+      }
+      const envelope = await response.json();
+      return envelope.data;
+    }
+
+    // Simulation Engine Mock:
+    return { status: 'PENDING', pending_role: (role || '').toUpperCase(), requested_at: new Date().toISOString() };
   }
 };
 

@@ -11,14 +11,21 @@ if (!process.env.JWT_SECRET) {
   dotenv.config();
 }
 
-if (!process.env.JWT_SECRET) {
-  throw new Error('JWT_SECRET environment variable is required');
+// C1: hard-fail bila JWT_SECRET hilang, terlalu pendek, atau nilai default/ter-leaked.
+const KNOWN_BAD_SECRETS = [
+  'change-me-for-development',
+  'supersecretkey_change_me_2026',
+  'laragon_local_dev_secret_min_32_chars_abcdef123456',
+  'change_me_jwt_secret_min_32_chars',
+];
+if (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32 || KNOWN_BAD_SECRETS.includes(process.env.JWT_SECRET)) {
+  throw new Error('JWT_SECRET wajib di-set, >=32 karakter, dan bukan nilai default/ter-leaked.');
 }
 
 export const config = {
   port: parseInt(process.env.PORT || '6969', 10),
   nodeEnv: process.env.NODE_ENV || 'development',
-  trustProxy: process.env.TRUST_PROXY === 'true',
+  trustProxy: process.env.TRUST_PROXY === 'true' ? 'loopback' : process.env.TRUST_PROXY || false,
   jwt: {
     secret: process.env.JWT_SECRET,
     accessExpires: parseInt(process.env.JWT_ACCESS_EXPIRES || '3600', 10),
@@ -37,6 +44,9 @@ export const config = {
   centralBank: {
     url: process.env.CENTRAL_BANK_CORE_URL || 'http://localhost:3000',
     mock: process.env.MOCK_CENTRAL_BANK === 'true',
+    // H3: SERVICE_TOKEN terpisah dari JWT_SECRET untuk service-to-service auth.
+    // Transition fallback ke JWT_SECRET; akan dihapus setelah semua env di-update.
+    serviceToken: process.env.SERVICE_TOKEN || process.env.JWT_SECRET,
   },
   cbdc: {
     cooldownSeconds: parseInt(process.env.COOLDOWN_SECONDS || '10', 10),

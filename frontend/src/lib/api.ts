@@ -32,6 +32,29 @@ function readServerMessage(data: ApiErrorPayload): string {
   return data.error?.message || data.message || '';
 }
 
+// M12: cache idempotency key per request signature selama 10 detik.
+// Retry / re-render dalam window ini akan reuse key yang sama → backend dedupe.
+const idempotencyCache = new Map<string, { key: string; at: number }>();
+const IDEMPOTENCY_CACHE_TTL = 10_000; // 10s
+
+function getOrCreateIdempotencyKey(method: string, url: string, body?: unknown): string {
+  const hash = `${method}:${url}:${body ? JSON.stringify(body) : ''}`;
+  const now = Date.now();
+  const entry = idempotencyCache.get(hash);
+  if (entry && now - entry.at < IDEMPOTENCY_CACHE_TTL) {
+    return entry.key;
+  }
+  const key = crypto.randomUUID();
+  idempotencyCache.set(hash, { key, at: now });
+  // cleanup stale entries
+  if (idempotencyCache.size > 200) {
+    for (const [k, v] of idempotencyCache) {
+      if (now - v.at > IDEMPOTENCY_CACHE_TTL * 2) idempotencyCache.delete(k);
+    }
+  }
+  return key;
+}
+
 export async function fetchApi<T = unknown>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const { token, logout } = useAuthStore.getState();
   const headers = new Headers(options.headers);
@@ -40,7 +63,7 @@ export async function fetchApi<T = unknown>(endpoint: string, options: RequestIn
   if (token) headers.set('Authorization', `Bearer ${token}`);
 
   if (options.method && ['POST', 'PUT', 'PATCH'].includes(options.method.toUpperCase()) && !headers.has('Idempotency-Key')) {
-    headers.set('Idempotency-Key', crypto.randomUUID());
+    headers.set('Idempotency-Key', getOrCreateIdempotencyKey(options.method, endpoint, options.body));
   }
 
   let response: Response;

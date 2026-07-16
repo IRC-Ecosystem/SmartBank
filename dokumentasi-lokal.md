@@ -159,7 +159,7 @@ PORT=3000
 NODE_ENV=development
 
 # JWT (HARUS SAMA dengan Wallet & Gateway!)
-JWT_SECRET=laragon_local_dev_secret_min_32_chars_abcdef123456
+JWT_SECRET=<GANTI_DENGAN_SECRET_RANDOM_MIN_32_CHAR_di_file_.env_lokal>
 JWT_ISSUER=smartbank
 JWT_AUDIENCE=smartbank-clients
 
@@ -179,7 +179,7 @@ PORT=6969
 NODE_ENV=development
 
 # JWT (sama dengan Central-Bank & Gateway)
-JWT_SECRET=laragon_local_dev_secret_min_32_chars_abcdef123456
+JWT_SECRET=<GANTI_DENGAN_SECRET_RANDOM_MIN_32_CHAR_di_file_.env_lokal>
 JWT_ISSUER=smartbank
 JWT_AUDIENCE=smartbank-clients
 JWT_ACCESS_EXPIRES=3600
@@ -215,7 +215,7 @@ CORS_ALLOWED_ORIGINS=http://localhost:3001,http://localhost:6969,http://localhos
 PORT=4000
 
 # JWT (sama dengan Central-Bank & Wallet)
-JWT_SECRET=laragon_local_dev_secret_min_32_chars_abcdef123456
+JWT_SECRET=<GANTI_DENGAN_SECRET_RANDOM_MIN_32_CHAR_di_file_.env_lokal>
 
 # Upstream services
 CENTRAL_BANK_URL=http://localhost:3000

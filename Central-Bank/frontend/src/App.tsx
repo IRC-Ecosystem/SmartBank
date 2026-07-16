@@ -19,6 +19,7 @@ import { PaymentRequestPage } from './features/payments/PaymentRequestPage';
 import { LoanPage } from './features/loans/LoanPage';
 import { ReversalPage } from './features/transactions/ReversalPage';
 import { AuditLogPage } from './features/audit/AuditLogPage';
+import { InboxPage } from './features/inbox/InboxPage';
 
 export const App: React.FC = () => {
   return (
@@ -46,6 +47,7 @@ export const App: React.FC = () => {
                 <Route path="transfers" element={<TransferPage />} />
                 <Route path="payments" element={<PaymentRequestPage />} />
                 <Route path="loans" element={<LoanPage />} />
+                <Route path="inbox" element={<InboxPage />} />
                 
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Route>

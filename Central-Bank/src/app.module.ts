@@ -13,6 +13,7 @@ import { MoneyModule } from './modules/money/money.module';
 import { PaymentRequestsModule } from './modules/payment-requests/payment-requests.module';
 import { PrismaModule } from './modules/prisma/prisma.module';
 import { SettlementModule } from './modules/settlement/settlement.module';
+import { NotificationsModule } from './modules/notifications/notifications.module';
 import { WalletsModule } from './modules/wallets/wallets.module';
 import { TellerModule } from './modules/teller/teller.module';
 import { ManagerModule } from './modules/manager/manager.module';
@@ -33,6 +34,7 @@ import { RolesGuard } from './common/roles.guard';
     AuthModule,
     WalletsModule,
     PaymentRequestsModule,
+    NotificationsModule,
     LoansModule,
     CentralBankModule,
     HealthModule,

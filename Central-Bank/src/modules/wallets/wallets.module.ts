@@ -1,10 +1,12 @@
 import { Module } from '@nestjs/common';
 import { WalletAccountService } from './wallet-account.service';
-import { WalletsController, UsersController } from './wallets.controller';
+import { InternalUsersController, WalletsController, UsersController } from './wallets.controller';
 import { ServiceTokenGuard } from '../../common/service-token.guard';
+import { AuditModule } from '../audit/audit.module';
 
 @Module({
-  controllers: [WalletsController, UsersController],
+  imports: [AuditModule],
+  controllers: [WalletsController, UsersController, InternalUsersController],
   providers: [WalletAccountService, ServiceTokenGuard],
   exports: [WalletAccountService],
 })

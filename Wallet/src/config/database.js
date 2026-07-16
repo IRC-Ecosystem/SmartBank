@@ -33,6 +33,11 @@ try {
 // 2.  Seed Staff Accounts to MySQL
 // ─────────────────────────────────────────────────────────────
 async function seedStaffAccountsToMySQL() {
+  // H2: staff seed dilarang di production. Kredensial known + loop reset password.
+  if (config.nodeEnv === 'production') {
+    console.log('ℹ️  Staff account seeding skipped (NODE_ENV=production)');
+    return;
+  }
   if (!config.security.enableStaffSeed) {
     console.log('ℹ️  Staff account seeding disabled (ENABLE_STAFF_SEED=false)');
     return;
@@ -68,7 +73,9 @@ async function seedStaffAccountsToMySQL() {
       await pool.execute(
         `INSERT INTO users (id, name, email, phone, password_hash, pin_hash, kyc_tier, status, role, updated_at)
          VALUES (?, ?, ?, ?, ?, ?, 'VERIFIED', 'ACTIVE', ?, CURRENT_TIMESTAMP(3))
-         ON DUPLICATE KEY UPDATE name=VALUES(name), phone=VALUES(phone), password_hash=VALUES(password_hash), updated_at=CURRENT_TIMESTAMP(3)`,
+         ON DUPLICATE KEY UPDATE name=VALUES(name), phone=VALUES(phone), updated_at=CURRENT_TIMESTAMP(3)`,
+
+// H2: password_hash + pin_hash dihapus dari UPDATE — tidak lagi mereset ke 'password' tiap restart.
         [acc.id, acc.name, acc.email, acc.phone, staffPassword, pinHash, acc.role]
       );
       console.log(`✅ Staff seeded: ${acc.email}`);

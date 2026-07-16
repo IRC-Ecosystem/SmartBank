@@ -1,14 +1,58 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
+import { Prisma } from '@prisma/client';
 import { PrismaService } from '../prisma/prisma.service';
+import { AuditLogService } from '../audit/audit-log.service';
+import { AppError } from '../../common/app-error';
+import { ErrorCode } from '../../common/error-codes';
+
+// Peran bisnis yang boleh DIAJUKAN user (bukan grant langsung — approval Teller).
+const UPGRADEABLE_ROLES = ['MERCHANT', 'SUPPLIER', 'ANALYTICS_VIEWER'];
 
 @Injectable()
 export class WalletAccountService {
-  constructor(private readonly prisma: PrismaService) {}
+  constructor(
+    private readonly prisma: PrismaService,
+    private readonly audit: AuditLogService,
+  ) {}
 
   async getPrimaryWallet(userId: string) {
     return this.prisma.walletAccount.findFirstOrThrow({
       where: { userId, accountType: { in: ['USER_WALLET', 'MERCHANT_WALLET'] } },
     });
+  }
+
+  async getWalletByPhone(phone: string) {
+    const user = await this.prisma.user.findUnique({
+      where: { phone },
+      select: {
+        id: true,
+        name: true,
+        kycTier: true,
+        phone: true,
+        status: true,
+        wallets: {
+          where: { accountType: { in: ['USER_WALLET', 'MERCHANT_WALLET'] } },
+          select: { id: true },
+          take: 1,
+        },
+      },
+    });
+    if (!user || user.wallets.length === 0 || user.status !== 'ACTIVE') {
+      throw new NotFoundException('Nomor HP belum terdaftar di SmartBank Wallet');
+    }
+    return {
+      user_id: user.id,
+      wallet_id: user.wallets[0].id,
+      name: user.name,
+      kyc_tier: user.kycTier,
+      phone_masked: this.maskPhone(user.phone ?? phone),
+    };
+  }
+
+  private maskPhone(phone: string): string {
+    const digits = phone.replace(/\D/g, '');
+    if (digits.length <= 4) return phone;
+    return `${phone.slice(0, 3)}xxx-xxx-${digits.slice(-4)}`;
   }
 
   /**
@@ -83,5 +127,57 @@ export class WalletAccountService {
       settled_at: transaction.settledAt,
       direction: transaction.payerWalletId === wallet.id ? 'OUT' : 'IN',
     }));
+  }
+
+  /**
+   * C3: User mengajukan upgrade peran bisnis. HANYA mencatat pending_role —
+   * TIDAK memberikan role baru atau mengubah kycTier. Grant final wajib via
+   * TellerService.approveKyc (yang sudah memvalidasi pendingRole). Menghapus
+   * vektor self-escalation: user tidak bisa lagi jadi MERCHANT/VERIFIED sendiri.
+   */
+  async requestUpgrade(input: {
+    userId: string;
+    requestedRole: string;
+    businessName?: string;
+    nik?: string;
+    requestId: string;
+  }) {
+    const role = (input.requestedRole || '').toUpperCase();
+    if (!UPGRADEABLE_ROLES.includes(role)) {
+      throw new AppError(
+        ErrorCode.VALIDATION_ERROR,
+        `Peran yang diajukan tidak valid. Pilihan: ${UPGRADEABLE_ROLES.join(', ')}`,
+      );
+    }
+    return this.prisma.$transaction(async (tx) => {
+      const user = await tx.user.findUniqueOrThrow({ where: { id: input.userId } });
+      if (user.role !== 'WALLET_USER') {
+        throw new AppError(ErrorCode.VALIDATION_ERROR, 'Hanya WALLET_USER yang dapat mengajukan upgrade peran');
+      }
+      // Idempoten: kalau sudah mengajukan role yang sama, kembalikan status pending.
+      if (user.pendingRole === role) {
+        return { status: 'PENDING', pending_role: role, requested_at: user.pendingRoleRequestedAt };
+      }
+      const now = new Date();
+      await tx.user.update({
+        where: { id: input.userId },
+        data: { pendingRole: role, pendingRoleRequestedAt: now },
+      });
+      await this.audit.record({
+        tx,
+        actorUserId: input.userId,
+        serviceName: 'centralbank-core',
+        action: 'UPGRADE_REQUESTED',
+        targetType: 'user',
+        targetId: input.userId,
+        requestId: input.requestId,
+        metadata: {
+          requested_role: role,
+          business_name: input.businessName ?? null,
+          nik: input.nik ?? null,
+        },
+      });
+      return { status: 'PENDING', pending_role: role, requested_at: now };
+    });
   }
 }
