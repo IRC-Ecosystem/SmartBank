@@ -1,14 +1,23 @@
 import React, { useEffect, useState } from 'react';
 import { NotificationsApi, Notification } from '../../api/notifications.api';
-import { PageHeader } from '../../components/layout/PageHeader';
 import { Card } from '../../components/ui/Card';
 import { Button } from '../../components/ui/Button';
 import { Bell, CheckCircle, Info, Key, ShieldCheck } from 'lucide-react';
-import { formatMoney } from '../../lib/money';
+
+function formatCountdown(expiresAt?: string) {
+  if (!expiresAt) return null;
+
+  const remainingSeconds = Math.max(0, Math.floor((new Date(expiresAt).getTime() - Date.now()) / 1000));
+  const minutes = Math.floor(remainingSeconds / 60).toString().padStart(2, '0');
+  const seconds = (remainingSeconds % 60).toString().padStart(2, '0');
+
+  return `${minutes}:${seconds}`;
+}
 
 export const InboxPage: React.FC = () => {
   const [notifications, setNotifications] = useState<Notification[]>([]);
   const [loading, setLoading] = useState(true);
+  const [, setClockTick] = useState(0);
 
   const fetchNotifications = async () => {
     try {
@@ -26,6 +35,11 @@ export const InboxPage: React.FC = () => {
   useEffect(() => {
     fetchNotifications();
     const interval = setInterval(fetchNotifications, 10000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => setClockTick((tick) => tick + 1), 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -96,7 +110,7 @@ export const InboxPage: React.FC = () => {
                         {n.payload.otp_code}
                       </div>
                       <p style={{ fontSize: '0.8rem', color: 'var(--color-danger-600)', marginTop: '0.5rem' }}>
-                        Berlaku hingga {new Date(n.payload.expires_at).toLocaleTimeString('id-ID')}
+                        Berlaku {formatCountdown(String(n.payload.expires_at)) ?? '00:00'} lagi
                       </p>
                     </div>
                   )}

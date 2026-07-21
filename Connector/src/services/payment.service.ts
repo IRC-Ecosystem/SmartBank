@@ -9,7 +9,7 @@ export class PaymentService {
     grossAmount: string,
     pin: string,
     description: string,
-    externalRefId: string,
+    externalRefId: string | undefined,
     serviceId: string,
     serviceName: string,
     idempotencyKey: string

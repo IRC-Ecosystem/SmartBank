@@ -4,7 +4,7 @@ import { getSessionToken, clearSession } from '../auth/session';
 import { newRequestId } from '../lib/request-id';
 
 type RequestOptions = {
-  method?: 'GET' | 'POST' | 'PUT' | 'DELETE';
+  method?: 'GET' | 'POST' | 'PUT' | 'PATCH' | 'DELETE';
   body?: unknown;
   idempotencyKey?: string;
   requestId?: string;
@@ -140,6 +140,9 @@ export const client = {
     
   put: <T>(path: string, body?: unknown, options?: Omit<RequestOptions, 'method' | 'body'>) => 
     apiRequest<T>(path, { ...options, method: 'PUT', body }),
+
+  patch: <T>(path: string, body?: unknown, options?: Omit<RequestOptions, 'method' | 'body'>) =>
+    apiRequest<T>(path, { ...options, method: 'PATCH', body }),
     
   delete: <T>(path: string, options?: Omit<RequestOptions, 'method' | 'body'>) => 
     apiRequest<T>(path, { ...options, method: 'DELETE' }),

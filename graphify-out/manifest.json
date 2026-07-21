@@ -35,9 +35,9 @@
     "semantic_hash": "7f09cae8c77f3a9abc8778ff9fd76a9d"
   },
   "Central-Bank/frontend/src/api/client.ts": {
-    "mtime": 1780676937.6143475,
-    "ast_hash": "7f8489cf3f7c37aa9afc8bb58858e68a",
-    "semantic_hash": "7f8489cf3f7c37aa9afc8bb58858e68a"
+    "mtime": 1784342600.2658348,
+    "ast_hash": "a98e3cb0b443f3d5ec273b56cf982c36",
+    "semantic_hash": ""
   },
   "Central-Bank/frontend/src/api/fees.api.ts": {
     "mtime": 1780676937.6153412,
@@ -275,9 +275,9 @@
     "semantic_hash": "5bec69f9d1231e53d34f36545351ed77"
   },
   "Central-Bank/frontend/src/features/inbox/InboxPage.tsx": {
-    "mtime": 1783018016.7947783,
-    "ast_hash": "075a4d20ae25db2068f3d2f4dab1c296",
-    "semantic_hash": "075a4d20ae25db2068f3d2f4dab1c296"
+    "mtime": 1784342600.2718363,
+    "ast_hash": "475c639f5974a0c2701d496630cf71eb",
+    "semantic_hash": ""
   },
   "Central-Bank/frontend/src/features/ledger/LedgerExplorerPage.tsx": {
     "mtime": 1780676937.6756146,
@@ -375,9 +375,9 @@
     "semantic_hash": "1546276270a204a542c06a54209d3e2e"
   },
   "Central-Bank/package.json": {
-    "mtime": 1783005660.8216915,
-    "ast_hash": "62a4b6b15303ffcf17350f573ec16e33",
-    "semantic_hash": "62a4b6b15303ffcf17350f573ec16e33"
+    "mtime": 1784535700.3303463,
+    "ast_hash": "db464f8bfc9a6435afd99b75e96822b7",
+    "semantic_hash": ""
   },
   "Central-Bank/prisma/migrations/0_init.sql": {
     "mtime": 1783017196.7683291,
@@ -465,9 +465,9 @@
     "semantic_hash": "8cb8dc3d58d832ab0203b1c046d6c82e"
   },
   "Central-Bank/src/common/app-error.ts": {
-    "mtime": 1782051385.5650525,
-    "ast_hash": "ecfe41dc01c5d16bbd1a878fff3f22c9",
-    "semantic_hash": "ecfe41dc01c5d16bbd1a878fff3f22c9"
+    "mtime": 1784535994.2108076,
+    "ast_hash": "74c411d9945b9c6face89365cbb07ceb",
+    "semantic_hash": ""
   },
   "Central-Bank/src/common/current-user.decorator.ts": {
     "mtime": 1780676937.7218366,
@@ -475,9 +475,9 @@
     "semantic_hash": "8a8e7bda41c3e9fe2fa2a7c2a5cd0381"
   },
   "Central-Bank/src/common/error-codes.ts": {
-    "mtime": 1782051385.5670533,
-    "ast_hash": "7d9303bae65c7b1932ecbd369cf2c58c",
-    "semantic_hash": "7d9303bae65c7b1932ecbd369cf2c58c"
+    "mtime": 1784535994.142791,
+    "ast_hash": "4c604b08ee4848344a355b217539d7dc",
+    "semantic_hash": ""
   },
   "Central-Bank/src/common/http-error.filter.ts": {
     "mtime": 1781005160.5633898,
@@ -770,14 +770,14 @@
     "semantic_hash": "fc6e4284a88a89ce1d98682890f39dd9"
   },
   "Central-Bank/src/modules/settlement/dto/internal-settle.dto.ts": {
-    "mtime": 1783017366.7978947,
-    "ast_hash": "745726f8e1bdf2c2d6daaab3d4b8a352",
-    "semantic_hash": "745726f8e1bdf2c2d6daaab3d4b8a352"
+    "mtime": 1784535994.0602355,
+    "ast_hash": "8408b957027c8164656b40e1a610953d",
+    "semantic_hash": ""
   },
   "Central-Bank/src/modules/settlement/internal-settlement.controller.ts": {
-    "mtime": 1783017376.173622,
-    "ast_hash": "1a8c695df91a31c5064f56173dd8a0c5",
-    "semantic_hash": "1a8c695df91a31c5064f56173dd8a0c5"
+    "mtime": 1784535994.0402396,
+    "ast_hash": "2399e3fad9f259fcc4729c34da49f073",
+    "semantic_hash": ""
   },
   "Central-Bank/src/modules/settlement/settlement.module.ts": {
     "mtime": 1783017407.8405263,
@@ -785,9 +785,9 @@
     "semantic_hash": "eb922b23e010d8264041f3e4a8e1ba85"
   },
   "Central-Bank/src/modules/settlement/settlement.service.ts": {
-    "mtime": 1783017520.5250354,
-    "ast_hash": "0b3a79ec113af874f34c7bedcf4f6155",
-    "semantic_hash": "0b3a79ec113af874f34c7bedcf4f6155"
+    "mtime": 1784535994.2953398,
+    "ast_hash": "be8360752e508b473196524685bfd41a",
+    "semantic_hash": ""
   },
   "Central-Bank/src/modules/settlement/transfers.controller.ts": {
     "mtime": 1781493393.5098975,
@@ -910,9 +910,9 @@
     "semantic_hash": "e3c78a986e42ef3cd0bb781aa3942430"
   },
   "Connector/package.json": {
-    "mtime": 1783017589.3046994,
-    "ast_hash": "abdb8de78ee59807562976a1cabf92aa",
-    "semantic_hash": "abdb8de78ee59807562976a1cabf92aa"
+    "mtime": 1784534296.1751664,
+    "ast_hash": "c4ad226e1e288e237e0a8d9e6ef56966",
+    "semantic_hash": ""
   },
   "Connector/prisma/init.sql": {
     "mtime": 1783018114.1831138,
@@ -922,27 +922,27 @@
   "Connector/src/api/health.routes.ts": {
     "mtime": 1784135344.237957,
     "ast_hash": "f904c3715396df5d44b989235755e76a",
-    "semantic_hash": ""
+    "semantic_hash": "f904c3715396df5d44b989235755e76a"
   },
   "Connector/src/api/payments.routes.ts": {
-    "mtime": 1783017966.5845962,
-    "ast_hash": "2b147a1b75ffaba84edab7da23141447",
-    "semantic_hash": "2b147a1b75ffaba84edab7da23141447"
+    "mtime": 1784533887.4975443,
+    "ast_hash": "429b46e4424f0381572bdb67bd455ce2",
+    "semantic_hash": ""
   },
   "Connector/src/api/users.routes.ts": {
-    "mtime": 1783017932.2784958,
-    "ast_hash": "112a1107c7245016eb202214df001e5f",
-    "semantic_hash": "112a1107c7245016eb202214df001e5f"
+    "mtime": 1784533903.2800064,
+    "ast_hash": "6919e0d89e6998aeb6dd21cb1eb0d0b8",
+    "semantic_hash": ""
   },
   "Connector/src/config/env.ts": {
-    "mtime": 1783017614.341133,
-    "ast_hash": "9a7340af4a41998be8e8b20fcf83800e",
-    "semantic_hash": "9a7340af4a41998be8e8b20fcf83800e"
+    "mtime": 1784537113.0906205,
+    "ast_hash": "91c12f256e33a396730de1d19d6a39cd",
+    "semantic_hash": ""
   },
   "Connector/src/integrations/centralbank.client.ts": {
-    "mtime": 1783017896.7094536,
-    "ast_hash": "83a8380e89aa3e0e2742673f81fc744c",
-    "semantic_hash": "83a8380e89aa3e0e2742673f81fc744c"
+    "mtime": 1784533887.5215852,
+    "ast_hash": "3062ca427bef685fca46968a7fe396e4",
+    "semantic_hash": ""
   },
   "Connector/src/middleware/auth.ts": {
     "mtime": 1783017654.8568354,
@@ -950,29 +950,29 @@
     "semantic_hash": "54cf05c653a08bcb079d5252e646cb7f"
   },
   "Connector/src/middleware/errorHandler.ts": {
-    "mtime": 1783017625.8406672,
-    "ast_hash": "6c82abcacff1335ae59644f73db797f3",
-    "semantic_hash": "6c82abcacff1335ae59644f73db797f3"
+    "mtime": 1784342612.1791346,
+    "ast_hash": "6bab5af11d826548e7ad99bfcc18f2d5",
+    "semantic_hash": ""
   },
   "Connector/src/server.ts": {
-    "mtime": 1784135344.2284062,
-    "ast_hash": "6eae28922b26dd7fc83fd21070e05e38",
+    "mtime": 1784533971.325951,
+    "ast_hash": "6c01596bc4cfea782034a6ddcece6df7",
     "semantic_hash": ""
   },
   "Connector/src/services/linkage.service.ts": {
-    "mtime": 1784135344.245952,
-    "ast_hash": "456728617ed5b114c25597ef3b0b8fec",
+    "mtime": 1784533903.2324293,
+    "ast_hash": "b78cae7532ad7f72c512adc5bed928d8",
     "semantic_hash": ""
   },
   "Connector/src/services/otp.service.ts": {
-    "mtime": 1784135344.2429554,
-    "ast_hash": "29e510ce9343765b6cab2c4f6da4cf30",
+    "mtime": 1784533887.5044456,
+    "ast_hash": "bc889e9f49f0b3a64956781fc69b5ce9",
     "semantic_hash": ""
   },
   "Connector/src/services/payment.service.ts": {
-    "mtime": 1783017960.281056,
-    "ast_hash": "239e73fe21db5cbbd5c8cac520c7e807",
-    "semantic_hash": "239e73fe21db5cbbd5c8cac520c7e807"
+    "mtime": 1784342702.3989472,
+    "ast_hash": "e0f1f7d69a48919be34ee6f30642fff1",
+    "semantic_hash": ""
   },
   "Connector/tsconfig.json": {
     "mtime": 1783017593.8710983,
@@ -1275,9 +1275,9 @@
     "semantic_hash": "6f0b420ff3528454632d513c4f4d5a6c"
   },
   "frontend/src/components/AppShell.tsx": {
-    "mtime": 1782095854.9792743,
-    "ast_hash": "1996110d9556813bc741cb5731044fd6",
-    "semantic_hash": "1996110d9556813bc741cb5731044fd6"
+    "mtime": 1784534773.1892488,
+    "ast_hash": "3985c8d874ed321c8fd7de34d26965e1",
+    "semantic_hash": ""
   },
   "frontend/src/components/KycDocumentCard.tsx": {
     "mtime": 1781138723.5751612,
@@ -1450,9 +1450,9 @@
     "semantic_hash": "7e1fd811c1e4250ebf58f0cfbd1ffb9d"
   },
   "frontend/src/lib/openapi/connector.ts": {
-    "mtime": 1783843236.1484547,
-    "ast_hash": "8bfc088b5c6e7392ad43bcf0b65196ca",
-    "semantic_hash": "8bfc088b5c6e7392ad43bcf0b65196ca"
+    "mtime": 1784536105.2262154,
+    "ast_hash": "da680381da03b08fc46ce53bc6cc718a",
+    "semantic_hash": ""
   },
   "frontend/src/lib/openapi/gateway.ts": {
     "mtime": 1783843236.15099,
@@ -1495,9 +1495,9 @@
     "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
   },
   "package.json": {
-    "mtime": 1781493397.0981083,
-    "ast_hash": "ca927b2d17d07c49ba481f8f2017f90c",
-    "semantic_hash": "ca927b2d17d07c49ba481f8f2017f90c"
+    "mtime": 1784169108.653807,
+    "ast_hash": "a84d20d986a90ab2bbf6c6a8c385f23d",
+    "semantic_hash": ""
   },
   "AGENTS.md": {
     "mtime": 1784006449.9225042,
@@ -1535,8 +1535,8 @@
     "semantic_hash": ""
   },
   "Connector/README.md": {
-    "mtime": 1783018122.4033568,
-    "ast_hash": "51fc20c4c31c4c19dd6aa6afdfaa8d7b",
+    "mtime": 1784535507.161116,
+    "ast_hash": "d8c19b2df4709373ef2fc72c958e856d",
     "semantic_hash": ""
   },
   "DOCKER_SETUP.md": {
@@ -1605,8 +1605,8 @@
     "semantic_hash": ""
   },
   "docker-compose.yml": {
-    "mtime": 1783018109.3595228,
-    "ast_hash": "99fd48dc3b19721574c5736a07a19811",
+    "mtime": 1784537099.443162,
+    "ast_hash": "5ef13daafd0189408f2ab53b0af982bc",
     "semantic_hash": ""
   },
   "docs/superpowers/plans/2026-07-03-smartbank-connector-implementation.md": {
@@ -1657,6 +1657,101 @@
   "frontend/public/window.svg": {
     "mtime": 1780809999.65066,
     "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": ""
+  },
+  "Connector/scripts/run-prisma.js": {
+    "mtime": 1784166266.6722748,
+    "ast_hash": "80de3a52739a0a3cd8b46d93a6101992",
+    "semantic_hash": "80de3a52739a0a3cd8b46d93a6101992"
+  },
+  "Connector/scripts/setup-local-db.js": {
+    "mtime": 1784166328.9805067,
+    "ast_hash": "0be59e560ae6e01b86ac612b4e8f48ca",
+    "semantic_hash": "0be59e560ae6e01b86ac612b4e8f48ca"
+  },
+  "Connector/src/services/audit.service.ts": {
+    "mtime": 1784537049.9703252,
+    "ast_hash": "01ba7f1a2c421de7a4c322d28f0c5e3e",
+    "semantic_hash": ""
+  },
+  "Connector/src/utils/phone.ts": {
+    "mtime": 1784534330.3708417,
+    "ast_hash": "c172244b58edc0f655e8f5422ea83aa2",
+    "semantic_hash": ""
+  },
+  "Connector/scripts/seed-service-key.js": {
+    "mtime": 1784344057.820921,
+    "ast_hash": "9a6699ab5eead770f83d788eebeb6f60",
+    "semantic_hash": ""
+  },
+  "Connector/load/k6-100rps.js": {
+    "mtime": 1784534296.0796406,
+    "ast_hash": "d58fba19dbcae7bbbe6c0b424d125679",
+    "semantic_hash": ""
+  },
+  "Connector/scripts/e2e-happy-path.js": {
+    "mtime": 1784534296.0514188,
+    "ast_hash": "8ab2f9f1b61018959704d47a2117d835",
+    "semantic_hash": ""
+  },
+  "Connector/scripts/start-docker.js": {
+    "mtime": 1784535507.1221192,
+    "ast_hash": "1dee90fc66156f93bd12c3146848c298",
+    "semantic_hash": ""
+  },
+  "Connector/src/api/admin.routes.ts": {
+    "mtime": 1784537147.1283872,
+    "ast_hash": "e89541ecb1a197727298c963c03ace5c",
+    "semantic_hash": ""
+  },
+  "Connector/src/middleware/adminAuth.ts": {
+    "mtime": 1784537099.4401667,
+    "ast_hash": "cc2509a1c034d4392995b04d43258806",
+    "semantic_hash": ""
+  },
+  "Connector/src/middleware/idempotency.ts": {
+    "mtime": 1784534006.9252717,
+    "ast_hash": "2303b06ab48b58bbe5ebe56d44f4cfe2",
+    "semantic_hash": ""
+  },
+  "Connector/src/middleware/rateLimit.ts": {
+    "mtime": 1784533887.488971,
+    "ast_hash": "be88129bd471184239e290642e4abda7",
+    "semantic_hash": ""
+  },
+  "Connector/tests/phone.test.js": {
+    "mtime": 1784534296.0146286,
+    "ast_hash": "1c6492d6a24529015f051175d1152ef9",
+    "semantic_hash": ""
+  },
+  "Connector/tests/rate-limit.test.js": {
+    "mtime": 1784534296.0247135,
+    "ast_hash": "6553470a0beae781a82b335f3eaba5ef",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/inbox/page.tsx": {
+    "mtime": 1784534296.005988,
+    "ast_hash": "029892a3329120899bd7a10b27306d65",
+    "semantic_hash": ""
+  },
+  "frontend/src/components/NotificationBell.tsx": {
+    "mtime": 1784534773.1602862,
+    "ast_hash": "39a92150f293ee668b43eb3db1aa88b9",
+    "semantic_hash": ""
+  },
+  "frontend/src/lib/notifications.ts": {
+    "mtime": 1784533586.7261572,
+    "ast_hash": "9c9e22547abb5a2a98e95587d3648ebf",
+    "semantic_hash": ""
+  },
+  "Connector/SECURITY_AUDIT.md": {
+    "mtime": 1784537349.1370456,
+    "ast_hash": "ab96fe89a3c7251622420070c276ffaf",
+    "semantic_hash": ""
+  },
+  "docs/connector-completion/PROGRESS.md": {
+    "mtime": 1784536493.7633567,
+    "ast_hash": "adda211de366dc128c8490464db3c7d3",
     "semantic_hash": ""
   }
 }

@@ -18,7 +18,8 @@ export class InternalSettleDto {
 
   @IsString()
   @IsNotEmpty()
-  @MaxLength(10)
+  @MaxLength(6)
+  @Matches(/^\d{6}$/)
   pin!: string;
 
   @IsString()

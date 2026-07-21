@@ -449,7 +449,7 @@ export class SettlementService {
 
         const pinMatch = await bcrypt.compare(input.pin, payerUser.pinHash);
         if (!pinMatch) {
-          throw new AppError(ErrorCode.UNAUTHORIZED, 'PIN transaksi salah');
+          throw new AppError(ErrorCode.INVALID_PIN, 'PIN transaksi salah');
         }
 
         // 2. Fee quote

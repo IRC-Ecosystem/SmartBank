@@ -81,4 +81,21 @@ export class LinkageService {
     }
     return link;
   }
+
+  static async unlinkUser(externalId: string, serviceId: string, serviceName: string) {
+    const link = await this.getLinkage(externalId, serviceId);
+    const unlinkedAt = new Date();
+    const updated = await prisma.linkageMap.update({
+      where: { service_id_external_user_id: { service_id: serviceId, external_user_id: externalId } },
+      data: { unlinked_at: unlinkedAt },
+    });
+    await CentralBankClient.createNotification({
+      user_id: link.smartbank_user_id,
+      type: 'WALLET_UNLINKED',
+      source_app: serviceName,
+      title: 'Wallet Tidak Lagi Terhubung',
+      body: `SmartBank Wallet Anda tidak lagi terhubung ke aplikasi ${serviceName}.`,
+    });
+    return { external_user_id: updated.external_user_id, unlinked_at: unlinkedAt };
+  }
 }

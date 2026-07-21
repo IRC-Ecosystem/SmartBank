@@ -12,7 +12,6 @@ import {
   Building2,
   ChevronRight,
   ClipboardList,
-  CreditCard,
   FileCheck2,
   Flame,
   Landmark,
@@ -27,13 +26,13 @@ import {
   Sparkles,
   UserCircle2,
   Users,
-  Wallet,
   X,
 } from "lucide-react";
 import OnboardingTour from "@/components/OnboardingTour";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Role, useAuthStore } from "@/store/auth";
 import { useIsClient } from "@/lib/use-is-client";
+import NotificationBell from "@/components/NotificationBell";
 
 type MenuItem = {
   name: string;
@@ -50,6 +49,7 @@ type MenuItem = {
 const menus: Record<Role, MenuItem[]> = {
   WALLET_USER: [
     { name: "Ringkasan Dompet", href: "/dashboard", icon: <LayoutDashboard size={19} /> },
+    { name: "Inbox", href: "/inbox", icon: <Bell size={19} />, live: true },
     { name: "Transfer", href: "/transfer", icon: <Send size={19} /> },
     { name: "Verifikasi KYC", href: "/kyc", icon: <FileCheck2 size={19} /> },
     { name: "Pinjaman", href: "/pinjaman", icon: <BadgeDollarSign size={19} />, badge: "Rp", badgeTone: "primary" },
@@ -57,6 +57,7 @@ const menus: Record<Role, MenuItem[]> = {
   ],
   RETAIL: [
     { name: "Ringkasan Dompet", href: "/dashboard", icon: <LayoutDashboard size={19} /> },
+    { name: "Inbox", href: "/inbox", icon: <Bell size={19} />, live: true },
     { name: "Transfer", href: "/transfer", icon: <Send size={19} /> },
     { name: "Verifikasi KYC", href: "/kyc", icon: <FileCheck2 size={19} /> },
     { name: "Pinjaman", href: "/pinjaman", icon: <BadgeDollarSign size={19} />, badge: "Rp", badgeTone: "primary" },
@@ -64,6 +65,7 @@ const menus: Record<Role, MenuItem[]> = {
   ],
   RETAIL_CUSTOMER: [
     { name: "Ringkasan Dompet", href: "/dashboard", icon: <LayoutDashboard size={19} /> },
+    { name: "Inbox", href: "/inbox", icon: <Bell size={19} />, live: true },
     { name: "Transfer", href: "/transfer", icon: <Send size={19} /> },
     { name: "Verifikasi KYC", href: "/kyc", icon: <FileCheck2 size={19} /> },
     { name: "Pinjaman", href: "/pinjaman", icon: <BadgeDollarSign size={19} />, badge: "Rp", badgeTone: "primary" },
@@ -200,7 +202,6 @@ export default function AppShell({ children }: { children: ReactNode }) {
         <nav className="flex-1 overflow-y-auto px-3 pb-4" aria-label="Navigasi dashboard">
           <ul className="space-y-1">
             {menus[role].map((item, i) => {
-              const active = pathname === item.href;
               const isExactActive = pathname === item.href;
               return (
                 <motion.li
@@ -359,6 +360,7 @@ export default function AppShell({ children }: { children: ReactNode }) {
                 Admin
               </span>
             )}
+            <NotificationBell />
             <ThemeToggle />
           </div>
         </header>

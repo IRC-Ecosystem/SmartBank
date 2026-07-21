@@ -19,7 +19,8 @@ COPY --from=builder /app/package*.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/prisma ./prisma
+COPY --from=builder /app/scripts ./scripts
 
 EXPOSE 5000
 
-CMD ["npm", "start"]
+CMD ["node", "scripts/start-docker.js"]

@@ -4,7 +4,7 @@ import { Public } from '../../common/public.decorator';
 import { ServiceTokenGuard } from '../../common/service-token.guard';
 import { SettlementService } from './settlement.service';
 import { InternalSettleDto } from './dto/internal-settle.dto';
-import { requestId, requireIdempotencyKey } from '../../common/request-utils';
+import { requestHash, requestId, requireIdempotencyKey } from '../../common/request-utils';
 
 @Controller('internal/payment-requests')
 export class InternalSettlementController {
@@ -29,7 +29,7 @@ export class InternalSettlementController {
       description: body.description ?? '',
       externalRefId: body.external_ref_id,
       metadata: body.metadata,
-      idempotency: { key: idemKey, route: req.path, actorId: delegatedUserId, requestHash: '' },
+      idempotency: { key: idemKey, route: req.path, actorId: delegatedUserId, requestHash: requestHash(body) },
       requestId: requestId(req),
       actorUserId: delegatedUserId,
     });

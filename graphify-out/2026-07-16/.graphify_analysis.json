@@ -112,6 +112,55 @@
       "frontend_src_store_auth_useauthstore"
     ],
     "2": [
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_10_error_handling_resilience",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_1_authentication_layers",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_2_authorization_rules",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_3_data_privacy",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_4_anti_tampering_audit_log",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_5_rate_limits",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_11_security",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_12_testing_strategy",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_13_1_docker_compose_yml_addition",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_13_2_environment_variables",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_13_3_migration_order",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_13_deployment",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_14_implementation_phases",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_15_resolved_decisions_ex_open_questions",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_16_acceptance_criteria",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_17_references",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_1_overview",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_2_decisions_summary_hasil_brainstorming",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_3_goals_non_goals",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_4_architecture",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_5_1_connector_service_new",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_5_2_central_bank_notification_module_internal_endpoints_modified",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_5_3_smartbank_wallet_inbox_page_modified",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_5_components",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_6_1_connector_new_tables",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_6_2_centralbank_new_notification_table",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_6_data_models",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_7_1_connector_endpoints",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_7_2_centralbank_new_endpoints",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_7_3_smartbank_wallet_inbox_page",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_7_api_contracts",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_8_1_otp_linking_flow_phone_verification_inbox",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_8_2_payment_request_sister_app_centralbank_internal_settlement",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_8_3_smartbank_wallet_inbox_refresh",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_8_data_flows",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_9_1_notification_bell_navbar",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_9_2_inbox_page_layout",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_9_3_notification_detail_modal",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_9_ui_components_smartbank_wallet_inbox",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_additional_resolved_decisions_2026_07_03_revision",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_goals",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_non_goals_di_luar_scope_spec_ini",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_phase_1_mvp_target_1_2_weeks",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_phase_2_hardening_target_1_week",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_phase_3_future_out_of_mvp_scope",
+      "docs_superpowers_specs_2026_06_23_smartbank_connector_design_smartbank_connector_service_design_spec"
+    ],
+    "3": [
       "central_bank_frontend_src_components_data_table_pagination",
       "central_bank_frontend_src_components_data_table_pagination_pagination",
       "central_bank_frontend_src_components_data_table_pagination_paginationprops",
@@ -157,7 +206,53 @@
       "central_bank_frontend_src_lib_money",
       "central_bank_frontend_src_lib_money_parsemoneyinput"
     ],
-    "3": [
+    "4": [
+      "central_bank_src_modules_fees_dto",
+      "central_bank_src_modules_fees_dto_feequotedto",
+      "central_bank_src_modules_fees_dto_ts_isin",
+      "central_bank_src_modules_fees_dto_ts_isnotempty",
+      "central_bank_src_modules_fees_dto_ts_isstring",
+      "central_bank_src_modules_fees_dto_ts_matches",
+      "central_bank_src_modules_fees_dto_ts_maxlength",
+      "central_bank_src_modules_fees_fee_quote_service_feequoteservice",
+      "central_bank_src_modules_fees_fee_quote_service_feequoteservice_constructor",
+      "central_bank_src_modules_fees_fee_quote_service_feequoteservice_quote",
+      "central_bank_src_modules_fees_fee_quote_service_ts_injectable",
+      "central_bank_src_modules_fees_fees_controller",
+      "central_bank_src_modules_fees_fees_controller_feequotecontroller",
+      "central_bank_src_modules_fees_fees_controller_feequotecontroller_constructor",
+      "central_bank_src_modules_fees_fees_controller_feequotecontroller_quote",
+      "central_bank_src_modules_fees_fees_controller_ts_body",
+      "central_bank_src_modules_fees_fees_controller_ts_controller",
+      "central_bank_src_modules_fees_fees_controller_ts_post",
+      "central_bank_src_modules_loans_loan_service_asjson",
+      "central_bank_src_modules_loans_loan_service_loanservice",
+      "central_bank_src_modules_loans_loan_service_loanservice_applyloan",
+      "central_bank_src_modules_loans_loan_service_loanservice_constructor",
+      "central_bank_src_modules_loans_loan_service_loanservice_getloan",
+      "central_bank_src_modules_loans_loan_service_ts_injectable",
+      "central_bank_src_modules_loans_loans_controller",
+      "central_bank_src_modules_loans_loans_controller_loanscontroller",
+      "central_bank_src_modules_loans_loans_controller_loanscontroller_constructor",
+      "central_bank_src_modules_loans_loans_controller_ts_controller",
+      "central_bank_src_modules_money_money_service_moneyservice",
+      "central_bank_src_modules_money_money_service_moneyservice_assertpositive",
+      "central_bank_src_modules_money_money_service_moneyservice_bps",
+      "central_bank_src_modules_money_money_service_moneyservice_tenpercent",
+      "central_bank_src_modules_money_money_service_ts_injectable",
+      "central_bank_src_modules_payment_requests_payment_request_service_asjson",
+      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice",
+      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice_constructor",
+      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice_create",
+      "central_bank_src_modules_payment_requests_payment_request_service_ts_injectable",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_constructor",
+      "central_bank_src_modules_settlement_settlement_service_settlementservice_constructor",
+      "central_bank_src_modules_teller_teller_service_tellerservice_topup",
+      "central_bank_test_fee_quote_service_spec",
+      "central_bank_test_loans_controller_spec",
+      "central_bank_test_money_service_spec"
+    ],
+    "5": [
       "central_bank_src_modules_algorithms_algorithms_controller",
       "central_bank_src_modules_algorithms_algorithms_controller_algorithmscontroller",
       "central_bank_src_modules_algorithms_algorithms_controller_algorithmscontroller_constructor",
@@ -201,19 +296,20 @@
       "central_bank_src_modules_algorithms_kmp_service_ts_injectable",
       "central_bank_test_algorithms_spec"
     ],
-    "4": [
+    "6": [
       "connector_src_api_health_routes",
       "connector_src_api_health_routes_healthroutes",
       "connector_src_api_health_routes_prisma",
       "connector_src_api_payments_routes",
-      "connector_src_api_payments_routes_paymentsroutes",
       "connector_src_api_payments_routes_router",
       "connector_src_api_users_routes",
       "connector_src_api_users_routes_router",
-      "connector_src_api_users_routes_usersroutes",
       "connector_src_config_env",
+      "connector_src_config_env_connectorroot",
+      "connector_src_config_env_databaseurlfromglobalmysql",
       "connector_src_config_env_env",
       "connector_src_config_env_envschema",
+      "connector_src_config_env_workspaceroot",
       "connector_src_integrations_centralbank_client",
       "connector_src_integrations_centralbank_client_centralbankclient",
       "connector_src_integrations_centralbank_client_centralbankclient_createnotification",
@@ -244,7 +340,7 @@
       "connector_src_services_payment_service_paymentservice",
       "connector_src_services_payment_service_paymentservice_processpayment"
     ],
-    "5": [
+    "7": [
       "central_bank_frontend_src_api_ledger_api",
       "central_bank_frontend_src_api_ledger_api_ledgerapi",
       "central_bank_frontend_src_api_supply_api",
@@ -286,49 +382,49 @@
       "central_bank_frontend_src_lib_money_formatmoney",
       "central_bank_frontend_src_main"
     ],
-    "6": [
-      "central_bank_src_app_module",
-      "central_bank_src_modules_audit_audit_module",
-      "central_bank_src_modules_audit_audit_module_auditmodule",
-      "central_bank_src_modules_audit_audit_module_ts_module",
-      "central_bank_src_modules_auth_auth_module",
-      "central_bank_src_modules_auth_auth_module_authmodule",
-      "central_bank_src_modules_auth_auth_module_ts_module",
-      "central_bank_src_modules_central_bank_central_bank_module",
-      "central_bank_src_modules_central_bank_central_bank_module_centralbankmodule",
-      "central_bank_src_modules_central_bank_central_bank_module_ts_module",
-      "central_bank_src_modules_fees_fees_module",
-      "central_bank_src_modules_fees_fees_module_feesmodule",
-      "central_bank_src_modules_fees_fees_module_ts_module",
-      "central_bank_src_modules_idempotency_idempotency_module",
-      "central_bank_src_modules_idempotency_idempotency_module_idempotencymodule",
-      "central_bank_src_modules_idempotency_idempotency_module_ts_module",
-      "central_bank_src_modules_ledger_ledger_module",
-      "central_bank_src_modules_ledger_ledger_module_ledgermodule",
-      "central_bank_src_modules_ledger_ledger_module_ts_module",
-      "central_bank_src_modules_loans_loans_module",
-      "central_bank_src_modules_loans_loans_module_loansmodule",
-      "central_bank_src_modules_loans_loans_module_ts_module",
-      "central_bank_src_modules_manager_manager_module",
-      "central_bank_src_modules_manager_manager_module_managermodule",
-      "central_bank_src_modules_manager_manager_module_ts_module",
-      "central_bank_src_modules_money_money_module",
-      "central_bank_src_modules_money_money_module_moneymodule",
-      "central_bank_src_modules_money_money_module_ts_module",
-      "central_bank_src_modules_payment_requests_payment_requests_module",
-      "central_bank_src_modules_payment_requests_payment_requests_module_paymentrequestsmodule",
-      "central_bank_src_modules_payment_requests_payment_requests_module_ts_module",
-      "central_bank_src_modules_settlement_settlement_module",
-      "central_bank_src_modules_settlement_settlement_module_settlementmodule",
-      "central_bank_src_modules_settlement_settlement_module_ts_module",
-      "central_bank_src_modules_teller_teller_module",
-      "central_bank_src_modules_teller_teller_module_tellermodule",
-      "central_bank_src_modules_teller_teller_module_ts_module",
-      "central_bank_src_modules_wallets_wallets_module",
-      "central_bank_src_modules_wallets_wallets_module_ts_module",
-      "central_bank_src_modules_wallets_wallets_module_walletsmodule"
+    "8": [
+      "central_bank_src_common_service_token_guard",
+      "central_bank_src_common_service_token_guard_servicetokenguard",
+      "central_bank_src_common_service_token_guard_servicetokenguard_canactivate",
+      "central_bank_src_common_service_token_guard_ts_injectable",
+      "central_bank_src_modules_notifications_dto_create_notification_dto",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_createnotificationdto",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isenum",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isnotempty",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isobject",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isoptional",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isstring",
+      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_maxlength",
+      "central_bank_src_modules_notifications_dto_list_notifications_dto",
+      "central_bank_src_modules_notifications_dto_list_notifications_dto_listnotificationsdto",
+      "central_bank_src_modules_notifications_dto_list_notifications_dto_ts_isenum",
+      "central_bank_src_modules_notifications_dto_list_notifications_dto_ts_isoptional",
+      "central_bank_src_modules_notifications_notification_controller",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_constructor",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_createinternal",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_markread",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_readall",
+      "central_bank_src_modules_notifications_notification_controller_ts_body",
+      "central_bank_src_modules_notifications_notification_controller_ts_controller",
+      "central_bank_src_modules_notifications_notification_controller_ts_param",
+      "central_bank_src_modules_notifications_notification_controller_ts_post",
+      "central_bank_src_modules_notifications_notification_controller_ts_useguards",
+      "central_bank_src_modules_notifications_notification_service",
+      "central_bank_src_modules_notifications_notification_service_notificationservice",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_constructor",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_create",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_listforuser",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_markread",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_readall",
+      "central_bank_src_modules_notifications_notification_service_serialize",
+      "central_bank_src_modules_notifications_notification_service_ts_injectable",
+      "central_bank_src_modules_notifications_notifications_module",
+      "central_bank_src_modules_notifications_notifications_module_notificationsmodule",
+      "central_bank_src_modules_notifications_notifications_module_ts_module",
+      "patch"
     ],
-    "7": [
+    "9": [
       "frontend_src_app_login_page",
       "frontend_src_app_login_page_container",
       "frontend_src_app_login_page_item",
@@ -370,7 +466,7 @@
       "frontend_src_components_theme_toggle_themetoggle",
       "frontend_src_store_auth_user"
     ],
-    "8": [
+    "10": [
       "central_bank_frontend_src_api_auth_api",
       "central_bank_frontend_src_api_auth_api_registerpayload",
       "central_bank_frontend_src_api_central_bank_api",
@@ -410,7 +506,7 @@
       "central_bank_frontend_src_lib_request_id",
       "central_bank_frontend_src_lib_request_id_newrequestid"
     ],
-    "9": [
+    "11": [
       "central_bank_src_common_app_error",
       "central_bank_src_common_app_error_apperror",
       "central_bank_src_common_app_error_apperror_constructor",
@@ -429,11 +525,10 @@
       "central_bank_src_modules_manager_manager_service",
       "central_bank_src_modules_money_money_service",
       "central_bank_src_modules_payment_requests_payment_request_service",
-      "central_bank_src_modules_payment_requests_payment_request_service_asjson",
       "central_bank_src_modules_prisma_prisma_service",
       "central_bank_src_modules_settlement_settlement_service",
       "central_bank_src_modules_settlement_settlement_service_idempotencyinput",
-      "central_bank_src_modules_settlement_settlement_service_isdeadlock",
+      "central_bank_src_modules_settlement_transfers_controller",
       "central_bank_src_modules_teller_teller_service",
       "central_bank_src_modules_wallets_wallet_account_service",
       "central_bank_test_idempotency_service_spec",
@@ -449,45 +544,7 @@
       "central_bank_test_teller_kyc_spec_build",
       "central_bank_test_wallet_account_request_upgrade_spec"
     ],
-    "10": [
-      "central_bank_src_modules_notifications_dto_create_notification_dto",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_createnotificationdto",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isenum",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isnotempty",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isobject",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isoptional",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_isstring",
-      "central_bank_src_modules_notifications_dto_create_notification_dto_ts_maxlength",
-      "central_bank_src_modules_notifications_dto_list_notifications_dto",
-      "central_bank_src_modules_notifications_dto_list_notifications_dto_listnotificationsdto",
-      "central_bank_src_modules_notifications_dto_list_notifications_dto_ts_isenum",
-      "central_bank_src_modules_notifications_dto_list_notifications_dto_ts_isoptional",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_constructor",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_createinternal",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_list",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_markread",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_readall",
-      "central_bank_src_modules_notifications_notification_controller_ts_body",
-      "central_bank_src_modules_notifications_notification_controller_ts_controller",
-      "central_bank_src_modules_notifications_notification_controller_ts_get",
-      "central_bank_src_modules_notifications_notification_controller_ts_param",
-      "central_bank_src_modules_notifications_notification_controller_ts_post",
-      "central_bank_src_modules_notifications_notification_controller_ts_query",
-      "central_bank_src_modules_notifications_notification_controller_ts_useguards",
-      "central_bank_src_modules_notifications_notification_service",
-      "central_bank_src_modules_notifications_notification_service_notificationservice",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_constructor",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_create",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_listforuser",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_markread",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_readall",
-      "central_bank_src_modules_notifications_notification_service_notificationservice_unreadcount",
-      "central_bank_src_modules_notifications_notification_service_serialize",
-      "central_bank_src_modules_notifications_notification_service_ts_injectable",
-      "patch"
-    ],
-    "11": [
+    "12": [
       "bcryptjs",
       "mysql2",
       "wallet_package",
@@ -524,7 +581,44 @@
       "wallet_package_type",
       "wallet_package_version"
     ],
-    "12": [
+    "13": [
+      "central_bank_src_modules_audit_audit_log_service_auditlogservice",
+      "central_bank_src_modules_audit_audit_log_service_auditlogservice_constructor",
+      "central_bank_src_modules_audit_audit_log_service_ts_injectable",
+      "central_bank_src_modules_auth_auth_service_authservice",
+      "central_bank_src_modules_auth_auth_service_authservice_constructor",
+      "central_bank_src_modules_auth_auth_service_authservice_login",
+      "central_bank_src_modules_auth_auth_service_ts_injectable",
+      "central_bank_src_modules_fees_fee_quote_service",
+      "central_bank_src_modules_fees_fee_quote_service_feecomponent",
+      "central_bank_src_modules_fees_fee_quote_service_feequote",
+      "central_bank_src_modules_fees_fee_quote_service_source_fee_by_app",
+      "central_bank_src_modules_manager_manager_service_managerservice_constructor",
+      "central_bank_src_modules_prisma_prisma_service_prismaservice",
+      "central_bank_src_modules_prisma_prisma_service_prismaservice_onmoduledestroy",
+      "central_bank_src_modules_prisma_prisma_service_prismaservice_onmoduleinit",
+      "central_bank_src_modules_prisma_prisma_service_ts_injectable",
+      "central_bank_src_modules_settlement_transfers_controller_transferscontroller",
+      "central_bank_src_modules_settlement_transfers_controller_transferscontroller_constructor",
+      "central_bank_src_modules_settlement_transfers_controller_ts_controller",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_constructor",
+      "central_bank_src_modules_teller_teller_service_tellerservice",
+      "central_bank_src_modules_teller_teller_service_tellerservice_approvekyc",
+      "central_bank_src_modules_teller_teller_service_tellerservice_constructor",
+      "central_bank_src_modules_teller_teller_service_tellerservice_recommendloan",
+      "central_bank_src_modules_teller_teller_service_tellerservice_rejectkyc",
+      "central_bank_src_modules_teller_teller_service_tellerservice_verifykyc",
+      "central_bank_src_modules_teller_teller_service_tellerservice_withdraw",
+      "central_bank_src_modules_teller_teller_service_ts_injectable",
+      "central_bank_src_modules_wallets_wallet_account_service_ts_injectable",
+      "central_bank_src_modules_wallets_wallet_account_service_upgradeable_roles",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_constructor",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getwalletbyphone",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_maskphone",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_requestupgrade"
+    ],
+    "14": [
       "frontend_src_app_api_docs_page",
       "frontend_src_app_api_docs_page_apidocspage",
       "frontend_src_app_api_docs_page_metadata",
@@ -560,41 +654,7 @@
       "frontend_src_lib_openapi_wallet_secured",
       "frontend_src_lib_openapi_wallet_walletspec"
     ],
-    "13": [
-      "central_bank_src_modules_fees_fee_quote_service",
-      "central_bank_src_modules_fees_fee_quote_service_feecomponent",
-      "central_bank_src_modules_fees_fee_quote_service_feequote",
-      "central_bank_src_modules_fees_fee_quote_service_feequoteservice",
-      "central_bank_src_modules_fees_fee_quote_service_feequoteservice_constructor",
-      "central_bank_src_modules_fees_fee_quote_service_source_fee_by_app",
-      "central_bank_src_modules_fees_fee_quote_service_ts_injectable",
-      "central_bank_src_modules_fees_fees_controller",
-      "central_bank_src_modules_fees_fees_controller_feequotecontroller",
-      "central_bank_src_modules_fees_fees_controller_feequotecontroller_constructor",
-      "central_bank_src_modules_fees_fees_controller_ts_controller",
-      "central_bank_src_modules_loans_loan_service_asjson",
-      "central_bank_src_modules_loans_loan_service_loanservice",
-      "central_bank_src_modules_loans_loan_service_loanservice_applyloan",
-      "central_bank_src_modules_loans_loan_service_loanservice_constructor",
-      "central_bank_src_modules_loans_loan_service_loanservice_getloan",
-      "central_bank_src_modules_loans_loan_service_loanservice_getloanlimitinfo",
-      "central_bank_src_modules_loans_loan_service_loanservice_listloansforwallet",
-      "central_bank_src_modules_loans_loan_service_ts_injectable",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller_constructor",
-      "central_bank_src_modules_money_money_service_moneyservice",
-      "central_bank_src_modules_money_money_service_moneyservice_bps",
-      "central_bank_src_modules_money_money_service_moneyservice_tenpercent",
-      "central_bank_src_modules_money_money_service_ts_injectable",
-      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice",
-      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice_constructor",
-      "central_bank_src_modules_payment_requests_payment_request_service_ts_injectable",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_constructor",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_constructor",
-      "central_bank_test_fee_quote_service_spec",
-      "central_bank_test_loans_controller_spec",
-      "central_bank_test_money_service_spec"
-    ],
-    "14": [
+    "15": [
       "central_bank_frontend_package",
       "central_bank_frontend_package_dependencies",
       "central_bank_frontend_package_dependencies_lucide_react",
@@ -627,7 +687,7 @@
       "vite",
       "vitejs_plugin_react"
     ],
-    "15": [
+    "16": [
       "frontend_tsconfig",
       "frontend_tsconfig_compileroptions",
       "frontend_tsconfig_compileroptions_allowjs",
@@ -660,45 +720,15 @@
       "ref_next_types_ts",
       "ref_tsx"
     ],
-    "16": [
-      "central_bank_src_modules_audit_audit_log_service_auditlogservice",
-      "central_bank_src_modules_audit_audit_log_service_auditlogservice_constructor",
+    "17": [
       "central_bank_src_modules_audit_audit_log_service_auditlogservice_record",
-      "central_bank_src_modules_audit_audit_log_service_ts_injectable",
-      "central_bank_src_modules_auth_auth_service_authservice_constructor",
       "central_bank_src_modules_auth_auth_service_authservice_register",
       "central_bank_src_modules_auth_auth_service_jsonsafe",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_constructor",
-      "central_bank_src_modules_manager_manager_service_managerservice",
-      "central_bank_src_modules_manager_manager_service_managerservice_activateuser",
-      "central_bank_src_modules_manager_manager_service_managerservice_approveloan",
-      "central_bank_src_modules_manager_manager_service_managerservice_constructor",
-      "central_bank_src_modules_manager_manager_service_managerservice_rejectloan",
-      "central_bank_src_modules_manager_manager_service_managerservice_suspenduser",
-      "central_bank_src_modules_manager_manager_service_ts_injectable",
-      "central_bank_src_modules_prisma_prisma_service_prismaservice",
-      "central_bank_src_modules_prisma_prisma_service_prismaservice_onmoduledestroy",
-      "central_bank_src_modules_prisma_prisma_service_prismaservice_onmoduleinit",
-      "central_bank_src_modules_prisma_prisma_service_ts_injectable",
-      "central_bank_src_modules_teller_teller_service_tellerservice",
-      "central_bank_src_modules_teller_teller_service_tellerservice_approvekyc",
-      "central_bank_src_modules_teller_teller_service_tellerservice_constructor",
-      "central_bank_src_modules_teller_teller_service_tellerservice_recommendloan",
-      "central_bank_src_modules_teller_teller_service_tellerservice_rejectkyc",
-      "central_bank_src_modules_teller_teller_service_tellerservice_verifykyc",
-      "central_bank_src_modules_teller_teller_service_ts_injectable",
-      "central_bank_src_modules_wallets_wallet_account_service_upgradeable_roles",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_constructor",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_requestupgrade"
-    ],
-    "17": [
-      "central_bank_src_modules_fees_fee_quote_service_feequoteservice_quote",
       "central_bank_src_modules_idempotency_idempotency_service_idempotencyservice_complete",
       "central_bank_src_modules_idempotency_idempotency_service_idempotencyservice_start",
       "central_bank_src_modules_ledger_ledger_service_ledgerservice_post",
-      "central_bank_src_modules_money_money_service_moneyservice_assertpositive",
-      "central_bank_src_modules_payment_requests_payment_request_service_paymentrequestservice_create",
       "central_bank_src_modules_settlement_settlement_service_asjson",
+      "central_bank_src_modules_settlement_settlement_service_isdeadlock",
       "central_bank_src_modules_settlement_settlement_service_settlementservice",
       "central_bank_src_modules_settlement_settlement_service_settlementservice_applyentries",
       "central_bank_src_modules_settlement_settlement_service_settlementservice_burncurrency",
@@ -722,6 +752,96 @@
       "central_bank_src_modules_settlement_settlement_service_ts_injectable"
     ],
     "18": [
+      "central_bank_src_app_module",
+      "central_bank_src_modules_auth_auth_module",
+      "central_bank_src_modules_auth_auth_module_authmodule",
+      "central_bank_src_modules_auth_auth_module_ts_module",
+      "central_bank_src_modules_central_bank_central_bank_module",
+      "central_bank_src_modules_central_bank_central_bank_module_centralbankmodule",
+      "central_bank_src_modules_central_bank_central_bank_module_ts_module",
+      "central_bank_src_modules_fees_fees_module",
+      "central_bank_src_modules_fees_fees_module_feesmodule",
+      "central_bank_src_modules_fees_fees_module_ts_module",
+      "central_bank_src_modules_idempotency_idempotency_module",
+      "central_bank_src_modules_idempotency_idempotency_module_idempotencymodule",
+      "central_bank_src_modules_idempotency_idempotency_module_ts_module",
+      "central_bank_src_modules_ledger_ledger_module",
+      "central_bank_src_modules_ledger_ledger_module_ledgermodule",
+      "central_bank_src_modules_ledger_ledger_module_ts_module",
+      "central_bank_src_modules_loans_loans_module",
+      "central_bank_src_modules_loans_loans_module_loansmodule",
+      "central_bank_src_modules_loans_loans_module_ts_module",
+      "central_bank_src_modules_money_money_module",
+      "central_bank_src_modules_money_money_module_moneymodule",
+      "central_bank_src_modules_money_money_module_ts_module",
+      "central_bank_src_modules_payment_requests_payment_requests_module",
+      "central_bank_src_modules_payment_requests_payment_requests_module_paymentrequestsmodule",
+      "central_bank_src_modules_payment_requests_payment_requests_module_ts_module",
+      "central_bank_src_modules_settlement_settlement_module",
+      "central_bank_src_modules_settlement_settlement_module_settlementmodule",
+      "central_bank_src_modules_settlement_settlement_module_ts_module"
+    ],
+    "19": [
+      "central_bank_src_common_request_utils_requestid",
+      "central_bank_src_modules_teller_dto_index",
+      "central_bank_src_modules_teller_dto_index_kycactiondto",
+      "central_bank_src_modules_teller_dto_index_kycapprovaldto",
+      "central_bank_src_modules_teller_dto_index_kycrejectiondto",
+      "central_bank_src_modules_teller_dto_index_telleractiondto",
+      "central_bank_src_modules_teller_dto_index_ts_isin",
+      "central_bank_src_modules_teller_dto_index_ts_isnotempty",
+      "central_bank_src_modules_teller_dto_index_ts_isoptional",
+      "central_bank_src_modules_teller_dto_index_ts_isstring",
+      "central_bank_src_modules_teller_dto_index_ts_matches",
+      "central_bank_src_modules_teller_dto_index_ts_maxlength",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_approvekyc",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_recommendloan",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_rejectkyc",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_topup",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_verifykyc",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_withdraw",
+      "central_bank_src_modules_teller_teller_controller_ts_body",
+      "central_bank_src_modules_teller_teller_controller_ts_controller",
+      "central_bank_src_modules_teller_teller_controller_ts_param",
+      "central_bank_src_modules_teller_teller_controller_ts_post",
+      "central_bank_src_modules_teller_teller_controller_ts_req",
+      "central_bank_src_modules_wallets_wallets_controller_ts_body",
+      "central_bank_src_modules_wallets_wallets_controller_ts_post",
+      "central_bank_src_modules_wallets_wallets_controller_ts_req",
+      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_upgraderequest"
+    ],
+    "20": [
+      "central_bank_src_modules_manager_dto_index",
+      "central_bank_src_modules_manager_dto_index_managerloanactiondto",
+      "central_bank_src_modules_manager_dto_index_manageruseractiondto",
+      "central_bank_src_modules_manager_dto_index_ts_isnotempty",
+      "central_bank_src_modules_manager_dto_index_ts_isoptional",
+      "central_bank_src_modules_manager_dto_index_ts_isstring",
+      "central_bank_src_modules_manager_dto_index_ts_maxlength",
+      "central_bank_src_modules_manager_manager_controller",
+      "central_bank_src_modules_manager_manager_controller_managercontroller",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_activateuser",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_approveloan",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_constructor",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_loanpool",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_rejectloan",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_suspenduser",
+      "central_bank_src_modules_manager_manager_controller_ts_body",
+      "central_bank_src_modules_manager_manager_controller_ts_controller",
+      "central_bank_src_modules_manager_manager_controller_ts_get",
+      "central_bank_src_modules_manager_manager_controller_ts_post",
+      "central_bank_src_modules_manager_manager_controller_ts_req",
+      "central_bank_src_modules_manager_manager_service_managerservice",
+      "central_bank_src_modules_manager_manager_service_managerservice_activateuser",
+      "central_bank_src_modules_manager_manager_service_managerservice_approveloan",
+      "central_bank_src_modules_manager_manager_service_managerservice_getloanpoolbalance",
+      "central_bank_src_modules_manager_manager_service_managerservice_listpendingloans",
+      "central_bank_src_modules_manager_manager_service_managerservice_rejectloan",
+      "central_bank_src_modules_manager_manager_service_managerservice_suspenduser",
+      "central_bank_src_modules_manager_manager_service_ts_injectable"
+    ],
+    "21": [
       "frontend_src_app_page",
       "frontend_src_app_page_landingpage",
       "frontend_src_components_landing_aboutsection",
@@ -751,7 +871,7 @@
       "frontend_src_components_landing_servicesgrid_services",
       "frontend_src_components_landing_servicesgrid_servicesgrid"
     ],
-    "19": [
+    "22": [
       "frontend_src_components_admin_walletpicker",
       "frontend_src_components_admin_walletpicker_money",
       "frontend_src_components_admin_walletpicker_props",
@@ -781,7 +901,36 @@
       "frontend_src_lib_api_idempotencycache",
       "frontend_src_lib_api_readservermessage"
     ],
-    "20": [
+    "23": [
+      "central_bank_src_common_public_decorator",
+      "central_bank_src_common_public_decorator_public",
+      "central_bank_src_modules_health_health_controller",
+      "central_bank_src_modules_health_health_controller_healthcontroller",
+      "central_bank_src_modules_health_health_controller_healthcontroller_health",
+      "central_bank_src_modules_health_health_controller_ts_controller",
+      "central_bank_src_modules_health_health_controller_ts_get",
+      "central_bank_src_modules_health_health_module",
+      "central_bank_src_modules_health_health_module_healthmodule",
+      "central_bank_src_modules_health_health_module_ts_module",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_internalsettledto",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isnotempty",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isobject",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isoptional",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isstring",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_matches",
+      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_maxlength",
+      "central_bank_src_modules_settlement_internal_settlement_controller",
+      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller",
+      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller_constructor",
+      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller_settleviaconnector",
+      "central_bank_src_modules_settlement_internal_settlement_controller_ts_body",
+      "central_bank_src_modules_settlement_internal_settlement_controller_ts_controller",
+      "central_bank_src_modules_settlement_internal_settlement_controller_ts_post",
+      "central_bank_src_modules_settlement_internal_settlement_controller_ts_req",
+      "central_bank_src_modules_settlement_internal_settlement_controller_ts_useguards"
+    ],
+    "24": [
       "wallet_src_public_app",
       "wallet_src_public_app_animatenumber",
       "wallet_src_public_app_authscreen",
@@ -810,7 +959,7 @@
       "wallet_src_public_app_transactionsfeed",
       "wallet_src_public_app_walletbalance"
     ],
-    "21": [
+    "25": [
       "frontend_src_app_guide_page",
       "frontend_src_app_guide_page_callout",
       "frontend_src_app_guide_page_faqs",
@@ -838,7 +987,34 @@
       "frontend_src_app_guide_page_tonering",
       "frontend_src_app_guide_page_tonetext"
     ],
-    "22": [
+    "26": [
+      "central_bank_src_common_current_user_decorator",
+      "central_bank_src_common_current_user_decorator_currentuser",
+      "central_bank_src_common_current_user_decorator_requestuser",
+      "central_bank_src_common_roles_decorator",
+      "central_bank_src_common_roles_decorator_roles",
+      "central_bank_src_modules_loans_loan_service_loanservice_getloanlimitinfo",
+      "central_bank_src_modules_loans_loan_service_loanservice_listloansforwallet",
+      "central_bank_src_modules_loans_loans_controller_loanscontroller_mylimit",
+      "central_bank_src_modules_loans_loans_controller_loanscontroller_myloans",
+      "central_bank_src_modules_loans_loans_controller_ts_get",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_list",
+      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_unreadcount",
+      "central_bank_src_modules_notifications_notification_controller_ts_get",
+      "central_bank_src_modules_notifications_notification_controller_ts_query",
+      "central_bank_src_modules_notifications_notification_service_notificationservice_unreadcount",
+      "central_bank_src_modules_payment_requests_payment_requests_controller",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_controller",
+      "central_bank_src_modules_teller_teller_controller",
+      "central_bank_src_modules_wallets_wallets_controller",
+      "central_bank_src_modules_wallets_wallets_controller_ts_get",
+      "central_bank_src_modules_wallets_wallets_controller_walletscontroller",
+      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_balance",
+      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_constructor",
+      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_transactions"
+    ],
+    "27": [
       "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_auditlogs",
       "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_constructor",
       "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_fee",
@@ -865,7 +1041,33 @@
       "central_bank_src_modules_central_bank_monetary_policy_service_monetarypolicyservice_upsertfeeconfiguration",
       "central_bank_src_modules_central_bank_monetary_policy_service_ts_injectable"
     ],
-    "23": [
+    "28": [
+      "central_bank_src_common_request_utils",
+      "central_bank_src_common_request_utils_requesthash",
+      "central_bank_src_common_request_utils_requireidempotencykey",
+      "central_bank_src_modules_central_bank_central_bank_controller",
+      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller",
+      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_burn",
+      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_issuance",
+      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_reversal",
+      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_upsertfee",
+      "central_bank_src_modules_central_bank_central_bank_controller_ts_body",
+      "central_bank_src_modules_central_bank_central_bank_controller_ts_controller",
+      "central_bank_src_modules_central_bank_central_bank_controller_ts_post",
+      "central_bank_src_modules_central_bank_central_bank_controller_ts_req",
+      "central_bank_src_modules_central_bank_dto",
+      "central_bank_src_modules_central_bank_dto_burndto",
+      "central_bank_src_modules_central_bank_dto_feeconfigurationdto",
+      "central_bank_src_modules_central_bank_dto_issuancedto",
+      "central_bank_src_modules_central_bank_dto_reversaldto",
+      "central_bank_src_modules_central_bank_dto_ts_isnotempty",
+      "central_bank_src_modules_central_bank_dto_ts_isoptional",
+      "central_bank_src_modules_central_bank_dto_ts_isstring",
+      "central_bank_src_modules_central_bank_dto_ts_matches",
+      "central_bank_src_modules_central_bank_dto_ts_maxlength",
+      "put"
+    ],
+    "29": [
       "central_bank_frontend_tsconfig",
       "central_bank_frontend_tsconfig_compileroptions",
       "central_bank_frontend_tsconfig_compileroptions_allowjs",
@@ -890,7 +1092,7 @@
       "central_bank_frontend_tsconfig_references",
       "ref_es2020"
     ],
-    "24": [
+    "30": [
       "catch",
       "central_bank_src_app_module_appmodule",
       "central_bank_src_app_module_ts_module",
@@ -913,73 +1115,7 @@
       "central_bank_src_main",
       "central_bank_src_main_bootstrap"
     ],
-    "25": [
-      "central_bank_src_common_current_user_decorator",
-      "central_bank_src_common_request_utils",
-      "central_bank_src_common_request_utils_requesthash",
-      "central_bank_src_common_request_utils_requireidempotencykey",
-      "central_bank_src_common_roles_decorator",
-      "central_bank_src_common_roles_decorator_roles",
-      "central_bank_src_modules_loans_loans_controller",
-      "central_bank_src_modules_manager_manager_controller",
-      "central_bank_src_modules_payment_requests_payment_requests_controller",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_create",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_pay",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_body",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_controller",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_param",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_post",
-      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_req",
-      "central_bank_src_modules_settlement_transfers_controller",
-      "central_bank_src_modules_settlement_transfers_controller_transferscontroller",
-      "central_bank_src_modules_settlement_transfers_controller_ts_controller"
-    ],
-    "26": [
-      "central_bank_src_common_public_decorator",
-      "central_bank_src_common_public_decorator_public",
-      "central_bank_src_common_service_token_guard",
-      "central_bank_src_common_service_token_guard_servicetokenguard",
-      "central_bank_src_common_service_token_guard_servicetokenguard_canactivate",
-      "central_bank_src_common_service_token_guard_ts_injectable",
-      "central_bank_src_modules_health_health_controller",
-      "central_bank_src_modules_health_health_controller_healthcontroller",
-      "central_bank_src_modules_health_health_controller_healthcontroller_health",
-      "central_bank_src_modules_health_health_controller_ts_controller",
-      "central_bank_src_modules_health_health_controller_ts_get",
-      "central_bank_src_modules_health_health_module",
-      "central_bank_src_modules_health_health_module_healthmodule",
-      "central_bank_src_modules_health_health_module_ts_module",
-      "central_bank_src_modules_notifications_notification_controller",
-      "central_bank_src_modules_notifications_notifications_module",
-      "central_bank_src_modules_notifications_notifications_module_notificationsmodule",
-      "central_bank_src_modules_notifications_notifications_module_ts_module",
-      "central_bank_src_modules_settlement_internal_settlement_controller",
-      "central_bank_src_modules_wallets_wallets_controller"
-    ],
-    "27": [
-      "central_bank_src_modules_auth_auth_controller",
-      "central_bank_src_modules_auth_auth_controller_authcontroller",
-      "central_bank_src_modules_auth_auth_controller_authcontroller_constructor",
-      "central_bank_src_modules_auth_auth_controller_authcontroller_login",
-      "central_bank_src_modules_auth_auth_controller_authcontroller_register",
-      "central_bank_src_modules_auth_auth_controller_ts_body",
-      "central_bank_src_modules_auth_auth_controller_ts_controller",
-      "central_bank_src_modules_auth_auth_controller_ts_post",
-      "central_bank_src_modules_auth_auth_controller_ts_req",
-      "central_bank_src_modules_auth_auth_service_authservice",
-      "central_bank_src_modules_auth_auth_service_authservice_login",
-      "central_bank_src_modules_auth_auth_service_ts_injectable",
-      "central_bank_src_modules_auth_dto",
-      "central_bank_src_modules_auth_dto_logindto",
-      "central_bank_src_modules_auth_dto_registerdto",
-      "central_bank_src_modules_auth_dto_ts_isnotempty",
-      "central_bank_src_modules_auth_dto_ts_isstring",
-      "central_bank_src_modules_auth_dto_ts_maxlength",
-      "isemail",
-      "minlength"
-    ],
-    "28": [
+    "31": [
       "central_bank_tsconfig",
       "central_bank_tsconfig_compileroptions",
       "central_bank_tsconfig_compileroptions_allowsyntheticdefaultimports",
@@ -1001,7 +1137,7 @@
       "central_bank_tsconfig_json_ref_frontend",
       "central_bank_tsconfig_json_ref_node_modules"
     ],
-    "29": [
+    "32": [
       "gateway_package",
       "gateway_package_dependencies",
       "gateway_package_dependencies_cors",
@@ -1023,70 +1159,49 @@
       "gateway_package_version",
       "http_proxy_middleware"
     ],
-    "30": [
+    "33": [
       "central_bank_package_dependencies",
       "central_bank_package_dependencies_bcrypt",
       "central_bank_package_dependencies_class_transformer",
       "central_bank_package_dependencies_class_validator",
       "central_bank_package_dependencies_jsonwebtoken",
       "central_bank_package_dependencies_nestjs_common",
-      "central_bank_package_dependencies_nestjs_config",
       "central_bank_package_dependencies_passport_jwt",
       "central_bank_package_dependencies_reflect_metadata",
       "central_bank_package_dependencies_rxjs",
+      "central_bank_package_dependencies_uuid",
       "central_bank_package_json_bcrypt",
       "central_bank_package_json_jsonwebtoken",
+      "central_bank_package_json_uuid",
       "class_transformer",
       "class_validator",
       "nestjs_common",
-      "nestjs_config",
       "passport_jwt",
       "reflect_metadata",
       "rxjs"
     ],
-    "31": [
-      "central_bank_src_modules_prisma_prisma_module",
-      "central_bank_src_modules_prisma_prisma_module_prismamodule",
-      "central_bank_src_modules_prisma_prisma_module_ts_module",
-      "central_bank_src_modules_public_public_controller",
-      "central_bank_src_modules_public_public_controller_publiccontroller",
-      "central_bank_src_modules_public_public_controller_publiccontroller_constructor",
-      "central_bank_src_modules_public_public_controller_publiccontroller_stats",
-      "central_bank_src_modules_public_public_controller_ts_controller",
-      "central_bank_src_modules_public_public_controller_ts_get",
-      "central_bank_src_modules_public_public_module",
-      "central_bank_src_modules_public_public_module_publicmodule",
-      "central_bank_src_modules_public_public_module_ts_module",
-      "central_bank_src_modules_public_public_service",
-      "central_bank_src_modules_public_public_service_publicstats",
-      "central_bank_src_modules_public_public_service_publicstatsservice",
-      "central_bank_src_modules_public_public_service_publicstatsservice_constructor",
-      "central_bank_src_modules_public_public_service_publicstatsservice_getstats",
-      "central_bank_src_modules_public_public_service_ts_injectable",
-      "global"
-    ],
-    "32": [
+    "34": [
       "clsx",
       "driver_js",
+      "framer_motion",
       "frontend_package_dependencies",
       "frontend_package_dependencies_clsx",
       "frontend_package_dependencies_driver_js",
+      "frontend_package_dependencies_framer_motion",
       "frontend_package_dependencies_geist",
       "frontend_package_dependencies_lucide_react",
-      "frontend_package_dependencies_next_themes",
       "frontend_package_dependencies_radix_ui_react_icons",
       "frontend_package_dependencies_recharts",
       "frontend_package_dependencies_swagger_ui_dist",
       "frontend_package_dependencies_tailwind_merge",
       "frontend_package_json_lucide_react",
       "geist",
-      "next_themes",
       "radix_ui_react_icons",
       "recharts",
       "swagger_ui_dist",
       "tailwind_merge"
     ],
-    "33": [
+    "35": [
       "frontend_src_components_dashboards_retaildashboard",
       "frontend_src_components_dashboards_retaildashboard_activeloan",
       "frontend_src_components_dashboards_retaildashboard_animatednumber",
@@ -1107,7 +1222,7 @@
       "frontend_src_components_dashboards_retaildashboard_unwrap",
       "frontend_src_components_dashboards_retaildashboard_walletcard3d"
     ],
-    "34": [
+    "36": [
       "central_bank_frontend_src_api_notifications_api",
       "central_bank_frontend_src_api_notifications_api_notification",
       "central_bank_frontend_src_api_notifications_api_notificationsapi",
@@ -1127,7 +1242,7 @@
       "central_bank_frontend_src_features_inbox_inboxpage",
       "central_bank_frontend_src_features_inbox_inboxpage_inboxpage"
     ],
-    "35": [
+    "37": [
       "central_bank_frontend_src_components_data_table_datatable",
       "central_bank_frontend_src_components_data_table_datatable_columndef",
       "central_bank_frontend_src_components_data_table_datatable_datatable",
@@ -1147,46 +1262,65 @@
       "central_bank_frontend_src_features_audit_auditlogpage",
       "central_bank_frontend_src_features_audit_auditlogpage_auditlogpage"
     ],
-    "36": [
-      "central_bank_src_common_current_user_decorator_requestuser",
-      "central_bank_src_common_request_utils_requestid",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_approvekyc",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_recommendloan",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_rejectkyc",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_topup",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_verifykyc",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_withdraw",
-      "central_bank_src_modules_teller_teller_controller_ts_body",
-      "central_bank_src_modules_teller_teller_controller_ts_controller",
-      "central_bank_src_modules_teller_teller_controller_ts_param",
-      "central_bank_src_modules_teller_teller_controller_ts_post",
-      "central_bank_src_modules_teller_teller_controller_ts_req",
-      "central_bank_src_modules_wallets_wallets_controller_ts_body",
-      "central_bank_src_modules_wallets_wallets_controller_ts_post",
-      "central_bank_src_modules_wallets_wallets_controller_ts_req",
-      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_upgraderequest"
-    ],
-    "37": [
-      "central_bank_src_modules_manager_manager_controller_managercontroller_loanpool",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_pendingloans",
-      "central_bank_src_modules_manager_manager_controller_ts_get",
-      "central_bank_src_modules_manager_manager_controller_ts_query",
-      "central_bank_src_modules_manager_manager_service_managerservice_getloanpoolbalance",
-      "central_bank_src_modules_manager_manager_service_managerservice_listpendingloans",
-      "central_bank_src_modules_money_money_service_moneyservice_parse",
-      "central_bank_src_modules_settlement_transfers_controller_transferscontroller_transfer",
-      "central_bank_src_modules_settlement_transfers_controller_ts_body",
-      "central_bank_src_modules_settlement_transfers_controller_ts_post",
-      "central_bank_src_modules_settlement_transfers_controller_ts_req",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_findcustomer",
-      "central_bank_src_modules_teller_teller_controller_tellercontroller_pendingloans",
-      "central_bank_src_modules_teller_teller_controller_ts_get",
-      "central_bank_src_modules_teller_teller_controller_ts_query",
-      "central_bank_src_modules_teller_teller_service_tellerservice_findcustomer",
-      "central_bank_src_modules_teller_teller_service_tellerservice_listsmallpendingloans"
-    ],
     "38": [
+      "docker_setup_arsitektur_port",
+      "docker_setup_central_bank",
+      "docker_setup_daftar_isi",
+      "docker_setup_environment_variables",
+      "docker_setup_frontend",
+      "docker_setup_gateway",
+      "docker_setup_monitoring_migration",
+      "docker_setup_mysql",
+      "docker_setup_opsional_ada_default",
+      "docker_setup_prasyarat",
+      "docker_setup_prisma_migration_di_docker",
+      "docker_setup_reset_database_caution_drops_all_data",
+      "docker_setup_service_detail",
+      "docker_setup_smartbank_docker_setup_guide",
+      "docker_setup_support",
+      "docker_setup_tambah_migration_baru_dev_workflow",
+      "docker_setup_wajib_minimum",
+      "docker_setup_wallet"
+    ],
+    "39": [
+      "bcrypt",
+      "connector_package_dependencies",
+      "connector_package_dependencies_bcrypt",
+      "connector_package_dependencies_cors",
+      "connector_package_dependencies_dotenv",
+      "connector_package_dependencies_express",
+      "connector_package_dependencies_jsonwebtoken",
+      "connector_package_dependencies_libphonenumber_js",
+      "connector_package_dependencies_prisma_client",
+      "connector_package_dependencies_zod",
+      "cors",
+      "dotenv",
+      "express",
+      "jsonwebtoken",
+      "libphonenumber_js",
+      "prisma_client",
+      "zod"
+    ],
+    "40": [
+      "central_bank_src_modules_auth_auth_controller",
+      "central_bank_src_modules_auth_auth_controller_authcontroller",
+      "central_bank_src_modules_auth_auth_controller_authcontroller_constructor",
+      "central_bank_src_modules_auth_auth_controller_authcontroller_login",
+      "central_bank_src_modules_auth_auth_controller_authcontroller_register",
+      "central_bank_src_modules_auth_auth_controller_ts_body",
+      "central_bank_src_modules_auth_auth_controller_ts_controller",
+      "central_bank_src_modules_auth_auth_controller_ts_post",
+      "central_bank_src_modules_auth_auth_controller_ts_req",
+      "central_bank_src_modules_auth_dto",
+      "central_bank_src_modules_auth_dto_logindto",
+      "central_bank_src_modules_auth_dto_registerdto",
+      "central_bank_src_modules_auth_dto_ts_isnotempty",
+      "central_bank_src_modules_auth_dto_ts_isstring",
+      "central_bank_src_modules_auth_dto_ts_maxlength",
+      "isemail",
+      "minlength"
+    ],
+    "41": [
       "concurrently",
       "package",
       "package_description",
@@ -1205,45 +1339,26 @@
       "package_scripts_start_wallet",
       "package_version"
     ],
-    "39": [
-      "connector_package_dependencies",
-      "connector_package_dependencies_bcrypt",
-      "connector_package_dependencies_cors",
-      "connector_package_dependencies_dotenv",
-      "connector_package_dependencies_express",
-      "connector_package_dependencies_jsonwebtoken",
-      "connector_package_dependencies_libphonenumber_js",
-      "connector_package_dependencies_prisma_client",
-      "connector_package_dependencies_zod",
-      "connector_package_json_bcrypt",
-      "connector_package_json_cors",
-      "connector_package_json_dotenv",
-      "connector_package_json_express",
-      "connector_package_json_jsonwebtoken",
-      "connector_package_json_prisma_client",
-      "connector_package_json_zod",
-      "libphonenumber_js"
-    ],
-    "40": [
+    "42": [
       "connector_package_devdependencies",
-      "connector_package_devdependencies_jest",
       "connector_package_devdependencies_prisma",
       "connector_package_devdependencies_ts_jest",
-      "connector_package_devdependencies_types_bcrypt",
+      "connector_package_devdependencies_ts_node_dev",
       "connector_package_devdependencies_types_cors",
-      "connector_package_devdependencies_types_express",
       "connector_package_devdependencies_types_jest",
+      "connector_package_devdependencies_types_jsonwebtoken",
+      "connector_package_devdependencies_types_node",
       "connector_package_devdependencies_typescript",
-      "connector_package_json_jest",
-      "connector_package_json_prisma",
-      "connector_package_json_ts_jest",
-      "connector_package_json_types_bcrypt",
-      "connector_package_json_types_express",
-      "connector_package_json_types_jest",
-      "connector_package_json_typescript",
-      "types_cors"
+      "prisma",
+      "ts_jest",
+      "ts_node_dev",
+      "types_cors",
+      "types_jest",
+      "types_jsonwebtoken",
+      "types_node",
+      "typescript"
     ],
-    "41": [
+    "43": [
       "eslint_config_next",
       "frontend_package_devdependencies",
       "frontend_package_devdependencies_eslint",
@@ -1262,7 +1377,7 @@
       "tailwindcss",
       "tailwindcss_postcss"
     ],
-    "42": [
+    "44": [
       "central_bank_frontend_src_auth_authprovider",
       "central_bank_frontend_src_auth_authprovider_authcontext",
       "central_bank_frontend_src_auth_authprovider_authprovider",
@@ -1280,43 +1395,97 @@
       "central_bank_frontend_src_components_layout_sidebar_sidebar",
       "central_bank_frontend_src_components_layout_sidebar_sidebarprops"
     ],
-    "43": [
-      "central_bank_src_modules_manager_dto_index",
-      "central_bank_src_modules_manager_dto_index_managerloanactiondto",
-      "central_bank_src_modules_manager_dto_index_manageruseractiondto",
-      "central_bank_src_modules_manager_dto_index_ts_isnotempty",
-      "central_bank_src_modules_manager_dto_index_ts_isoptional",
-      "central_bank_src_modules_manager_dto_index_ts_isstring",
-      "central_bank_src_modules_manager_dto_index_ts_maxlength",
-      "central_bank_src_modules_manager_manager_controller_managercontroller",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_activateuser",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_approveloan",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_rejectloan",
-      "central_bank_src_modules_manager_manager_controller_managercontroller_suspenduser",
-      "central_bank_src_modules_manager_manager_controller_ts_body",
-      "central_bank_src_modules_manager_manager_controller_ts_controller",
-      "central_bank_src_modules_manager_manager_controller_ts_post",
-      "central_bank_src_modules_manager_manager_controller_ts_req"
-    ],
-    "44": [
-      "central_bank_src_modules_settlement_dto_internal_settle_dto",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_internalsettledto",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isnotempty",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isobject",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isoptional",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_isstring",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_matches",
-      "central_bank_src_modules_settlement_dto_internal_settle_dto_ts_maxlength",
-      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller",
-      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller_constructor",
-      "central_bank_src_modules_settlement_internal_settlement_controller_internalsettlementcontroller_settleviaconnector",
-      "central_bank_src_modules_settlement_internal_settlement_controller_ts_body",
-      "central_bank_src_modules_settlement_internal_settlement_controller_ts_controller",
-      "central_bank_src_modules_settlement_internal_settlement_controller_ts_post",
-      "central_bank_src_modules_settlement_internal_settlement_controller_ts_req",
-      "central_bank_src_modules_settlement_internal_settlement_controller_ts_useguards"
-    ],
     "45": [
+      "central_bank_src_modules_audit_audit_module",
+      "central_bank_src_modules_audit_audit_module_auditmodule",
+      "central_bank_src_modules_audit_audit_module_ts_module",
+      "central_bank_src_modules_manager_manager_module",
+      "central_bank_src_modules_manager_manager_module_managermodule",
+      "central_bank_src_modules_manager_manager_module_ts_module",
+      "central_bank_src_modules_prisma_prisma_module",
+      "central_bank_src_modules_prisma_prisma_module_prismamodule",
+      "central_bank_src_modules_prisma_prisma_module_ts_module",
+      "central_bank_src_modules_teller_teller_module",
+      "central_bank_src_modules_teller_teller_module_tellermodule",
+      "central_bank_src_modules_teller_teller_module_ts_module",
+      "central_bank_src_modules_wallets_wallets_module",
+      "central_bank_src_modules_wallets_wallets_module_ts_module",
+      "central_bank_src_modules_wallets_wallets_module_walletsmodule",
+      "global"
+    ],
+    "46": [
+      "central_bank_src_modules_loans_loans_controller_loanscontroller_apply",
+      "central_bank_src_modules_loans_loans_controller_loanscontroller_repay",
+      "central_bank_src_modules_loans_loans_controller_ts_body",
+      "central_bank_src_modules_loans_loans_controller_ts_param",
+      "central_bank_src_modules_loans_loans_controller_ts_post",
+      "central_bank_src_modules_loans_loans_controller_ts_req",
+      "central_bank_src_modules_manager_manager_controller_managercontroller_pendingloans",
+      "central_bank_src_modules_manager_manager_controller_ts_query",
+      "central_bank_src_modules_money_money_service_moneyservice_parse",
+      "central_bank_src_modules_settlement_transfers_controller_transferscontroller_transfer",
+      "central_bank_src_modules_settlement_transfers_controller_ts_body",
+      "central_bank_src_modules_settlement_transfers_controller_ts_post",
+      "central_bank_src_modules_settlement_transfers_controller_ts_req",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getbalance",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getprimarywallet",
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_gettransactions"
+    ],
+    "47": [
+      "central_bank_src_modules_payment_requests_dto",
+      "central_bank_src_modules_payment_requests_dto_createpaymentrequestdto",
+      "central_bank_src_modules_payment_requests_dto_ts_isin",
+      "central_bank_src_modules_payment_requests_dto_ts_isnotempty",
+      "central_bank_src_modules_payment_requests_dto_ts_isobject",
+      "central_bank_src_modules_payment_requests_dto_ts_isoptional",
+      "central_bank_src_modules_payment_requests_dto_ts_isstring",
+      "central_bank_src_modules_payment_requests_dto_ts_matches",
+      "central_bank_src_modules_payment_requests_dto_ts_maxlength",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_create",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_paymentrequestscontroller_pay",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_body",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_param",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_post",
+      "central_bank_src_modules_payment_requests_payment_requests_controller_ts_req",
+      "isdatestring"
+    ],
+    "48": [
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_central_bank_changes",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_connector_service",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_deployment_docs",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_file_structure",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_frontend_changes",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_global_constraints",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_self_review",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_smartbank_connector_implementation_plan",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_1_centralbank_notification_phone_lookup",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_2_centralbank_internal_settlement_pin",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_3_connector_service_skeleton_core_middleware",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_4_connector_otp_linkage",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_5_connector_payment",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_6_smartbank_frontend_inbox_ui",
+      "docs_superpowers_plans_2026_07_03_smartbank_connector_implementation_sprint_7_compose_seeds_docs"
+    ],
+    "49": [
+      "dokumentasi_lokal_build_typescript_lambat_hang_di_windows",
+      "dokumentasi_lokal_frontend_crash_memory_allocation_of_16777216_bytes_failed_exit_3221226505",
+      "dokumentasi_lokal_frontend_error_multiple_lockfiles",
+      "dokumentasi_lokal_frontend_next_is_not_recognized",
+      "dokumentasi_lokal_gateway_return_502_upstream_unavailable_timeout_30s",
+      "dokumentasi_lokal_login_return_500_typeerror_getwalletbyuserid_is_not_a_function",
+      "dokumentasi_lokal_login_via_gateway_return_404_rute_tidak_ditemukan",
+      "dokumentasi_lokal_mysql_access_denied_for_user_root_localhost_using_password_yes",
+      "dokumentasi_lokal_port_sudah_dipakai_eaddrinuse",
+      "dokumentasi_lokal_prisma_error_migration_failed_database_needs_reset",
+      "dokumentasi_lokal_route_admin_404_setelah_tambah_page_baru",
+      "dokumentasi_lokal_troubleshooting",
+      "dokumentasi_lokal_ts_error_htmlanchorelement_null_is_not_assignable_to_htmldivelement",
+      "dokumentasi_lokal_ts_error_type_unknown_is_not_assignable_to_type_reactnode",
+      "dokumentasi_lokal_unknown_column_phone_in_field_list_saat_seed_staff",
+      "dokumentasi_lokal_wallet_gagal_konek_mysql_setelah_edit_env"
+    ],
+    "50": [
       "gateway_middleware_jwt",
       "gateway_middleware_jwt_jwtmiddleware",
       "gateway_middleware_security",
@@ -1334,7 +1503,59 @@
       "gateway_server_server",
       "gateway_server_stripinternalheaders"
     ],
-    "46": [
+    "51": [
+      "readme_acknowledgments",
+      "readme_akun_pengujian",
+      "readme_aturan_finansial",
+      "readme_daftar_isi",
+      "readme_dokumentasi_service",
+      "readme_environment_variables",
+      "readme_highlights_v2_0_fitur_baru",
+      "readme_kontribusi",
+      "readme_lisensi",
+      "readme_per_service",
+      "readme_prasyarat",
+      "readme_quick_start_untuk_kontributor",
+      "readme_route_pintas_setelah_login",
+      "readme_smartbank_cbdc_integration",
+      "readme_struktur_direktori",
+      "readme_tentang_proyek"
+    ],
+    "52": [
+      "central_bank_src_modules_public_public_controller",
+      "central_bank_src_modules_public_public_controller_publiccontroller",
+      "central_bank_src_modules_public_public_controller_publiccontroller_constructor",
+      "central_bank_src_modules_public_public_controller_publiccontroller_stats",
+      "central_bank_src_modules_public_public_controller_ts_controller",
+      "central_bank_src_modules_public_public_controller_ts_get",
+      "central_bank_src_modules_public_public_module",
+      "central_bank_src_modules_public_public_module_publicmodule",
+      "central_bank_src_modules_public_public_module_ts_module",
+      "central_bank_src_modules_public_public_service",
+      "central_bank_src_modules_public_public_service_publicstats",
+      "central_bank_src_modules_public_public_service_publicstatsservice",
+      "central_bank_src_modules_public_public_service_publicstatsservice_constructor",
+      "central_bank_src_modules_public_public_service_publicstatsservice_getstats",
+      "central_bank_src_modules_public_public_service_ts_injectable"
+    ],
+    "53": [
+      "contributing_1_lapor_bug_request_fitur",
+      "contributing_2_pull_request",
+      "contributing_3_dokumentasi",
+      "contributing_cara_berkontribusi",
+      "contributing_code_of_conduct",
+      "contributing_contributing_to_smartbank",
+      "contributing_instalasi_dengan_docker",
+      "contributing_instalasi_lokal_tanpa_docker",
+      "contributing_keamanan",
+      "contributing_kontak",
+      "contributing_lisensi",
+      "contributing_menjalankan_test",
+      "contributing_prasyarat",
+      "contributing_pull_request_checklist",
+      "contributing_setup_development"
+    ],
+    "54": [
       "frontend_src_app_layout",
       "frontend_src_app_layout_metadata",
       "frontend_src_app_layout_rootlayout",
@@ -1351,39 +1572,7 @@
       "frontend_src_components_theme_provider_themeprovider",
       "frontend_src_components_theme_provider_usesystemtheme"
     ],
-    "47": [
-      "central_bank_package",
-      "central_bank_package_description",
-      "central_bank_package_jest",
-      "central_bank_package_jest_collectcoveragefrom",
-      "central_bank_package_jest_coveragedirectory",
-      "central_bank_package_jest_rootdir",
-      "central_bank_package_jest_testenvironment",
-      "central_bank_package_jest_testregex",
-      "central_bank_package_jest_transform",
-      "central_bank_package_name",
-      "central_bank_package_private",
-      "central_bank_package_transform_t_j_s",
-      "central_bank_package_version",
-      "ref_t_j_s"
-    ],
-    "48": [
-      "central_bank_src_modules_settlement_transfers_controller_transferscontroller_constructor",
-      "central_bank_src_modules_teller_teller_service_tellerservice_topup",
-      "central_bank_src_modules_teller_teller_service_tellerservice_withdraw",
-      "central_bank_src_modules_wallets_wallet_account_service_ts_injectable",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getbalance",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getprimarywallet",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_gettransactions",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getwalletbyaccountnumber",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getwalletbyphone",
-      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_maskphone",
-      "central_bank_src_modules_wallets_wallets_controller_internaluserscontroller_constructor",
-      "central_bank_src_modules_wallets_wallets_controller_userscontroller_constructor",
-      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_constructor"
-    ],
-    "49": [
+    "55": [
       "central_bank_tsconfig_build",
       "central_bank_tsconfig_build_compileroptions",
       "central_bank_tsconfig_build_compileroptions_outdir",
@@ -1399,7 +1588,7 @@
       "ref_test",
       "ref_tsconfig_json"
     ],
-    "50": [
+    "56": [
       "central_bank_frontend_src_api_auth_api_authapi",
       "central_bank_frontend_src_api_client_apierror",
       "central_bank_frontend_src_api_client_apierror_constructor",
@@ -1414,7 +1603,22 @@
       "central_bank_frontend_src_lib_errors_geterrormessage",
       "central_bank_frontend_src_lib_errors_isapiresult"
     ],
-    "51": [
+    "57": [
+      "central_bank_package_jest",
+      "central_bank_package_jest_collectcoveragefrom",
+      "central_bank_package_jest_coveragedirectory",
+      "central_bank_package_jest_modulefileextensions",
+      "central_bank_package_jest_rootdir",
+      "central_bank_package_jest_testenvironment",
+      "central_bank_package_jest_testregex",
+      "central_bank_package_jest_transform",
+      "central_bank_package_json_ref_ts",
+      "central_bank_package_transform_t_j_s",
+      "ref_js",
+      "ref_json",
+      "ref_t_j_s"
+    ],
+    "58": [
       "central_bank_package_scripts",
       "central_bank_package_scripts_build",
       "central_bank_package_scripts_format",
@@ -1429,22 +1633,7 @@
       "central_bank_package_scripts_test_e2e",
       "central_bank_package_scripts_test_watch"
     ],
-    "52": [
-      "central_bank_src_common_current_user_decorator_currentuser",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller_apply",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller_mylimit",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller_myloans",
-      "central_bank_src_modules_loans_loans_controller_loanscontroller_repay",
-      "central_bank_src_modules_loans_loans_controller_ts_body",
-      "central_bank_src_modules_loans_loans_controller_ts_controller",
-      "central_bank_src_modules_loans_loans_controller_ts_get",
-      "central_bank_src_modules_loans_loans_controller_ts_param",
-      "central_bank_src_modules_loans_loans_controller_ts_post",
-      "central_bank_src_modules_loans_loans_controller_ts_req",
-      "central_bank_src_modules_notifications_notification_controller_notificationcontroller_unreadcount"
-    ],
-    "53": [
+    "59": [
       "connector_tsconfig",
       "connector_tsconfig_compileroptions",
       "connector_tsconfig_compileroptions_esmoduleinterop",
@@ -1459,48 +1648,61 @@
       "connector_tsconfig_include",
       "connector_tsconfig_json_ref_src"
     ],
-    "54": [
-      "central_bank_src_modules_teller_dto_index",
-      "central_bank_src_modules_teller_dto_index_kycactiondto",
-      "central_bank_src_modules_teller_dto_index_kycapprovaldto",
-      "central_bank_src_modules_teller_dto_index_kycrejectiondto",
-      "central_bank_src_modules_teller_dto_index_telleractiondto",
-      "central_bank_src_modules_teller_dto_index_ts_isin",
-      "central_bank_src_modules_teller_dto_index_ts_isnotempty",
-      "central_bank_src_modules_teller_dto_index_ts_isoptional",
-      "central_bank_src_modules_teller_dto_index_ts_isstring",
-      "central_bank_src_modules_teller_dto_index_ts_matches",
-      "central_bank_src_modules_teller_dto_index_ts_maxlength",
-      "central_bank_src_modules_teller_teller_controller"
+    "60": [
+      "code_of_conduct_1_correction",
+      "code_of_conduct_2_warning",
+      "code_of_conduct_3_temporary_ban",
+      "code_of_conduct_4_permanent_ban",
+      "code_of_conduct_attribution",
+      "code_of_conduct_contributor_covenant_code_of_conduct",
+      "code_of_conduct_enforcement",
+      "code_of_conduct_enforcement_guidelines",
+      "code_of_conduct_enforcement_responsibilities",
+      "code_of_conduct_our_pledge",
+      "code_of_conduct_our_standards",
+      "code_of_conduct_scope"
     ],
-    "55": [
+    "61": [
+      "connector_scripts_setup_local_db",
+      "connector_scripts_setup_local_db_args",
+      "connector_scripts_setup_local_db_connectorroot",
+      "connector_scripts_setup_local_db_dotenv",
+      "connector_scripts_setup_local_db_execute",
+      "connector_scripts_setup_local_db_findmysqlclient",
+      "connector_scripts_setup_local_db_fs",
+      "connector_scripts_setup_local_db_mysql",
+      "connector_scripts_setup_local_db_path",
+      "connector_scripts_setup_local_db_quote",
+      "connector_scripts_setup_local_db_result",
+      "connector_scripts_setup_local_db_spawnsync"
+    ],
+    "62": [
+      "central_bank_readme_architecture",
+      "central_bank_readme_central_bank_core_cbdc_simulation",
+      "central_bank_readme_database_schema",
+      "central_bank_readme_endpoints",
+      "central_bank_readme_financial_invariants",
+      "central_bank_readme_frontend_test_client",
+      "central_bank_readme_local_setup",
+      "central_bank_readme_main_folder_structure",
+      "central_bank_readme_next_steps",
+      "central_bank_readme_technical_trade_offs",
+      "central_bank_readme_verification_run"
+    ],
+    "63": [
+      "central_bank_src_modules_wallets_wallet_account_service_walletaccountservice_getwalletbyaccountnumber",
       "central_bank_src_modules_wallets_wallets_controller_internaluserscontroller",
+      "central_bank_src_modules_wallets_wallets_controller_internaluserscontroller_constructor",
       "central_bank_src_modules_wallets_wallets_controller_internaluserscontroller_getuserbyphone",
       "central_bank_src_modules_wallets_wallets_controller_ts_controller",
-      "central_bank_src_modules_wallets_wallets_controller_ts_get",
       "central_bank_src_modules_wallets_wallets_controller_ts_param",
       "central_bank_src_modules_wallets_wallets_controller_ts_useguards",
       "central_bank_src_modules_wallets_wallets_controller_userscontroller",
+      "central_bank_src_modules_wallets_wallets_controller_userscontroller_constructor",
       "central_bank_src_modules_wallets_wallets_controller_userscontroller_getuserbyaccountnumber",
-      "central_bank_src_modules_wallets_wallets_controller_userscontroller_getwalletbyuserid",
-      "central_bank_src_modules_wallets_wallets_controller_walletscontroller",
-      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_balance",
-      "central_bank_src_modules_wallets_wallets_controller_walletscontroller_transactions"
+      "central_bank_src_modules_wallets_wallets_controller_userscontroller_getwalletbyuserid"
     ],
-    "56": [
-      "central_bank_src_modules_central_bank_central_bank_controller",
-      "central_bank_src_modules_central_bank_dto",
-      "central_bank_src_modules_central_bank_dto_burndto",
-      "central_bank_src_modules_central_bank_dto_feeconfigurationdto",
-      "central_bank_src_modules_central_bank_dto_issuancedto",
-      "central_bank_src_modules_central_bank_dto_reversaldto",
-      "central_bank_src_modules_central_bank_dto_ts_isnotempty",
-      "central_bank_src_modules_central_bank_dto_ts_isoptional",
-      "central_bank_src_modules_central_bank_dto_ts_isstring",
-      "central_bank_src_modules_central_bank_dto_ts_matches",
-      "central_bank_src_modules_central_bank_dto_ts_maxlength"
-    ],
-    "57": [
+    "64": [
       "frontend_src_components_dashboards_admindashboard",
       "frontend_src_components_dashboards_admindashboard_activitypulse",
       "frontend_src_components_dashboards_admindashboard_admindashboard",
@@ -1513,7 +1715,7 @@
       "frontend_src_components_dashboards_admindashboard_supplygauge",
       "frontend_src_components_dashboards_admindashboard_unwrap"
     ],
-    "58": [
+    "65": [
       "central_bank_frontend_src_components_feedback_errorboundary",
       "central_bank_frontend_src_components_feedback_errorboundary_errorboundary",
       "central_bank_frontend_src_components_feedback_errorboundary_errorboundary_componentdidcatch",
@@ -1525,43 +1727,19 @@
       "central_bank_frontend_src_components_ui_errorstate_errorstate",
       "central_bank_frontend_src_components_ui_errorstate_errorstateprops"
     ],
-    "59": [
-      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller",
-      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_burn",
-      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_issuance",
-      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_reversal",
-      "central_bank_src_modules_central_bank_central_bank_controller_centralbankcontroller_upsertfee",
-      "central_bank_src_modules_central_bank_central_bank_controller_ts_body",
-      "central_bank_src_modules_central_bank_central_bank_controller_ts_controller",
-      "central_bank_src_modules_central_bank_central_bank_controller_ts_post",
-      "central_bank_src_modules_central_bank_central_bank_controller_ts_req",
-      "put"
+    "66": [
+      "dokumentasi_lokal_akun_untuk_testing",
+      "dokumentasi_lokal_arsitektur_lokal",
+      "dokumentasi_lokal_catatan_frontend_pakai_webgl_3d",
+      "dokumentasi_lokal_daftar_isi",
+      "dokumentasi_lokal_langkah_0_install_dependencies",
+      "dokumentasi_lokal_langkah_2_buat_database_mysql",
+      "dokumentasi_lokal_langkah_4_buat_tabel_cache_wallet",
+      "dokumentasi_lokal_langkah_7_akses_frontend",
+      "dokumentasi_lokal_ringkasan_alur_startup",
+      "dokumentasi_lokal_tutorial_menjalankan_smartbank_di_lokal_laragon_terminal"
     ],
-    "60": [
-      "central_bank_src_modules_fees_dto",
-      "central_bank_src_modules_fees_dto_feequotedto",
-      "central_bank_src_modules_fees_dto_ts_isin",
-      "central_bank_src_modules_fees_dto_ts_isnotempty",
-      "central_bank_src_modules_fees_dto_ts_isstring",
-      "central_bank_src_modules_fees_dto_ts_matches",
-      "central_bank_src_modules_fees_dto_ts_maxlength",
-      "central_bank_src_modules_fees_fees_controller_feequotecontroller_quote",
-      "central_bank_src_modules_fees_fees_controller_ts_body",
-      "central_bank_src_modules_fees_fees_controller_ts_post"
-    ],
-    "61": [
-      "central_bank_src_modules_payment_requests_dto",
-      "central_bank_src_modules_payment_requests_dto_createpaymentrequestdto",
-      "central_bank_src_modules_payment_requests_dto_ts_isin",
-      "central_bank_src_modules_payment_requests_dto_ts_isnotempty",
-      "central_bank_src_modules_payment_requests_dto_ts_isobject",
-      "central_bank_src_modules_payment_requests_dto_ts_isoptional",
-      "central_bank_src_modules_payment_requests_dto_ts_isstring",
-      "central_bank_src_modules_payment_requests_dto_ts_matches",
-      "central_bank_src_modules_payment_requests_dto_ts_maxlength",
-      "isdatestring"
-    ],
-    "62": [
+    "67": [
       "central_bank_frontend_src_api",
       "central_bank_frontend_src_api_apibaseurl",
       "central_bank_frontend_src_api_apienvelope",
@@ -1572,7 +1750,29 @@
       "central_bank_frontend_src_api_newidempotencykey",
       "central_bank_frontend_src_api_newrequestid"
     ],
-    "63": [
+    "68": [
+      "connector_package_scripts",
+      "connector_package_scripts_build",
+      "connector_package_scripts_db_setup",
+      "connector_package_scripts_dev",
+      "connector_package_scripts_prisma_generate",
+      "connector_package_scripts_prisma_push",
+      "connector_package_scripts_prisma_validate",
+      "connector_package_scripts_start",
+      "connector_package_scripts_test"
+    ],
+    "69": [
+      "connector_scripts_run_prisma",
+      "connector_scripts_run_prisma_connectorroot",
+      "connector_scripts_run_prisma_databaseurlfromglobalmysql",
+      "connector_scripts_run_prisma_dotenv",
+      "connector_scripts_run_prisma_path",
+      "connector_scripts_run_prisma_prismacli",
+      "connector_scripts_run_prisma_result",
+      "connector_scripts_run_prisma_spawnsync",
+      "connector_scripts_run_prisma_workspaceroot"
+    ],
+    "70": [
       "frontend_package",
       "frontend_package_name",
       "frontend_package_private",
@@ -1583,7 +1783,7 @@
       "frontend_package_scripts_start",
       "frontend_package_version"
     ],
-    "64": [
+    "71": [
       "frontend_package_optionaldependencies",
       "frontend_package_optionaldependencies_lightningcss_linux_x64_gnu",
       "frontend_package_optionaldependencies_lightningcss_win32_x64_msvc",
@@ -1594,7 +1794,7 @@
       "tailwindcss_oxide_linux_x64_gnu",
       "tailwindcss_oxide_win32_x64_msvc"
     ],
-    "65": [
+    "72": [
       "frontend_src_components_dashboards_managerdashboard",
       "frontend_src_components_dashboards_managerdashboard_customer",
       "frontend_src_components_dashboards_managerdashboard_loanfilter",
@@ -1605,7 +1805,7 @@
       "frontend_src_components_dashboards_managerdashboard_tabbutton",
       "frontend_src_components_dashboards_managerdashboard_unwrap"
     ],
-    "66": [
+    "73": [
       "central_bank_prisma_seed",
       "central_bank_prisma_seed_main",
       "central_bank_prisma_seed_prisma",
@@ -1615,7 +1815,7 @@
       "central_bank_prisma_seed_upsertfeerules",
       "central_bank_prisma_seed_upsertsystemaccounts"
     ],
-    "67": [
+    "74": [
       "central_bank_src_modules_loans_dto",
       "central_bank_src_modules_loans_dto_applyloandto",
       "central_bank_src_modules_loans_dto_repayloandto",
@@ -1625,7 +1825,57 @@
       "central_bank_src_modules_loans_dto_ts_matches",
       "central_bank_src_modules_loans_dto_ts_maxlength"
     ],
-    "68": [
+    "75": [
+      "docker_setup_1_secrets_management",
+      "docker_setup_2_https_reverse_proxy",
+      "docker_setup_3_database_backup",
+      "docker_setup_4_resource_limits",
+      "docker_setup_5_logging",
+      "docker_setup_6_healthcheck_di_orchestrator",
+      "docker_setup_7_image_registry",
+      "docker_setup_production_hardening"
+    ],
+    "76": [
+      "docker_setup_container_restart_loop",
+      "docker_setup_frontend_tidak_bisa_hit_gateway",
+      "docker_setup_migration_gagal_di_boot",
+      "docker_setup_mysql_port_3301_sudah_dipakai",
+      "docker_setup_out_of_disk_space",
+      "docker_setup_reset_total_factory_reset",
+      "docker_setup_seed_error_er_dup_entry_di_restart_kedua",
+      "docker_setup_troubleshooting"
+    ],
+    "77": [
+      "readme_1_verifikasi_stack",
+      "readme_2_registrasi_dua_pengguna_retail",
+      "readme_3_testing_teller",
+      "readme_4_testing_transfer_retail",
+      "readme_5_testing_pinjaman",
+      "readme_6_testing_admin_bank_sentral",
+      "readme_hasil_minimum_yang_diharapkan",
+      "readme_testing_manual"
+    ],
+    "78": [
+      "readme_audit_log",
+      "readme_burn_musnahkan_cbdc",
+      "readme_fee_configuration",
+      "readme_fitur_admin_bank_sentral",
+      "readme_issuance_cetak_cbdc",
+      "readme_ledger_browser",
+      "readme_reversal_balikkan_transaksi",
+      "readme_supply_monitor"
+    ],
+    "79": [
+      "wallet_readme",
+      "wallet_readme_arsitektur_simulasi",
+      "wallet_readme_development_commands",
+      "wallet_readme_instalasi_dan_menjalankan_development",
+      "wallet_readme_integrasi_central_bank_core_mode_simulasi",
+      "wallet_readme_kontrak_api_gambaran_umum",
+      "wallet_readme_smartbank_wallet_cbdc_tier_2_retail_e_wallet",
+      "wallet_readme_struktur_project"
+    ],
+    "80": [
       "central_bank_frontend_src_types",
       "central_bank_frontend_src_types_feequote",
       "central_bank_frontend_src_types_logentry",
@@ -1634,16 +1884,25 @@
       "central_bank_frontend_src_types_walletbalance",
       "central_bank_frontend_src_types_wallettransaction"
     ],
-    "69": [
+    "81": [
       "central_bank_package_devdependencies",
       "central_bank_package_devdependencies_eslint",
-      "central_bank_package_devdependencies_nestjs_cli",
+      "central_bank_package_devdependencies_eslint_config_prettier",
       "central_bank_package_devdependencies_tsconfig_paths",
       "central_bank_package_json_eslint",
-      "nestjs_cli",
+      "eslint_config_prettier",
       "tsconfig_paths"
     ],
-    "70": [
+    "82": [
+      "central_bank_readme_common_commands",
+      "central_bank_readme_docker_production_in_container",
+      "central_bank_readme_local_development_laragon_host_mysql",
+      "central_bank_readme_prisma_migration_guide",
+      "central_bank_readme_schema_migrations_overview",
+      "central_bank_readme_seed_idempotency",
+      "central_bank_readme_troubleshooting"
+    ],
+    "83": [
       "central_bank_src_common_roles_guard",
       "central_bank_src_common_roles_guard_rolesguard",
       "central_bank_src_common_roles_guard_rolesguard_canactivate",
@@ -1652,25 +1911,25 @@
       "central_bank_test_rbac_spec",
       "central_bank_test_rbac_spec_contextwithrole"
     ],
-    "71": [
-      "central_bank_src_modules_ledger_ledger_service",
-      "central_bank_src_modules_ledger_ledger_service_ledgerpost",
-      "central_bank_src_modules_ledger_ledger_service_ledgerservice",
-      "central_bank_src_modules_ledger_ledger_service_ledgerservice_validate",
-      "central_bank_src_modules_ledger_ledger_service_ts_injectable",
-      "central_bank_src_modules_settlement_settlement_service_settlementservice_constructor",
-      "central_bank_test_ledger_service_spec"
+    "84": [
+      "docker_setup_1_clone_masuk_folder",
+      "docker_setup_2_copy_env_template",
+      "docker_setup_3_build_start_semua_service",
+      "docker_setup_4_tunggu_healthcheck_pass_30_60_detik",
+      "docker_setup_5_verifikasi",
+      "docker_setup_6_login_dengan_akun_dummy",
+      "docker_setup_quick_start_5_menit"
     ],
-    "72": [
-      "connector_package_scripts",
-      "connector_package_scripts_build",
-      "connector_package_scripts_dev",
-      "connector_package_scripts_prisma_generate",
-      "connector_package_scripts_prisma_push",
-      "connector_package_scripts_start",
-      "connector_package_scripts_test"
+    "85": [
+      "dokumentasi_lokal_6_1_health_check_semua_service",
+      "dokumentasi_lokal_6_2_e2e_test_register_login_balance_transaksi",
+      "dokumentasi_lokal_6_3_test_admin_endpoints_issuance_burn_fee_audit",
+      "dokumentasi_lokal_6_4_test_algorithm_endpoints_bfs_dfs_kmp_greedy",
+      "dokumentasi_lokal_6_5_test_login_staff_teller_manager_admin",
+      "dokumentasi_lokal_6_6_test_transfer_p2p_opsional_butuh_2_user_retail",
+      "dokumentasi_lokal_langkah_6_smoke_test_api"
     ],
-    "73": [
+    "86": [
       "frontend_src_app_admin_ledger_page",
       "frontend_src_app_admin_ledger_page_adminledgerpage",
       "frontend_src_components_dashboards_adminledger",
@@ -1679,7 +1938,41 @@
       "frontend_src_components_dashboards_adminledger_money",
       "frontend_src_components_dashboards_adminledger_unwrap"
     ],
-    "74": [
+    "87": [
+      "readme_api_reference",
+      "readme_base_url",
+      "readme_endpoint_central_bank",
+      "readme_endpoint_wallet",
+      "readme_format_respons",
+      "readme_header_standar",
+      "readme_testing_api_dengan_powershell"
+    ],
+    "88": [
+      "readme_container_tidak_healthy",
+      "readme_error_cooldown_atau_daily_limit",
+      "readme_frontend_menampilkan_502",
+      "readme_login_staf_gagal",
+      "readme_migration_drift_db_push_warning",
+      "readme_port_sudah_digunakan",
+      "readme_troubleshooting"
+    ],
+    "89": [
+      "central_bank_readme",
+      "code_of_conduct",
+      "contributing",
+      "docker_setup",
+      "dokumentasi_lokal",
+      "readme"
+    ],
+    "90": [
+      "central_bank_src_modules_ledger_ledger_service",
+      "central_bank_src_modules_ledger_ledger_service_ledgerpost",
+      "central_bank_src_modules_ledger_ledger_service_ledgerservice",
+      "central_bank_src_modules_ledger_ledger_service_ledgerservice_validate",
+      "central_bank_src_modules_ledger_ledger_service_ts_injectable",
+      "central_bank_test_ledger_service_spec"
+    ],
+    "91": [
       "central_bank_src_modules_settlement_transfers_controller_transferdto",
       "central_bank_src_modules_settlement_transfers_controller_ts_isnotempty",
       "central_bank_src_modules_settlement_transfers_controller_ts_isoptional",
@@ -1687,7 +1980,39 @@
       "central_bank_src_modules_settlement_transfers_controller_ts_matches",
       "central_bank_src_modules_settlement_transfers_controller_ts_maxlength"
     ],
-    "75": [
+    "92": [
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_findcustomer",
+      "central_bank_src_modules_teller_teller_controller_tellercontroller_pendingloans",
+      "central_bank_src_modules_teller_teller_controller_ts_get",
+      "central_bank_src_modules_teller_teller_controller_ts_query",
+      "central_bank_src_modules_teller_teller_service_tellerservice_findcustomer",
+      "central_bank_src_modules_teller_teller_service_tellerservice_listsmallpendingloans"
+    ],
+    "93": [
+      "contributing_backend_nestjs_pattern",
+      "contributing_branch_naming",
+      "contributing_code_style",
+      "contributing_commit_messages",
+      "contributing_frontend_next_js_react_pattern",
+      "contributing_konvensi_kode"
+    ],
+    "94": [
+      "docker_setup_command_reference",
+      "docker_setup_exec_ke_container",
+      "docker_setup_lifecycle",
+      "docker_setup_logs",
+      "docker_setup_rebuild_specific_service",
+      "docker_setup_resource_usage"
+    ],
+    "95": [
+      "dokumentasi_lokal_1_6_route_admin_baru",
+      "dokumentasi_lokal_2_module_algoritma_modul_praktikum_2026",
+      "dokumentasi_lokal_3_redesign_frontend",
+      "dokumentasi_lokal_4_database_schema_baru",
+      "dokumentasi_lokal_5_dependency_frontend_baru",
+      "dokumentasi_lokal_fitur_baru_di_branch_ini"
+    ],
+    "96": [
       "frontend_src_components_admin_transactionpicker",
       "frontend_src_components_admin_transactionpicker_money",
       "frontend_src_components_admin_transactionpicker_props",
@@ -1695,7 +2020,7 @@
       "frontend_src_components_admin_transactionpicker_transactionpicker",
       "frontend_src_components_admin_transactionpicker_transactionsummary"
     ],
-    "76": [
+    "97": [
       "frontend_src_components_dashboards_adminfee",
       "frontend_src_components_dashboards_adminfee_adminfee",
       "frontend_src_components_dashboards_adminfee_feeconfig",
@@ -1703,385 +2028,446 @@
       "frontend_src_components_dashboards_adminfee_tx_types",
       "frontend_src_components_dashboards_adminfee_unwrap"
     ],
-    "77": [
+    "98": [
+      "central_bank_package",
+      "central_bank_package_description",
+      "central_bank_package_name",
+      "central_bank_package_private",
+      "central_bank_package_version"
+    ],
+    "99": [
       "central_bank_src_common_account_number",
       "central_bank_src_common_account_number_formataccountnumber",
       "central_bank_src_common_account_number_generateaccountnumber",
       "central_bank_src_common_account_number_isvalidaccountnumber",
       "central_bank_src_common_account_number_luhnchecksum"
     ],
-    "78": [
+    "100": [
       "connector_package",
       "connector_package_description",
       "connector_package_main",
       "connector_package_name",
       "connector_package_version"
     ],
-    "79": [
+    "101": [
+      "connector_readme",
+      "connector_readme_setup",
+      "connector_readme_smartbank_connector",
+      "connector_readme_stack",
+      "connector_readme_testing"
+    ],
+    "102": [
+      "dokumentasi_lokal_1_1_central_bank_env",
+      "dokumentasi_lokal_1_2_wallet_env",
+      "dokumentasi_lokal_1_3_gateway_env",
+      "dokumentasi_lokal_1_4_frontend_env_local",
+      "dokumentasi_lokal_langkah_1_konfigurasi_environment"
+    ],
+    "103": [
+      "dokumentasi_lokal_langkah_5_jalankan_4_services",
+      "dokumentasi_lokal_tab_1_central_bank_port_3000",
+      "dokumentasi_lokal_tab_2_wallet_port_6969",
+      "dokumentasi_lokal_tab_3_gateway_port_4000",
+      "dokumentasi_lokal_tab_4_frontend_port_3001"
+    ],
+    "104": [
+      "dokumentasi_lokal_reset_database_hapus_semua_data_ulang_dari_nol",
+      "dokumentasi_lokal_reset_environment",
+      "dokumentasi_lokal_reset_frontend_cache_next_folder",
+      "dokumentasi_lokal_reset_node_modules_kalau_ada_konflik_dependency",
+      "dokumentasi_lokal_stop_semua_service"
+    ],
+    "105": [
       "frontend_src_components_dashboards_adminsupply",
       "frontend_src_components_dashboards_adminsupply_adminsupply",
       "frontend_src_components_dashboards_adminsupply_money",
       "frontend_src_components_dashboards_adminsupply_supply",
       "frontend_src_components_dashboards_adminsupply_unwrap"
     ],
-    "80": [
+    "106": [
       "central_bank_nest_cli",
       "central_bank_nest_cli_collection",
       "central_bank_nest_cli_schema",
       "central_bank_nest_cli_sourceroot"
     ],
-    "81": [
-      "central_bank_package_jest_modulefileextensions",
-      "central_bank_package_json_ref_ts",
-      "ref_js",
-      "ref_json"
-    ],
-    "82": [
+    "107": [
       "central_bank_src_common_optional_auth_guard_optionalauthguard",
       "central_bank_src_common_optional_auth_guard_optionalauthguard_canactivate",
       "central_bank_src_common_optional_auth_guard_optionalauthguard_constructor",
       "central_bank_src_common_optional_auth_guard_ts_injectable"
     ],
-    "83": [
+    "108": [
+      "dokumentasi_lokal_langkah_3_migrate_seed_central_bank",
+      "dokumentasi_lokal_opsi_a_prisma_migrate_untuk_database_fresh",
+      "dokumentasi_lokal_opsi_b_prisma_db_push_sync_schema_langsung_lebih_cepat",
+      "dokumentasi_lokal_seed_data_awal"
+    ],
+    "109": [
       "e2e_test",
       "e2e_test_createclient",
       "e2e_test_delay",
       "e2e_test_rune2etests"
     ],
-    "84": [
+    "110": [
+      "frontend_readme",
+      "frontend_readme_deploy_on_vercel",
+      "frontend_readme_getting_started",
+      "frontend_readme_learn_more"
+    ],
+    "111": [
       "frontend_src_components_dashboards_adminaudit",
       "frontend_src_components_dashboards_adminaudit_adminaudit",
       "frontend_src_components_dashboards_adminaudit_auditlog",
       "frontend_src_components_dashboards_adminaudit_unwrap"
     ],
-    "85": [
+    "112": [
       "central_bank_eslint_config",
       "central_bank_eslint_config_ts",
       "central_bank_eslint_config_tsparser"
     ],
-    "86": [
+    "113": [
+      "dokumentasi_lokal_prasyarat",
+      "dokumentasi_lokal_rekomendasi_hardware_untuk_frontend_dengan_3d_webgl",
+      "dokumentasi_lokal_verifikasi_awal_wajib"
+    ],
+    "114": [
       "frontend_src_types_swagger_ui_dist_d",
       "frontend_src_types_swagger_ui_dist_d_swagger_ui_dist_swagger_ui_bundle_js",
       "frontend_src_types_swagger_ui_dist_d_swaggeruioptions"
     ],
-    "87": [
+    "115": [
+      "readme_dengan_docker_direkomendasikan",
+      "readme_quick_start",
+      "readme_tanpa_docker_laragon_mysql_lokal"
+    ],
+    "116": [
       "central_bank_jest_config",
       "central_bank_jest_config_config"
     ],
-    "88": [
+    "117": [
       "central_bank_package_dependencies_express_rate_limit",
       "express_rate_limit"
     ],
-    "89": [
+    "118": [
       "central_bank_package_dependencies_helmet",
       "helmet"
     ],
-    "90": [
+    "119": [
+      "central_bank_package_dependencies_nestjs_config",
+      "nestjs_config"
+    ],
+    "120": [
       "central_bank_package_dependencies_nestjs_core",
       "nestjs_core"
     ],
-    "91": [
+    "121": [
       "central_bank_package_dependencies_nestjs_jwt",
       "nestjs_jwt"
     ],
-    "92": [
+    "122": [
       "central_bank_package_dependencies_nestjs_passport",
       "nestjs_passport"
     ],
-    "93": [
+    "123": [
       "central_bank_package_dependencies_nestjs_platform_express",
       "nestjs_platform_express"
     ],
-    "94": [
+    "124": [
       "central_bank_package_dependencies_passport",
       "passport"
     ],
-    "95": [
+    "125": [
       "central_bank_package_dependencies_prisma_client",
       "central_bank_package_json_prisma_client"
     ],
-    "96": [
+    "126": [
       "central_bank_package_dependencies_swagger_ui_express",
       "central_bank_package_json_swagger_ui_express"
     ],
-    "97": [
-      "central_bank_package_dependencies_uuid",
-      "central_bank_package_json_uuid"
-    ],
-    "98": [
+    "127": [
       "central_bank_package_devdependencies_eslint_plugin_import",
       "eslint_plugin_import"
     ],
-    "99": [
+    "128": [
       "central_bank_package_devdependencies_jest",
       "central_bank_package_json_jest"
     ],
-    "100": [
-      "central_bank_package_devdependencies_eslint_config_prettier",
-      "eslint_config_prettier"
+    "129": [
+      "central_bank_package_devdependencies_nestjs_cli",
+      "nestjs_cli"
     ],
-    "101": [
+    "130": [
       "central_bank_package_devdependencies_nestjs_schematics",
       "nestjs_schematics"
     ],
-    "102": [
+    "131": [
       "central_bank_package_devdependencies_nestjs_testing",
       "nestjs_testing"
     ],
-    "103": [
+    "132": [
       "central_bank_package_devdependencies_prettier",
       "prettier"
     ],
-    "104": [
+    "133": [
       "central_bank_package_devdependencies_prisma",
       "central_bank_package_json_prisma"
     ],
-    "105": [
+    "134": [
       "central_bank_package_devdependencies_source_map_support",
       "source_map_support"
     ],
-    "106": [
+    "135": [
       "central_bank_package_devdependencies_supertest",
       "supertest"
     ],
-    "107": [
+    "136": [
       "central_bank_package_devdependencies_ts_jest",
       "central_bank_package_json_ts_jest"
     ],
-    "108": [
+    "137": [
       "central_bank_package_devdependencies_ts_loader",
       "ts_loader"
     ],
-    "109": [
+    "138": [
       "central_bank_package_devdependencies_ts_node",
       "ts_node"
     ],
-    "110": [
+    "139": [
       "central_bank_package_devdependencies_types_bcrypt",
       "central_bank_package_json_types_bcrypt"
     ],
-    "111": [
+    "140": [
       "central_bank_package_devdependencies_types_express",
       "central_bank_package_json_types_express"
     ],
-    "112": [
+    "141": [
       "central_bank_package_devdependencies_types_jest",
       "central_bank_package_json_types_jest"
     ],
-    "113": [
+    "142": [
       "central_bank_package_devdependencies_types_jsonwebtoken",
       "central_bank_package_json_types_jsonwebtoken"
     ],
-    "114": [
+    "143": [
       "central_bank_package_devdependencies_types_node",
       "central_bank_package_json_types_node"
     ],
-    "115": [
+    "144": [
       "central_bank_package_devdependencies_types_passport_jwt",
       "types_passport_jwt"
     ],
-    "116": [
+    "145": [
       "central_bank_package_devdependencies_types_swagger_ui_express",
       "types_swagger_ui_express"
     ],
-    "117": [
+    "146": [
       "central_bank_package_devdependencies_types_uuid",
       "types_uuid"
     ],
-    "118": [
+    "147": [
       "central_bank_package_devdependencies_typescript",
       "central_bank_package_json_typescript"
     ],
-    "119": [
+    "148": [
       "central_bank_package_devdependencies_typescript_eslint_eslint_plugin",
       "typescript_eslint_eslint_plugin"
     ],
-    "120": [
+    "149": [
       "central_bank_package_devdependencies_typescript_eslint_parser",
       "typescript_eslint_parser"
     ],
-    "121": [
-      "connector_package_devdependencies_ts_node_dev",
-      "ts_node_dev"
+    "150": [
+      "connector_package_devdependencies_jest",
+      "jest"
     ],
-    "122": [
-      "connector_package_devdependencies_types_jsonwebtoken",
-      "connector_package_json_types_jsonwebtoken"
+    "151": [
+      "connector_package_devdependencies_types_bcrypt",
+      "types_bcrypt"
     ],
-    "123": [
-      "connector_package_devdependencies_types_node",
-      "connector_package_json_types_node"
+    "152": [
+      "connector_package_devdependencies_types_express",
+      "types_express"
     ],
-    "124": [
-      "framer_motion",
-      "frontend_package_dependencies_framer_motion"
-    ],
-    "125": [
+    "153": [
       "frontend_eslint_config",
       "frontend_eslint_config_eslintconfig"
     ],
-    "126": [
+    "154": [
       "frontend_next_config",
       "frontend_next_config_nextconfig"
     ],
-    "127": [
+    "155": [
       "frontend_package_dependencies_next",
       "next"
     ],
-    "128": [
+    "156": [
+      "frontend_package_dependencies_next_themes",
+      "next_themes"
+    ],
+    "157": [
       "frontend_package_dependencies_react",
       "frontend_package_json_react"
     ],
-    "129": [
+    "158": [
       "frontend_package_dependencies_react_dom",
       "frontend_package_json_react_dom"
     ],
-    "130": [
+    "159": [
       "frontend_package_dependencies_zustand",
       "zustand"
     ],
-    "131": [
+    "160": [
       "frontend_postcss_config",
       "frontend_postcss_config_config"
     ],
-    "132": [
+    "161": [
       "frontend_src_components_landing_cryptocoin3d",
       "frontend_src_components_landing_cryptocoin3d_cryptocoin3d"
     ],
-    "133": [
+    "162": [
       "frontend_src_lib_utils",
       "frontend_src_lib_utils_cn"
     ],
-    "134": [
+    "163": [
+      "readme_arsitektur",
+      "readme_tech_stack_detail"
+    ],
+    "164": [
       "central_bank_frontend_src_vite_env_d"
     ],
-    "135": [
+    "165": [
       "central_bank_frontend_vite_config"
     ],
-    "136": [
+    "166": [
       "central_bank_test_invariants_spec"
     ],
-    "137": [
+    "167": [
+      "connector_src_api_payments_routes_paymentsroutes"
+    ],
+    "168": [
+      "connector_src_api_users_routes_usersroutes"
+    ],
+    "169": [
       "wallet_eslint_config"
     ]
   },
   "cohesion": {
     "0": 0.0771478667445938,
     "1": 0.08156028368794327,
-    "2": 0.12790697674418605,
-    "3": 0.10685249709639953,
-    "4": 0.09146341463414634,
-    "5": 0.12051282051282051,
-    "6": 0.14102564102564102,
-    "7": 0.07307692307692308,
-    "8": 0.112375533428165,
-    "9": 0.18468468468468469,
-    "10": 0.07777777777777778,
-    "11": 0.05714285714285714,
-    "12": 0.11764705882352941,
-    "13": 0.08669354838709678,
-    "14": 0.06451612903225806,
+    "2": 0.0425531914893617,
+    "3": 0.12790697674418605,
+    "4": 0.06871035940803383,
+    "5": 0.10685249709639953,
+    "6": 0.07200929152148665,
+    "7": 0.12051282051282051,
+    "8": 0.08076923076923077,
+    "9": 0.07307692307692308,
+    "10": 0.112375533428165,
+    "11": 0.20317460317460317,
+    "12": 0.05714285714285714,
+    "13": 0.0773109243697479,
+    "14": 0.11764705882352941,
     "15": 0.06451612903225806,
-    "16": 0.11330049261083744,
-    "17": 0.3386243386243386,
-    "18": 0.07407407407407407,
-    "19": 0.11904761904761904,
-    "20": 0.1339031339031339,
-    "21": 0.10461538461538461,
-    "22": 0.12333333333333334,
-    "23": 0.08695652173913043,
-    "24": 0.16666666666666666,
-    "25": 0.23157894736842105,
-    "26": 0.16842105263157894,
-    "27": 0.1631578947368421,
-    "28": 0.1,
-    "29": 0.1,
-    "30": 0.10526315789473684,
-    "31": 0.15789473684210525,
-    "32": 0.10526315789473684,
-    "33": 0.15789473684210525,
-    "34": 0.1895424836601307,
-    "35": 0.1503267973856209,
-    "36": 0.28104575163398693,
-    "37": 0.125,
-    "38": 0.11764705882352941,
+    "16": 0.06451612903225806,
+    "17": 0.3275862068965517,
+    "18": 0.17989417989417988,
+    "19": 0.16137566137566137,
+    "20": 0.13756613756613756,
+    "21": 0.07407407407407407,
+    "22": 0.11904761904761904,
+    "23": 0.09401709401709402,
+    "24": 0.1339031339031339,
+    "25": 0.10461538461538461,
+    "26": 0.16,
+    "27": 0.12333333333333334,
+    "28": 0.21014492753623187,
+    "29": 0.08695652173913043,
+    "30": 0.16666666666666666,
+    "31": 0.1,
+    "32": 0.1,
+    "33": 0.10526315789473684,
+    "34": 0.10526315789473684,
+    "35": 0.15789473684210525,
+    "36": 0.1895424836601307,
+    "37": 0.1503267973856209,
+    "38": 0.1111111111111111,
     "39": 0.11764705882352941,
-    "40": 0.11764705882352941,
+    "40": 0.19852941176470587,
     "41": 0.11764705882352941,
-    "42": 0.26666666666666666,
-    "43": 0.25833333333333336,
-    "44": 0.125,
-    "45": 0.16666666666666666,
-    "46": 0.2,
-    "47": 0.14285714285714285,
-    "48": 0.17582417582417584,
-    "49": 0.14285714285714285,
-    "50": 0.3076923076923077,
-    "51": 0.15384615384615385,
-    "52": 0.24358974358974358,
-    "53": 0.15384615384615385,
-    "54": 0.3787878787878788,
-    "55": 0.2727272727272727,
-    "56": 0.4727272727272727,
-    "57": 0.23636363636363636,
-    "58": 0.2222222222222222,
-    "59": 0.35555555555555557,
-    "60": 0.2,
-    "61": 0.2,
-    "62": 0.2777777777777778,
-    "63": 0.2222222222222222,
-    "64": 0.2222222222222222,
-    "65": 0.2777777777777778,
-    "66": 0.39285714285714285,
-    "67": 0.39285714285714285,
-    "68": 0.2857142857142857,
-    "69": 0.2857142857142857,
-    "70": 0.3333333333333333,
-    "71": 0.3333333333333333,
-    "72": 0.2857142857142857,
-    "73": 0.42857142857142855,
-    "74": 0.3333333333333333,
-    "75": 0.4666666666666667,
-    "76": 0.4666666666666667,
-    "77": 0.6,
-    "78": 0.4,
-    "79": 0.6,
-    "80": 0.5,
-    "81": 0.5,
-    "82": 0.5,
-    "83": 0.8333333333333334,
-    "84": 0.6666666666666666,
-    "85": 0.6666666666666666,
-    "86": 0.6666666666666666,
-    "87": 1.0,
-    "88": 1.0,
-    "89": 1.0,
-    "90": 1.0,
-    "91": 1.0,
-    "92": 1.0,
-    "93": 1.0,
-    "94": 1.0,
-    "95": 1.0,
-    "96": 1.0,
-    "97": 1.0,
-    "98": 1.0,
-    "99": 1.0,
-    "100": 1.0,
-    "101": 1.0,
-    "102": 1.0,
-    "103": 1.0,
-    "104": 1.0,
-    "105": 1.0,
-    "106": 1.0,
-    "107": 1.0,
-    "108": 1.0,
-    "109": 1.0,
-    "110": 1.0,
-    "111": 1.0,
-    "112": 1.0,
-    "113": 1.0,
-    "114": 1.0,
-    "115": 1.0,
+    "42": 0.11764705882352941,
+    "43": 0.11764705882352941,
+    "44": 0.26666666666666666,
+    "45": 0.20833333333333334,
+    "46": 0.15833333333333333,
+    "47": 0.13333333333333333,
+    "48": 0.125,
+    "49": 0.125,
+    "50": 0.16666666666666666,
+    "51": 0.125,
+    "52": 0.20952380952380953,
+    "53": 0.13333333333333333,
+    "54": 0.2,
+    "55": 0.14285714285714285,
+    "56": 0.3076923076923077,
+    "57": 0.15384615384615385,
+    "58": 0.15384615384615385,
+    "59": 0.15384615384615385,
+    "60": 0.16666666666666666,
+    "61": 0.16666666666666666,
+    "62": 0.18181818181818182,
+    "63": 0.23636363636363636,
+    "64": 0.23636363636363636,
+    "65": 0.2222222222222222,
+    "66": 0.2,
+    "67": 0.2777777777777778,
+    "68": 0.2222222222222222,
+    "69": 0.2222222222222222,
+    "70": 0.2222222222222222,
+    "71": 0.2222222222222222,
+    "72": 0.2777777777777778,
+    "73": 0.39285714285714285,
+    "74": 0.39285714285714285,
+    "75": 0.25,
+    "76": 0.25,
+    "77": 0.25,
+    "78": 0.25,
+    "79": 0.25,
+    "80": 0.2857142857142857,
+    "81": 0.2857142857142857,
+    "82": 0.2857142857142857,
+    "83": 0.3333333333333333,
+    "84": 0.2857142857142857,
+    "85": 0.2857142857142857,
+    "86": 0.42857142857142855,
+    "87": 0.2857142857142857,
+    "88": 0.2857142857142857,
+    "89": 0.6,
+    "90": 0.4,
+    "91": 0.3333333333333333,
+    "92": 0.4,
+    "93": 0.3333333333333333,
+    "94": 0.3333333333333333,
+    "95": 0.3333333333333333,
+    "96": 0.4666666666666667,
+    "97": 0.4666666666666667,
+    "98": 0.4,
+    "99": 0.6,
+    "100": 0.4,
+    "101": 0.4,
+    "102": 0.4,
+    "103": 0.4,
+    "104": 0.4,
+    "105": 0.6,
+    "106": 0.5,
+    "107": 0.5,
+    "108": 0.5,
+    "109": 0.8333333333333334,
+    "110": 0.5,
+    "111": 0.6666666666666666,
+    "112": 0.6666666666666666,
+    "113": 0.6666666666666666,
+    "114": 0.6666666666666666,
+    "115": 0.6666666666666666,
     "116": 1.0,
     "117": 1.0,
     "118": 1.0,
@@ -2103,7 +2489,39 @@
     "134": 1.0,
     "135": 1.0,
     "136": 1.0,
-    "137": 1.0
+    "137": 1.0,
+    "138": 1.0,
+    "139": 1.0,
+    "140": 1.0,
+    "141": 1.0,
+    "142": 1.0,
+    "143": 1.0,
+    "144": 1.0,
+    "145": 1.0,
+    "146": 1.0,
+    "147": 1.0,
+    "148": 1.0,
+    "149": 1.0,
+    "150": 1.0,
+    "151": 1.0,
+    "152": 1.0,
+    "153": 1.0,
+    "154": 1.0,
+    "155": 1.0,
+    "156": 1.0,
+    "157": 1.0,
+    "158": 1.0,
+    "159": 1.0,
+    "160": 1.0,
+    "161": 1.0,
+    "162": 1.0,
+    "163": 1.0,
+    "164": 1.0,
+    "165": 1.0,
+    "166": 1.0,
+    "167": 1.0,
+    "168": 1.0,
+    "169": 1.0
   },
   "gods": [
     {
@@ -2214,41 +2632,8 @@
       "why": "bridges separate communities"
     }
   ],
-  "questions": [
-    {
-      "type": "bridge_node",
-      "question": "Why does `CentralBankController` connect `CentralBankController` to `central-bank.controller.ts`, `requireIdempotencyKey`, `MonetaryPolicyService`, `app.module.ts`?",
-      "why": "High betweenness centrality (0.011) - this node is a cross-community bridge."
-    },
-    {
-      "type": "bridge_node",
-      "question": "Why does `PrismaService` connect `PrismaService` to `ledger.service.ts`, `settlement.service.ts`, `CreateNotificationDto`, `MoneyService`, `SettlementService`, `MonetaryPolicyService`, `prisma.module.ts`?",
-      "why": "High betweenness centrality (0.010) - this node is a cross-community bridge."
-    },
-    {
-      "type": "bridge_node",
-      "question": "Why does `RequestUser` connect `RequestUser` to `.parse`, `CreateNotificationDto`, `ManagerController`, `CurrentUser`, `teller.controller.ts`, `WalletsController`, `central-bank.controller.ts`, `requireIdempotencyKey`, `Public`, `CentralBankController`?",
-      "why": "High betweenness centrality (0.010) - this node is a cross-community bridge."
-    },
-    {
-      "type": "isolated_nodes",
-      "question": "What connects `ts`, `tsParser`, `name` to the rest of the system?",
-      "why": "447 weakly-connected nodes found - possible documentation gaps or missing edges."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `app.js` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.0771478667445938 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `AppShell.tsx` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.08156028368794327 - nodes in this community are weakly interconnected."
-    },
-    {
-      "type": "low_cohesion",
-      "question": "Should `PaymentRequestPage.tsx` be split into smaller, more focused modules?",
-      "why": "Cohesion score 0.12790697674418605 - nodes in this community are weakly interconnected."
-    }
-  ]
+  "tokens": {
+    "input": 0,
+    "output": 0
+  }
 }

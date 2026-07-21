@@ -7,9 +7,14 @@
     "build": "tsc",
     "start": "node dist/server.js",
     "dev": "ts-node-dev src/server.ts",
-    "test": "jest",
-    "prisma:generate": "prisma generate",
-    "prisma:push": "prisma db push"
+    "test": "npm run build && jest --runInBand",
+    "test:e2e": "node scripts/e2e-happy-path.js",
+    "test:load": "k6 run load/k6-100rps.js",
+    "db:setup": "node scripts/setup-local-db.js",
+    "prisma:generate": "node scripts/run-prisma.js generate",
+    "prisma:validate": "node scripts/run-prisma.js validate",
+    "prisma:push": "node scripts/run-prisma.js db push",
+    "seed:service-key": "node scripts/seed-service-key.js"
   },
   "dependencies": {
     "@prisma/client": "^5.22.0",

@@ -3,6 +3,7 @@ import { ErrorCode } from './error-codes';
 
 const STATUS_BY_CODE: Partial<Record<ErrorCode, HttpStatus>> = {
   [ErrorCode.UNAUTHORIZED]: HttpStatus.UNAUTHORIZED,
+  [ErrorCode.INVALID_PIN]: HttpStatus.UNAUTHORIZED,
   [ErrorCode.FORBIDDEN]: HttpStatus.FORBIDDEN,
   [ErrorCode.VALIDATION_ERROR]: HttpStatus.BAD_REQUEST,
   [ErrorCode.IDEMPOTENCY_KEY_REQUIRED]: HttpStatus.BAD_REQUEST,

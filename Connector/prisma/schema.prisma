@@ -101,7 +101,8 @@ enum OtpStatus {
 }
 
 model IdempotencyRecord {
-  key             String   @id
+  id              String   @id @default(uuid())
+  key             String
   service_id      String
   endpoint        String
   request_hash    String
@@ -110,6 +111,7 @@ model IdempotencyRecord {
   created_at      DateTime @default(now())
   expires_at      DateTime
 
+  @@unique([service_id, endpoint, key])
   @@index([expires_at])
 }
 
