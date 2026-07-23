@@ -120,6 +120,7 @@ Dokumentasi detail per service dan operational guide. README utama ini hanya hig
 | [`Central-Bank/README.md`](./Central-Bank/README.md) | Arsitektur, financial invariants, endpoint list, Prisma migration guide, schema, local setup | Backend developer / Prisma contributor |
 | [`DOCKER_SETUP.md`](./DOCKER_SETUP.md) | Full Docker Compose deployment (5 service), env vars, Prisma di Docker, troubleshooting, production hardening | DevOps / deployer / hosting |
 | [`dokumentasi-lokal.md`](./dokumentasi-lokal.md) | Setup tanpa Docker (Laragon + MySQL lokal Windows) | Frontend-only developer / akademik |
+| [`Connector/CONNECTOR_SETUP.md`](./Connector/CONNECTOR_SETUP.md) | Setup Connector lokal dan Docker, provisioning API key, wallet linking, pembayaran, troubleshooting | Integrator POS/Marketplace |
 | [`AUDIT_REPORT.md`](./AUDIT_REPORT.md) | Audit keamanan & kualitas kode | Reviewer / auditor |
 | [`PR.md`](./PR.md) | Ringkasan PR & changelog | Maintainer / kontributor |
 

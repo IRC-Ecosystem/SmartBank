@@ -8,6 +8,10 @@ This is the API Connector service for sister applications to connect to the Smar
 - Prisma
 - MySQL
 
+## Setup
+
+Panduan lengkap lokal, Docker, provisioning API key, linkage, dan troubleshooting tersedia di [CONNECTOR_SETUP.md](./CONNECTOR_SETUP.md).
+
 ## Local setup (Terminal + Laragon)
 
 1. Start MySQL from Laragon (default `127.0.0.1:3306`).

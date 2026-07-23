@@ -45,6 +45,7 @@ wallet/PROGRESS.md
 .github/
 .commandcode/
 .codex/
+docs/
 AUDIT_REPORT_v2.md
 AUDIT_REPORT.md
 CLAUDE.md
