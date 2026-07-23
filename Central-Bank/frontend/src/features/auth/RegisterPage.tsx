@@ -12,6 +12,7 @@ import { schemas } from '../../api/schemas';
 export const RegisterPage: React.FC = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [idempotencyKey, setIdempotencyKey] = useState(generateIdempotencyKey());
   const [loading, setLoading] = useState(false);
@@ -22,13 +23,13 @@ export const RegisterPage: React.FC = () => {
 
   useEffect(() => {
     setIdempotencyKey(generateIdempotencyKey());
-  }, [name, email, password]);
+  }, [name, email, phone, password]);
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
 
-    const payload = { name: name.trim(), email: email.trim(), password };
+    const payload = { name: name.trim(), email: email.trim(), phone: phone.trim(), password };
     const validation = schemas.auth.register.safeParse(payload);
     if (!validation.success) {
       setError(validation.error.issues[0].message);
@@ -91,6 +92,16 @@ export const RegisterPage: React.FC = () => {
             error={error || undefined}
             required
             autoComplete="email"
+          />
+
+          <Input
+            label="Phone Number"
+            type="tel"
+            placeholder="081234567890"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            autoComplete="tel"
           />
 
           <Input

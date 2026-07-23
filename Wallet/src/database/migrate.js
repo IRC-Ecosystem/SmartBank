@@ -7,7 +7,7 @@ import { config } from '../config/config.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function runMigrations() {
+export async function runMigrations() {
   if (config.db.useInMemory) {
     console.log('ℹ️ Mode Database In-Memory Aktif: Melewati migrasi MySQL.');
     return;
@@ -62,4 +62,6 @@ async function runMigrations() {
   }
 }
 
-runMigrations();
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  void runMigrations();
+}

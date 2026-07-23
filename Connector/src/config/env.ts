@@ -8,7 +8,7 @@ const workspaceRoot = path.resolve(connectorRoot, '..');
 // Load shared values first, then Connector-specific values. Existing process
 // variables (for example those injected by Docker) always take precedence.
 dotenv.config({ path: path.join(workspaceRoot, '.env') });
-dotenv.config({ path: path.join(connectorRoot, '.env') });
+dotenv.config({ path: path.join(connectorRoot, '.env'), override: true });
 dotenv.config({ path: path.join(connectorRoot, '.env.local'), override: true });
 
 function databaseUrlFromGlobalMysql(): string | undefined {

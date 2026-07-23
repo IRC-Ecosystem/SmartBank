@@ -38,7 +38,7 @@ export async function idempotencyMiddleware(req: Request, res: Response, next: N
     const originalJson = res.json.bind(res);
     res.json = ((body: unknown) => {
       const status = res.statusCode;
-      if (status < 500) {
+      if (status >= 200 && status < 300) {
         void prisma.idempotencyRecord.upsert({
           where: { service_id_endpoint_key: { service_id: serviceId, endpoint, key } },
           create: {

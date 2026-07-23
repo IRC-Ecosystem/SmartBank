@@ -5,6 +5,7 @@ export type RegisterPayload = {
   name: string;
   email: string;
   password: string;
+  phone?: string;
 };
 
 export const AuthApi = {

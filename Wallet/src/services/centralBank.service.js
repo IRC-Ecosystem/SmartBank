@@ -49,7 +49,7 @@ const cbState = {
 export const centralBankService = {
 
   // 1. CREATE ACCOUNT / REGISTER USER
-  createAccount: async (name, email, password) => {
+  createAccount: async (name, email, phone, password) => {
     if (!config.centralBank.mock) {
       const idempotencyKey = `cb_reg_${email.replace(/[@.]/g, '_')}`;
       const response = await fetch(`${config.centralBank.url}/api/v1/auth/register`, {
@@ -59,7 +59,7 @@ export const centralBankService = {
           'Idempotency-Key': idempotencyKey,
           'X-Request-Id': `reg_${crypto.randomUUID()}`
         },
-        body: JSON.stringify({ name, email, password })
+        body: JSON.stringify({ name, email, phone, password })
       });
       if (!response.ok) {
         const errBody = await response.json().catch(() => ({}));

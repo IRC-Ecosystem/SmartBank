@@ -10,6 +10,7 @@ export const schemas = {
       name: z.string().min(1, 'Name is required'),
       email: z.string().email('Please enter a valid email address'),
       password: z.string().min(6, 'Password must be at least 6 characters'),
+      phone: z.string().regex(/^(?:\+62|62|0)8\d{8,12}$/, 'Nomor telepon Indonesia tidak valid'),
     }),
   },
   transfer: {

@@ -24,7 +24,12 @@ export class LinkageService {
       where: { service_id: serviceId, phone: payload.phone }
     });
     if (existingByPhone && existingByPhone.external_user_id !== externalId) {
+      const legacyMerchantId = `pos-user-${externalId}`;
+      if (existingByPhone.external_user_id === legacyMerchantId) {
+        await prisma.linkageMap.delete({ where: { id: existingByPhone.id } });
+      } else {
       throw new AppError(409, 'LINKAGE_CONFLICT', 'Nomor HP sudah dihubungkan dengan akun lain di aplikasi ini');
+      }
     }
 
     const existingLink = await prisma.linkageMap.findUnique({

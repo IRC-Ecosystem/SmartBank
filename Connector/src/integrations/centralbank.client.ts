@@ -48,7 +48,8 @@ export class CentralBankClient {
     });
     if (res.status === 404) return null;
     if (!res.ok) throw new Error(`CentralBank lookup failed: ${res.status}`);
-    return res.json();
+    const body = await res.json();
+    return body.data ?? body;
   }
 
   static async createNotification(payload: any) {

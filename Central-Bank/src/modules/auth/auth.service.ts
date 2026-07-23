@@ -15,6 +15,11 @@ function jsonSafe(value: unknown) {
   return JSON.parse(JSON.stringify(value, (_key, current) => (typeof current === 'bigint' ? current.toString() : current)));
 }
 
+function normalizeIndonesianPhone(phone: string): string {
+  const digits = phone.replace(/\D/g, '');
+  return digits.startsWith('62') ? `+${digits}` : `+62${digits.slice(1)}`;
+}
+
 @Injectable()
 export class AuthService {
   constructor(
@@ -28,6 +33,7 @@ export class AuthService {
   async register(input: {
     name: string;
     email: string;
+    phone?: string;
     password: string;
     requestId: string;
     idempotencyKey: string;
@@ -60,13 +66,20 @@ export class AuthService {
               passwordHash,
               role: 'WALLET_USER',
               accountNumber: candidate,
+              phone: input.phone ? normalizeIndonesianPhone(input.phone) : null,
             },
           });
           accountNumber = candidate;
           break;
         } catch (err) {
           if (err instanceof Prisma.PrismaClientKnownRequestError && err.code === 'P2002') {
-            // Collision on accountNumber; regenerate.
+            const target = Array.isArray(err.meta?.target) ? err.meta.target.join(', ') : String(err.meta?.target ?? '');
+            if (!target.includes('account_number') && !target.includes('accountNumber')) {
+              throw new AppError(
+                ErrorCode.VALIDATION_ERROR,
+                target.includes('phone') ? 'Nomor telepon sudah terdaftar' : 'Email sudah terdaftar',
+              );
+            }
             continue;
           }
           throw err;
