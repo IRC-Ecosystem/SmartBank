@@ -6,7 +6,7 @@ const connectorRoot = path.resolve(__dirname, '..');
 const workspaceRoot = path.resolve(connectorRoot, '..');
 
 dotenv.config({ path: path.join(workspaceRoot, '.env') });
-dotenv.config({ path: path.join(connectorRoot, '.env') });
+dotenv.config({ path: path.join(connectorRoot, '.env'), override: true });
 dotenv.config({ path: path.join(connectorRoot, '.env.local'), override: true });
 
 function databaseUrlFromGlobalMysql() {

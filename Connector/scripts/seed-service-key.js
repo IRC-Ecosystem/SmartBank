@@ -8,7 +8,7 @@ const connectorRoot = path.resolve(__dirname, '..');
 const workspaceRoot = path.resolve(connectorRoot, '..');
 
 dotenv.config({ path: path.join(workspaceRoot, '.env') });
-dotenv.config({ path: path.join(connectorRoot, '.env') });
+dotenv.config({ path: path.join(connectorRoot, '.env'), override: true });
 dotenv.config({ path: path.join(connectorRoot, '.env.local'), override: true });
 
 if (!process.env.DATABASE_URL) {
@@ -18,7 +18,7 @@ if (!process.env.DATABASE_URL) {
   const port = process.env.CONNECTOR_DATABASE_PORT ?? '3306';
   const database = process.env.CONNECTOR_DATABASE_NAME ?? 'connector_db';
 
-  if (user && password) {
+  if (user && password !== undefined) {
     process.env.DATABASE_URL = `mysql://${encodeURIComponent(user)}:${encodeURIComponent(password)}@${host}:${port}/${database}`;
   }
 }
