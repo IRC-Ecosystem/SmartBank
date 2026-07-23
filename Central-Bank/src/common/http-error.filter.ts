@@ -12,13 +12,18 @@ export class HttpErrorFilter implements ExceptionFilter {
     const status = exception instanceof HttpException ? exception.getStatus() : HttpStatus.INTERNAL_SERVER_ERROR;
     const body = exception instanceof HttpException ? exception.getResponse() : {};
     const typed = typeof body === 'object' && body !== null ? (body as Record<string, unknown>) : {};
-    const code = typeof typed.code === 'string' ? typed.code : ErrorCode.DATABASE_TRANSACTION_FAILED;
+    const validationMessages = Array.isArray(typed.message) ? typed.message.filter((value): value is string => typeof value === 'string') : [];
+    const code = typeof typed.code === 'string'
+      ? typed.code
+      : status === HttpStatus.BAD_REQUEST && validationMessages.length
+        ? ErrorCode.VALIDATION_ERROR
+        : ErrorCode.DATABASE_TRANSACTION_FAILED;
     const isServerError = status >= HttpStatus.INTERNAL_SERVER_ERROR;
     const message = isServerError
       ? 'Terjadi kesalahan sistem internal'
       : typeof typed.message === 'string'
         ? typed.message
-        : 'Permintaan tidak dapat diproses';
+        : validationMessages[0] ?? 'Permintaan tidak dapat diproses';
 
     if (isServerError) {
       console.error({
@@ -35,7 +40,7 @@ export class HttpErrorFilter implements ExceptionFilter {
       error: {
         code,
         message,
-        details: isServerError ? {} : (typed.details ?? {}),
+        details: isServerError ? {} : (typed.details ?? (validationMessages.length ? { messages: validationMessages } : {})),
       },
       meta: {
         request_id: request.header('x-request-id') ?? randomUUID(),

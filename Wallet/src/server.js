@@ -1,6 +1,7 @@
 import app from './app.js';
 import { config } from './config/config.js';
 import { db } from './config/database.js';
+import { runMigrations } from './database/migrate.js';
 
 // C2: Mock central-bank di produksi dilarang — saldo hidup di RAM, restart = data loss + double-spend.
 if (config.centralBank.mock && config.nodeEnv === 'production') {
@@ -10,7 +11,9 @@ if (config.centralBank.mock && config.nodeEnv === 'production') {
 
 const PORT = config.port;
 
-app.listen(PORT, () => {
+async function start() {
+  await runMigrations();
+  app.listen(PORT, () => {
   console.log(`
   ======================================================
   🏦 SMARTBANK WALLET BACKEND - Tier-2 CBDC Provider
@@ -23,4 +26,7 @@ app.listen(PORT, () => {
   ⚡ Mock Core    : ${config.centralBank.mock ? 'ENABLED (Simulation Mode)' : 'DISABLED (Real HTTP Integration)'}
   ======================================================
   `);
-});
+  });
+}
+
+void start();

@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsString, MaxLength, MinLength } from 'class-validator';
+import { IsEmail, IsNotEmpty, IsOptional, IsString, Matches, MaxLength, MinLength } from 'class-validator';
 
 export class RegisterDto {
   @IsString()
@@ -9,6 +9,11 @@ export class RegisterDto {
   @IsEmail()
   @MaxLength(191)
   email!: string;
+
+  @IsOptional()
+  @IsString()
+  @Matches(/^(?:\+62|62|0)8\d{8,12}$/, { message: 'Nomor telepon Indonesia tidak valid' })
+  phone?: string;
 
   @IsString()
   @MinLength(8)

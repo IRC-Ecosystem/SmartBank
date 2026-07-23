@@ -7,13 +7,28 @@ import { CustomError } from '../utils/errors.js';
 import { config } from '../config/config.js';
 import jwt from 'jsonwebtoken';
 
+const normalizeIndonesianPhone = (phone) => {
+  if (!phone) return null;
+  const digits = String(phone).replace(/\D/g, '');
+  const normalized = digits.startsWith('62')
+    ? `+${digits}`
+    : digits.startsWith('0')
+      ? `+62${digits.slice(1)}`
+      : `+62${digits}`;
+
+  if (!/^\+628\d{8,12}$/.test(normalized)) {
+    throw new CustomError('BAD_REQUEST', 'Format nomor telepon Indonesia tidak valid', 400);
+  }
+  return normalized;
+};
+
 export const authService = {
 
   // 1. REGISTER NEW USER
   register: async (name, email, phone, password, pin, role = 'RETAIL_CUSTOMER') => {
     // Basic formatting
     const cleanEmail = email.toLowerCase().trim();
-    const cleanPhone = phone ? phone.trim() : null;
+    const cleanPhone = normalizeIndonesianPhone(phone);
 
     // Check if email already registered locally
     const emailCheck = await db.query('SELECT id FROM users WHERE email = $1', [cleanEmail]);
@@ -32,9 +47,10 @@ export const authService = {
     // Call Central Bank Core to open account & disburse initial stimulus
     let walletInfo;
     try {
-      walletInfo = await centralBankService.createAccount(name, cleanEmail, password);
+      walletInfo = await centralBankService.createAccount(name, cleanEmail, cleanPhone, password);
     } catch (err) {
       console.error('❌ Gagal membuat wallet di CentralBank Core:', err.message);
+      if (err instanceof CustomError) throw err;
       throw new CustomError('INTERNAL_SERVER_ERROR', 'Registrasi tidak dapat diproses oleh Central Bank', 500);
     }
 

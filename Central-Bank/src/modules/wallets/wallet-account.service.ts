@@ -22,8 +22,9 @@ export class WalletAccountService {
   }
 
   async getWalletByPhone(phone: string) {
-    const user = await this.prisma.user.findUnique({
-      where: { phone },
+    const normalizedPhone = normalizeIndonesianPhone(phone);
+    const user = await this.prisma.user.findFirst({
+      where: normalizedPhone ? { phone: { in: [phone, normalizedPhone, `0${normalizedPhone.slice(3)}`] } } : { phone },
       select: {
         id: true,
         name: true,
@@ -180,4 +181,11 @@ export class WalletAccountService {
       return { status: 'PENDING', pending_role: role, requested_at: now };
     });
   }
+}
+
+function normalizeIndonesianPhone(phone: string): string | null {
+  const digits = phone.replace(/\D/g, '');
+  if (digits.startsWith('62') && digits.length >= 10) return `+${digits}`;
+  if (digits.startsWith('0') && digits.length >= 10) return `+62${digits.slice(1)}`;
+  return null;
 }
